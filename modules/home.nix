@@ -28,9 +28,10 @@
     syntaxHighlighting = { 
       enable = true;
     };
-    oh-my-zsh = {
+    prezto = {
       enable = true;
-      theme = "dst";
+      tmux.autoStartRemote = true;
+      tmux.autoStartLocal = true;
     };
   };
 
@@ -41,6 +42,8 @@
 
   programs.tmux = {
     enable = true;
+    clock24 = true;
+    mouse = true;
   };
 
   programs.ssh = {
@@ -57,5 +60,15 @@
     username = "eh8";
     homeDirectory = "/home/eh8";
     stateVersion = "23.11";
+    packages = [
+      pkgs.btop
+      pkgs.croc
+      pkgs.duf
+      pkgs.exa
+      pkgs.just
+      pkgs.kopia
+      pkgs.neofetch
+      pkgs.tealdeer
+    ];
   };
 }

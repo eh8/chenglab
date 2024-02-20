@@ -62,12 +62,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    btop
-    croc
-    duf
     git
-    kopia
-    neofetch
     vim
   ];
 
