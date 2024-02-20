@@ -1,17 +1,20 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   services.netatalk = {
     enable = true;
     settings = {
-      Homes = {  # Homes are optional - don't need them for Time Machine
+      Homes = {
+        # Homes are optional - don't need them for Time Machine
         "basedir regex" = "/home";
         path = "netatalk";
       };
       time-machine = {
-          path = "/timemachine";
-          "valid users" = "whoever";
-          "time machine" = true;
+        path = "/timemachine";
+        "valid users" = "whoever";
+        "time machine" = true;
       };
     };
   };

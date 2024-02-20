@@ -7,34 +7,26 @@
   ...
 }: {
   imports = [
-    # Import home-manager's NixOS module
+    # Import home-manager's bundled NixOS module
     inputs.home-manager.nixosModules.home-manager
   ];
 
-  nixpkgs = {
-    config = {
-      allowUnfree = true;
-    };
-  };
-
+  nixpkgs.config.allowUnfree = true;
   nix.settings = {
-    # Enable flakes and new 'nix' command
     experimental-features = "nix-command flakes";
-    # Deduplicate and optimize nix store
     auto-optimise-store = true;
   };
 
   networking.networkmanager.enable = true;
+  networking.firewall.enable = true;
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.timeout = 5;
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+    timeout = 5;
+  };
 
   time.timeZone = "America/New_York";
-
-  zramSwap.enable = true;
-
-  security.sudo.wheelNeedsPassword = false;
 
   users.users.eh8 = {
     isNormalUser = true;
@@ -47,10 +39,12 @@
     packages = with pkgs; [];
   };
 
-  programs.zsh.enable = true;
-  programs._1password.enable = true;
+  security.sudo.wheelNeedsPassword = false;
 
-  networking.firewall.enable = true;
+  environment.systemPackages = with pkgs; [
+    git
+    vim
+  ];
 
   services.openssh = {
     enable = true;
@@ -61,10 +55,10 @@
     openFirewall = true;
   };
 
-  environment.systemPackages = with pkgs; [
-    git
-    vim
-  ];
+  programs.zsh.enable = true;
+  programs._1password.enable = true;
+
+  zramSwap.enable = true;
 
   home-manager = {
     extraSpecialArgs = {inherit inputs outputs;};

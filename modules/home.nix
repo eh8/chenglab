@@ -5,15 +5,6 @@
   pkgs,
   ...
 }: {
-  nixpkgs = {
-    config = {
-      # Disable if you don't want unfree packages
-      allowUnfree = true;
-      # Workaround for https://github.com/nix-community/home-manager/issues/2942
-      allowUnfreePredicate = _: true;
-    };
-  };
-
   programs.git = {
     enable = true;
     delta = {
@@ -21,14 +12,14 @@
     };
   };
 
-  programs.zsh = {  
+  programs.zsh = {
     enable = true;
     enableCompletion = true;
     enableAutosuggestions = true;
-    syntaxHighlighting = { 
+    syntaxHighlighting = {
       enable = true;
     };
-    shellAliases = {  
+    shellAliases = {
       cat = "bat --style=plain --theme=base16 --paging=never ";
       ls = "eza ";
       e = "eza ";
@@ -38,10 +29,6 @@
     };
     # https://discourse.nixos.org/t/zsh-zplug-powerlevel10k-zshrc-is-readonly/30333
     initExtra = ''
-      if [ -z "$TMUX" ]; then
-        exec tmux new-session -A -s 0
-      fi
-
       fortune
 
       [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -66,12 +53,9 @@
     enableZshIntegration = true;
   };
 
-  programs.tmux = {
+  programs.zellij = {
     enable = true;
-    clock24 = true;
-    mouse = true;
-    terminal = "screen-256color";
-    baseIndex = 1;
+    enableZshIntegration = true;
   };
 
   programs.ssh = {
