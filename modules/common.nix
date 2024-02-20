@@ -1,12 +1,14 @@
 {
   inputs,
+  outputs,
   lib,
   config,
   pkgs,
   ...
 }: {
   imports = [
-    ./hardware-configuration.nix
+    # Import home-manager's NixOS module
+    inputs.home-manager.nixosModules.home-manager
   ];
 
   nixpkgs = {
@@ -22,9 +24,6 @@
     auto-optimise-store = true;
   };
 
-  # FIXME: Add the rest of your current configuration
-
-  networking.hostName = "sg13chng";
   networking.networkmanager.enable = true;
 
   boot.loader.systemd-boot.enable = true;
@@ -33,30 +32,30 @@
 
   time.timeZone = "America/New_York";
 
-  zramSwap.enable = true;   
+  zramSwap.enable = true;
 
   security.sudo.wheelNeedsPassword = false;
 
   users.users.eh8 = {
     isNormalUser = true;
     description = "eh8";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIkcgwjYMHqUDnx0JIOSXQ/TN80KEaFvvUWA2qH1AHFC"
     ];
+    shell = pkgs.zsh;
     packages = with pkgs; [];
   };
 
+  programs.zsh.enable = true;
+  programs._1password.enable = true;
+
   networking.firewall.enable = true;
 
-  # This setups a SSH server. Very important if you're setting up a headless system.
-  # Feel free to remove if you don't need it.
   services.openssh = {
     enable = true;
     settings = {
-      # Forbid root login through SSH.
       PermitRootLogin = "no";
-      # Use keys only. Remove if you want to SSH using password (not recommended)
       PasswordAuthentication = false;
     };
     openFirewall = true;
@@ -66,11 +65,19 @@
     btop
     croc
     duf
+    git
     kopia
     neofetch
     vim
   ];
 
-  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  system.stateVersion = "23.11";
+  home-manager = {
+    extraSpecialArgs = {inherit inputs outputs;};
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users = {
+      # Import your home-manager configuration
+      eh8 = import ./home.nix;
+    };
+  };
 }

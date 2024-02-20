@@ -10,7 +10,7 @@
       };
       time-machine = {
           path = "/timemachine";
-        "valid users" = "whoever";
+          "valid users" = "whoever";
           "time machine" = true;
       };
     };
