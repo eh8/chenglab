@@ -18,7 +18,7 @@
     nixosConfigurations = {
       sg13chng = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = [./hosts/host-sg13chng.nix];
+        modules = [./sg13chng/configuration.nix];
       };
     };
   };

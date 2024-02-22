@@ -7,11 +7,11 @@
     image = "koush/scrypted:latest";
     volumes = [ "/var/lib/scrypted:/scrypted" ];
     extraOptions = [ "--network=host" ];
-  }
+  };
 
   services.caddy = {
     virtualHosts."scrypted.chengeric.com".extraConfig = ''
       reverse_proxy localhost:10443
     '';
-  }
+  };
 }

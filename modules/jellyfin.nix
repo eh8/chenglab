@@ -31,5 +31,5 @@
     virtualHosts."watch.chengeric.com".extraConfig = ''
       reverse_proxy localhost:8096
     '';
-  }
+  };
 }

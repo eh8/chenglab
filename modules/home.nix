@@ -21,15 +21,20 @@
     };
     shellAliases = {
       cat = "bat --style=plain --theme=base16 --paging=never ";
-      ls = "eza ";
       e = "eza ";
-      v = "nvim ";
+      v = "vim ";
       sudo = "sudo ";
+      z = "zellij ";
       ".." = "cd ..";
     };
     # https://discourse.nixos.org/t/zsh-zplug-powerlevel10k-zshrc-is-readonly/30333
     initExtra = ''
       fortune
+
+      if [[ -z "$ZELLIJ" ]]; then
+        zellij attach default || zellij --session default
+        exit
+      fi
 
       [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
     '';
@@ -42,10 +47,12 @@
     ];
   };
 
-  programs.neovim = {
+  programs.helix = {
     enable = true;
-    viAlias = true;
-    vimAlias = true;
+    defaultEditor = true;
+    settings = {
+      theme = "dark_high_contrast";
+    };
   };
 
   programs.fzf = {
@@ -55,7 +62,6 @@
 
   programs.zellij = {
     enable = true;
-    enableZshIntegration = true;
   };
 
   programs.ssh = {
