@@ -7,10 +7,10 @@
 }: {
   imports = [
     ./hardware-configuration.nix
-    ../modules/core/common.nix
-    ../modules/core/home.nix
-    ../modules/core/remote-unlock.nix
-    ../modules/tailscale.nix
+    ../../modules/core/common.nix
+    ../../modules/core/home.nix
+    ../../modules/core/remote-unlock.nix
+    ../../modules/services/tailscale.nix
   ];
 
   networking.hostName = "sg13chng";

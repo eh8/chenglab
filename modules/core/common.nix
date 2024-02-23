@@ -28,6 +28,7 @@
 
   time.timeZone = "America/New_York";
 
+  users.mutableUsers = false;
   users.users.eh8 = {
     isNormalUser = true;
     description = "eh8";
@@ -37,6 +38,7 @@
     ];
     shell = pkgs.zsh;
     packages = with pkgs; [];
+    initialHashedPassword = "$6$CiT7P11BDzbTEXhQ$Cz4pVgUgHtkgNCgjB8r0PQ1Z.jajc6vwuphGjockKnO9e4EOA5Y9Ef3f1PpVYGMXgzvYX1R4Jh8hUo6Ku4J.l0";
   };
 
   security.sudo.wheelNeedsPassword = false;
