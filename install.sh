@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-# Helpful references
-# https://mhu.dev/posts/2024-01-06-nixos-on-hetzner/
-# https://elis.nu/blog/2020/05/nixos-tmpfs-as-root/
-
 set -e -u -o pipefail
 
 # Define disk
@@ -72,3 +68,4 @@ echo -e "\033[32mSSH host key generated successfully.\033[0m"
 echo -e "\n\033[1;32mAll steps completed successfully. NixOS is now ready to be installed.\033[0m\n"
 echo -e "To install NixOS, run the following command:\n"
 echo -e "\033[1msudo nixos-install --no-root-passwd --flake '.#sg13chng'\033[0m\n"
+echo -e "Remember to add the server's host public key to sops-nix!"

@@ -1,7 +1,9 @@
 keys:
-  - &primary age142e54afjeqajz4pgdc30tj8u6cjnyppj9ef3xjv4keqmk7pjcc2sfhk29x
+  - &mac1chng age142e54afjeqajz4pgdc30tj8u6cjnyppj9ef3xjv4keqmk7pjcc2sfhk29x
+  - &sg13chng age1rja0vzcq9ycx8c4e8fdsqytye800vv57fwjzwxr36yjg8q8v033se5vynr
 creation_rules:
-  - path_regex: secrets/secrets.yaml$
+  - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
     key_groups:
     - age:
-      - *primary
+      - *mac1chng
+      - *sg13chng

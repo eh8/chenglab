@@ -19,7 +19,7 @@
       dates = "weekly";
       options = "--delete-older-than 1w";
     };
-    nix.settings = {
+    settings = {
       experimental-features = "nix-command flakes";
       auto-optimise-store = true;
     };
@@ -37,9 +37,10 @@
   time.timeZone = "America/New_York";
 
   sops.defaultSopsFile = ./../secrets/secrets.yaml;
-  sops.defaultSopsFormat = "yaml";
+
   sops.secrets.user-password.neededForUsers = true;
-  
+  sops.secrets.user-password = {};
+
   users.mutableUsers = false;
   users.users.eh8 = {
     isNormalUser = true;
@@ -52,6 +53,8 @@
     packages = with pkgs; [];
     hashedPasswordFile = config.sops.secrets.user-password.path;
   };
+
+  programs.zsh.enable = true;
 
   security.sudo.wheelNeedsPassword = false;
 
@@ -68,9 +71,6 @@
     };
     openFirewall = true;
   };
-
-  programs.zsh.enable = true;
-  programs._1password.enable = true;
 
   zramSwap.enable = true;
 
