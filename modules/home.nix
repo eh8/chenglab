@@ -64,13 +64,6 @@
     enable = true;
   };
 
-  programs.ssh = {
-    enable = true;
-    extraConfig = ''
-      IdentityAgent ~/.1password/agent.sock
-    '';
-  };
-
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
