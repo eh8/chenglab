@@ -9,12 +9,20 @@
   imports = [
     # Import home-manager's bundled NixOS module
     inputs.home-manager.nixosModules.home-manager
+    inputs.sops-nix.nixosModules.sops
   ];
 
   nixpkgs.config.allowUnfree = true;
-  nix.settings = {
-    experimental-features = "nix-command flakes";
-    auto-optimise-store = true;
+  nix = {
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 1w";
+    };
+    nix.settings = {
+      experimental-features = "nix-command flakes";
+      auto-optimise-store = true;
+    };
   };
 
   networking.networkmanager.enable = true;
@@ -28,6 +36,10 @@
 
   time.timeZone = "America/New_York";
 
+  sops.defaultSopsFile = ./../secrets/secrets.yaml;
+  sops.defaultSopsFormat = "yaml";
+  sops.secrets.user-password.neededForUsers = true;
+  
   users.mutableUsers = false;
   users.users.eh8 = {
     isNormalUser = true;
@@ -38,7 +50,7 @@
     ];
     shell = pkgs.zsh;
     packages = with pkgs; [];
-    initialHashedPassword = "$6$CiT7P11BDzbTEXhQ$Cz4pVgUgHtkgNCgjB8r0PQ1Z.jajc6vwuphGjockKnO9e4EOA5Y9Ef3f1PpVYGMXgzvYX1R4Jh8hUo6Ku4J.l0";
+    hashedPasswordFile = config.sops.secrets.user-password.path;
   };
 
   security.sudo.wheelNeedsPassword = false;

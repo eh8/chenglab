@@ -91,7 +91,7 @@
       pkgs.tealdeer
     ];
     file = {
-      ".p10k.zsh".source = ./../../utils/p10k.zsh;
+      ".p10k.zsh".source = ./../utils/p10k.zsh;
     };
   };
 }
