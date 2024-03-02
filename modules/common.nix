@@ -7,8 +7,6 @@
   ...
 }: {
   imports = [
-    # Import home-manager's bundled NixOS module
-    inputs.home-manager.nixosModules.home-manager
     inputs.sops-nix.nixosModules.sops
   ];
 
@@ -74,13 +72,6 @@
 
   zramSwap.enable = true;
 
-  home-manager = {
-    extraSpecialArgs = {inherit inputs outputs;};
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    users = {
-      # Import your home-manager configuration
-      eh8 = import ./home.nix;
-    };
-  };
+  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
+  system.stateVersion = "23.11";
 }

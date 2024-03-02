@@ -16,6 +16,7 @@
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-amd"];
   boot.extraModulePackages = [];
+  boot.initrd.luks.devices."cryptroot".device = "/dev/nvme0n1p2";
 
   fileSystems."/" = {
     device = "none";
@@ -32,8 +33,6 @@
     device = "/dev/disk/by-label/nix";
     fsType = "ext4";
   };
-
-  boot.initrd.luks.devices."cryptroot".device = "/dev/nvme0n1p2";
 
   fileSystems."/var/log" = {
     device = "/nix/persist/var/log";

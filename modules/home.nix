@@ -69,19 +69,22 @@
 
   home = {
     username = "eh8";
-    homeDirectory = "/home/eh8";
+    homeDirectory = lib.mkMerge [
+      (lib.mkIf pkgs.stdenv.isLinux "/home/eh8" )
+      (lib.mkIf pkgs.stdenv.isDarwin "/Users/eh8" )
+    ];
     stateVersion = "23.11";
-    packages = [
-      pkgs.bat
-      pkgs.btop
-      pkgs.croc
-      pkgs.duf
-      pkgs.eza
-      pkgs.fortune-kind
-      pkgs.just
-      pkgs.kopia
-      pkgs.neofetch
-      pkgs.tealdeer
+    packages = with pkgs; [
+      bat
+      btop
+      croc
+      duf
+      eza
+      fortune-kind
+      just
+      kopia
+      neofetch
+      tealdeer
     ];
     file = {
       ".p10k.zsh".source = ./../utils/p10k.zsh;

@@ -36,6 +36,10 @@ echo "password" | mkpasswd -m SHA-512 -s
 
 Then run `just secrets` to replace the existing decrypted hash with the one that you just generated. If you use a password manager, sure to update the new password as necessary.
 
+## To-do
+
+1. [Wireless remote unlocking](https://discourse.nixos.org/t/wireless-connection-within-initrd/38317/13)
+
 ## Helpful references
 
 - [NixOS on Hetzner Dedicated](https://mhu.dev/posts/2024-01-06-nixos-on-hetzner)

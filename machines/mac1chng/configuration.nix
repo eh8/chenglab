@@ -7,11 +7,8 @@
   ...
 }: {
   imports = [
-    ./hardware-configuration.nix
-    ./../../modules/common.nix
-    ./../../modules/remote-unlock.nix
-    ./../../services/tailscale.nix
-    inputs.home-manager.nixosModules.home-manager
+    ./../../modules/mac.nix
+    inputs.home-manager.darwinModules.home-manager
   ];
 
   home-manager = {
@@ -23,5 +20,5 @@
     };
   };
 
-  networking.hostName = "sg13chng";
+  networking.hostName = "mac1chng";
 }
