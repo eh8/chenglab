@@ -5,12 +5,30 @@
   pkgs,
   ...
 }: {
-  programs.git = {
-    enable = true;
-    delta = {
+  programs.git = lib.mkMerge [
+    (lib.mkIf (pkgs.stdenv.isDarwin) {
       enable = true;
-    };
-  };
+      userName = "Eric Cheng";
+      userEmail = "eric@chengeric.com";
+      delta = {
+        enable = true;
+      };
+      signing = {
+        key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIkcgwjYMHqUDnx0JIOSXQ/TN80KEaFvvUWA2qH1AHFC";
+        signByDefault = true;
+        gpgPath = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign";
+      };
+      extraConfig = {
+        gpg = {format = "ssh";};
+      };
+    })
+    (lib.mkIf (pkgs.stdenv.isLinux) {
+      enable = true;
+      delta = {
+        enable = true;
+      };
+    })
+  ];
 
   programs.zsh = {
     enable = true;
@@ -70,8 +88,8 @@
   home = {
     username = "eh8";
     homeDirectory = lib.mkMerge [
-      (lib.mkIf pkgs.stdenv.isLinux "/home/eh8" )
-      (lib.mkIf pkgs.stdenv.isDarwin "/Users/eh8" )
+      (lib.mkIf pkgs.stdenv.isLinux "/home/eh8")
+      (lib.mkIf pkgs.stdenv.isDarwin "/Users/eh8")
     ];
     stateVersion = "23.11";
     packages = with pkgs; [
@@ -84,6 +102,7 @@
       just
       kopia
       neofetch
+      sops
       tealdeer
     ];
     file = {

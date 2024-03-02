@@ -1,6 +1,5 @@
 {
   inputs,
-  outputs,
   lib,
   config,
   pkgs,
@@ -48,7 +47,6 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIkcgwjYMHqUDnx0JIOSXQ/TN80KEaFvvUWA2qH1AHFC"
     ];
     shell = pkgs.zsh;
-    packages = with pkgs; [];
     hashedPasswordFile = config.sops.secrets.user-password.path;
   };
 

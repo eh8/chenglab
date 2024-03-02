@@ -1,6 +1,5 @@
 {
   inputs,
-  outputs,
   lib,
   config,
   pkgs,
@@ -46,6 +45,8 @@
 
   users.users.eh8.home = "/Users/eh8";
 
+  services.tailscale.enable = true;
+
   nix-homebrew = {
     enable = true;
     enableRosetta = true;
@@ -62,6 +63,9 @@
       upgrade = false;
       cleanup = "zap";
     };
+    brews = [
+      "trash"
+    ];
     casks = [
       "1password"
       "1password-cli"
@@ -74,12 +78,8 @@
       "discord"
       "dropbox"
       "firefox"
-      "font-ibm-plex"
       "font-inter"
       "font-iosevka-ss08"
-      "font-marcellus"
-      "font-noto-sans"
-      "font-roboto-slab"
       "google-chrome"
       "handbrake"
       "inkscape"
@@ -90,12 +90,10 @@
       "rar"
       "raycast"
       "screen-studio"
-      "sidequest"
       "spotify"
       "the-unarchiver"
       "transmission"
       "visual-studio-code"
-      "zed"
       "vlc"
     ];
     masApps = {
@@ -107,7 +105,6 @@
       "Microsoft PowerPoint" = 462062816;
       "Microsoft Word" = 462054704;
       "OneDrive" = 823766827;
-      "Tailscale" = 1475387142;
     };
   };
 
