@@ -9,7 +9,7 @@ if [ "$(uname)" == "Darwin" ]; then
   read -n 1 -s -r -p "Press any key to continue or Ctrl+C to abort..."
 
   echo -e "\n\033[1mInstalling Nix...\033[0m"
-  curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
+  curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install --no-confirm
 
   # Completed
   echo -e "\n\033[1;32mAll steps completed successfully. nix-darwin is now ready to be installed.\033[0m\n"
