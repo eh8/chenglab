@@ -76,16 +76,22 @@ with how it appears on the official website.
 ## Frequently used resources
 
 - [Search NixOS options](https://search.nixos.org/options)
-- [Home Manager Option Search](https://mipmip.github.io/home-manager-option-search/)
-- [Darwin Configuration Options](https://daiderd.com/nix-darwin/manual/index.html)
+- [Home Manager Option
+  Search](https://mipmip.github.io/home-manager-option-search/)
+- [Darwin Configuration
+  Options](https://daiderd.com/nix-darwin/manual/index.html)
 
 ## Helpful references
 
-- [NixOS on Hetzner
-  Dedicated](https://mhu.dev/posts/2024-01-06-nixos-on-hetzner)
-- [NixOS ❄: tmpfs as root](https://elis.nu/blog/2020/05/nixos-tmpfs-as-root)
+- [Conditional
+  implementation](https://nixos.wiki/wiki/Extend_NixOS#Conditional_Implementation)
+- [Error when using lib.mkIf and lib.mkMerge to set configuration based on
+  hostname](https://stackoverflow.com/questions/77527439/error-when-using-lib-mkif-and-lib-mkmerge-to-set-configuration-based-on-hostname)
 - [Handling Secrets in NixOS: An
   Overview](https://lgug2z.com/articles/handling-secrets-in-nixos-an-overview/)
+- [NixOS ❄: tmpfs as root](https://elis.nu/blog/2020/05/nixos-tmpfs-as-root)
+- [NixOS on Hetzner
+  Dedicated](https://mhu.dev/posts/2024-01-06-nixos-on-hetzner)
+- [Setting up Nix on macOS](https://nixcademy.com/2024/01/15/nix-on-macos/)
 - [Users.users.<name>.packages vs home-manager
   packages](https://discourse.nixos.org/t/users-users-name-packages-vs-home-manager-packages/22240)
-- [Setting up Nix on macOS](https://nixcademy.com/2024/01/15/nix-on-macos/)

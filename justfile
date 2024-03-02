@@ -1,5 +1,3 @@
-# https://github.com/casey/just
-
 default:
   just --list
 

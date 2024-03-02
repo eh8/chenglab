@@ -5,7 +5,6 @@
   pkgs,
   ...
 }: {
-  # https://stackoverflow.com/questions/77527439/error-when-using-lib-mkif-and-lib-mkmerge-to-set-configuration-based-on-hostname
   programs.git = lib.mkMerge [
     (lib.mkIf (pkgs.stdenv.isDarwin) {
       enable = true;
@@ -66,6 +65,13 @@
         file = "p10k.zsh";
       }
     ];
+  };
+
+  programs.ssh = lib.mkIf (pkgs.stdenv.isDarwin) {
+    enable = true;
+    extraConfig = ''
+      IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+    '';
   };
 
   programs.helix = {
