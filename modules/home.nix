@@ -5,6 +5,7 @@
   pkgs,
   ...
 }: {
+  # https://stackoverflow.com/questions/77527439/error-when-using-lib-mkif-and-lib-mkmerge-to-set-configuration-based-on-hostname
   programs.git = lib.mkMerge [
     (lib.mkIf (pkgs.stdenv.isDarwin) {
       enable = true;
@@ -95,6 +96,9 @@
       (lib.mkIf pkgs.stdenv.isDarwin "/Users/eh8")
     ];
     stateVersion = "23.11";
+    sessionVariables = lib.mkIf (pkgs.stdenv.isDarwin) {
+      SOPS_AGE_KEY_FILE = "$HOME/.config/sops/age/keys.txt";
+    };
     packages = with pkgs; [
       alejandra
       bat
