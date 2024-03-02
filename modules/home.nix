@@ -16,10 +16,10 @@
       signing = {
         key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIkcgwjYMHqUDnx0JIOSXQ/TN80KEaFvvUWA2qH1AHFC";
         signByDefault = true;
-        gpgPath = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign";
       };
       extraConfig = {
         gpg = {format = "ssh";};
+        "gpg \"ssh\"" = {program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign";};
       };
     })
     (lib.mkIf (pkgs.stdenv.isLinux) {
