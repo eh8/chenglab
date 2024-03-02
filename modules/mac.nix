@@ -11,13 +11,8 @@
 
   nixpkgs.hostPlatform = "aarch64-darwin";
 
-  # https://nixcademy.com/2024/01/15/nix-on-macos/
   environment.systemPackages = with pkgs; [
-    # nix development stuff
     nixos-rebuild
-    nil
-    alejandra
-    # useful cli tools
   ];
 
   services.nix-daemon.enable = true;

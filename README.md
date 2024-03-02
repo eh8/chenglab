@@ -18,6 +18,16 @@ your system by partitioning drives and mounting them.
 
 Install `just` to access the simple aliases below
 
+### Locally deploy changes
+
+```
+just deploy macos
+```
+
+```
+just deploy MACHINE
+```
+
 ### Remote deployment
 
 To remotely deploy `MACHINE`, which has an IP address of `10.0.10.2`

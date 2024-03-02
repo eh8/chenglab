@@ -45,7 +45,6 @@
       z = "zellij ";
       ".." = "cd ..";
     };
-    # https://discourse.nixos.org/t/zsh-zplug-powerlevel10k-zshrc-is-readonly/30333
     initExtra = ''
       fortune
 
@@ -53,14 +52,17 @@
         zellij attach default || zellij --session default
         exit
       fi
-
-      [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
     '';
     plugins = [
       {
         name = "powerlevel10k";
         src = pkgs.zsh-powerlevel10k;
         file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+      }
+      {
+        name = "powerlevel10k-config";
+        src = ./../utils;
+        file = "p10k.zsh";
       }
     ];
   };
@@ -93,6 +95,7 @@
     ];
     stateVersion = "23.11";
     packages = with pkgs; [
+      alejandra
       bat
       btop
       croc
@@ -102,11 +105,10 @@
       just
       kopia
       neofetch
+      nil
       sops
       tealdeer
+      tree
     ];
-    file = {
-      ".p10k.zsh".source = ./../utils/p10k.zsh;
-    };
   };
 }
