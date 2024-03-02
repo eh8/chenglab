@@ -14,7 +14,7 @@ if [ "$(uname)" == "Darwin" ]; then
   # Completed
   echo -e "\n\033[1;32mAll steps completed successfully. nix-darwin is now ready to be installed.\033[0m\n"
   echo -e "To install nix-darwin configuration for hostname, run the following command:\n"
-  echo -e "\033[1mnix run nix-darwin -- --flake github:eh8/config#hostname\033[0m\n"
+  echo -e "\033[1mnix run nix-darwin -- --flake github:eh8/chenglab#hostname\033[0m\n"
   echo -e "Remember to add the new host public key to sops-nix!"
 elif [ "$(uname)" == "Linux" ]; then
   # Define disk
@@ -83,6 +83,6 @@ elif [ "$(uname)" == "Linux" ]; then
   # Completed
   echo -e "\n\033[1;32mAll steps completed successfully. NixOS is now ready to be installed.\033[0m\n"
   echo -e "To install NixOS configuration for hostname, run the following command:\n"
-  echo -e "\033[1msudo nixos-install --no-root-passwd --flake github:eh8/config#hostname\033[0m\n"
+  echo -e "\033[1msudo nixos-install --no-root-passwd --flake github:eh8/chenglab#hostname\033[0m\n"
   echo -e "Remember to add the server's host public key to sops-nix!"
 fi

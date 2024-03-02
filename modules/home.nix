@@ -85,6 +85,7 @@
   };
 
   # Nicely reload system units when changing configs
+  # Should be ignored by nix-darwin
   systemd.user.startServices = "sd-switch";
 
   home = {

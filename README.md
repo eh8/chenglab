@@ -3,7 +3,7 @@
 ## Getting set up 
 
 ```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/eh8/config/master/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/eh8/chenglab/master/install.sh)"
 ```
 
 On macOS, this will prompt you to install `nix` onto your local machine if you
