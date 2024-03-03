@@ -16,8 +16,22 @@
   ];
 
   services.nix-daemon.enable = true;
-  nix.package = pkgs.nix;
-  nix.settings.experimental-features = "nix-command flakes";
+  nix = {
+    package = pkgs.nix;
+    gc = {
+      automatic = true;
+      interval = {
+        Weekday = 0;
+        Hour = 0;
+        Minute = 0;
+      };
+      options = "--delete-older-than 1w";
+    };
+    settings = {
+      experimental-features = "nix-command flakes";
+      auto-optimise-store = true;
+    };
+  };
 
   programs.zsh.enable = true;
 

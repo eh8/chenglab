@@ -16,7 +16,14 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     users = {
-      eh8 = import ./../../modules/home.nix;
+      eh8 = {
+        imports = [
+          ./../../modules/home.nix
+          ./../../modules/alacritty.nix
+          ./../../modules/1password.nix
+          ./../../modules/zsh.nix
+        ];
+      };
     };
   };
 

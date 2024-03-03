@@ -11,5 +11,11 @@ deploy machine ip='':
     nixos-rebuild switch --fast --flake ".#{{machine}}" --use-remote-sudo --target-host "eh8@{{ip}}" --build-host "eh8@{{ip}}"
   fi
 
-secrets:
+edit-secrets:
   sops secrets/secrets.yaml
+
+refresh-secrets:
+  sops updatekeys secrets/secrets.yaml
+
+rotate-secrets:
+  sops -r secrets/secrets.yaml

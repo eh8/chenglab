@@ -2,9 +2,9 @@
   description = "homelab";
 
   inputs = {
-    nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/*.tar.gz";
-    home-manager.url = "https://flakehub.com/f/nix-community/home-manager/*.tar.gz";
-    sops-nix.url = "https://flakehub.com/f/Mic92/sops-nix/*.tar.gz";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    home-manager.url = "github:nix-community/home-manager";
+    sops-nix.url = "github:Mic92/sops-nix";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
 
