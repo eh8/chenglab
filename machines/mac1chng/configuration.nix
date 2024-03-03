@@ -19,9 +19,9 @@
       eh8 = {
         imports = [
           ./../../modules/home.nix
+          ./../../modules/zsh.nix
           ./../../modules/alacritty.nix
           ./../../modules/1password.nix
-          ./../../modules/zsh.nix
         ];
       };
     };

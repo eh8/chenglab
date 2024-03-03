@@ -28,5 +28,5 @@
     };
   };
 
-  networking.hostName = "sg13chng";
+  networking.hostName = "dsk1chng";
 }
