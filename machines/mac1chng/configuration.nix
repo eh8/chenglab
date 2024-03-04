@@ -7,7 +7,7 @@
   ...
 }: {
   imports = [
-    ./../../modules/mac.nix
+    ./../../modules/base-macos.nix
     inputs.home-manager.darwinModules.home-manager
   ];
 
@@ -18,10 +18,10 @@
     users = {
       eh8 = {
         imports = [
-          ./../../modules/home.nix
-          ./../../modules/zsh.nix
-          ./../../modules/alacritty.nix
-          ./../../modules/1password.nix
+          ./../../modules/home-manager/home.nix
+          ./../../modules/home-manager/zsh.nix
+          ./../../modules/home-manager/alacritty.nix
+          ./../../modules/home-manager/1password.nix
         ];
       };
     };

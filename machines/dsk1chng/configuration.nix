@@ -8,7 +8,7 @@
 }: {
   imports = [
     ./hardware-configuration.nix
-    ./../../modules/common.nix
+    ./../../modules/base.nix
     ./../../modules/remote-unlock.nix
     ./../../services/tailscale.nix
     inputs.home-manager.nixosModules.home-manager
@@ -21,8 +21,8 @@
     users = {
       eh8 = {
         imports = [
-          ./../../modules/home.nix
-          ./../../modules/zsh.nix
+          ./../../modules/home-manager/home.nix
+          ./../../modules/home-manager/zsh.nix
         ];
       };
     };

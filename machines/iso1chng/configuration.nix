@@ -7,7 +7,7 @@
   ...
 }: {
   imports = [
-    ./../../modules/common.nix
+    ./../../modules/base.nix
     ./../../modules/iso.nix
     inputs.home-manager.nixosModules.home-manager
   ];
@@ -19,8 +19,8 @@
     users = {
       eh8 = {
         imports = [
-          ./../../modules/home.nix
-          ./../../modules/zsh.nix
+          ./../../modules/home-manager/home.nix
+          ./../../modules/home-manager/zsh.nix
         ];
       };
     };

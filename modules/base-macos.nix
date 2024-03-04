@@ -7,7 +7,7 @@
 }: {
   imports = [
     inputs.nix-homebrew.darwinModules.nix-homebrew
-    ./../utils/dock.nix
+    ./home-manager/dock.nix
   ];
 
   nixpkgs.hostPlatform = "aarch64-darwin";
