@@ -23,8 +23,8 @@
       duf
       eza
       fortune-kind
-      just
       genact
+      just
       kopia
       neofetch
       nil

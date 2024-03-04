@@ -31,3 +31,6 @@ refresh-secrets:
 
 rotate-secrets:
   sops -r secrets/secrets.yaml
+
+build-iso:
+  nix build .#nixosConfigurations.iso1chng.config.system.build.isoImage

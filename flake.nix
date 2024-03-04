@@ -22,9 +22,19 @@
     inherit (self) outputs;
   in {
     nixosConfigurations = {
-      sg13chng = nixpkgs.lib.nixosSystem {
+      dsk1chng = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = [./machines/sg13chng/configuration.nix];
+        modules = [./machines/dsk1chng/configuration.nix];
+      };
+    };
+    nixosConfigurations = {
+      iso1chng = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        system = "x86_64-linux";
+        modules = [
+          (nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix")
+          ./machines/iso1chng/configuration.nix
+        ];
       };
     };
     darwinConfigurations = {
