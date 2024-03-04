@@ -1,10 +1,4 @@
-{
-  inputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
+{lib, ...}: {
   networking.networkmanager.enable = lib.mkForce false;
   services.openssh.settings.PermitRootLogin = lib.mkForce "yes";
 }

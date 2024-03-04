@@ -1,10 +1,4 @@
-{
-  inputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
+{config, ...}: {
   boot.kernelParams = ["ip=dhcp"];
   boot.initrd.network = {
     enable = true;

@@ -1,6 +1,4 @@
-{ config, pkgs, ... }:
-
-{
+{pkgs, ...}: {
   services.jellyfin = {
     enable = true;
     openFirewall = true;
@@ -14,7 +12,7 @@
   # Enable hardware transcoding
   # https://nixos.wiki/wiki/Jellyfin
   nixpkgs.config.packageOverrides = pkgs: {
-  vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
+    vaapiIntel = pkgs.vaapiIntel.override {enableHybridCodec = true;};
   };
   hardware.opengl = {
     enable = true;
