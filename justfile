@@ -11,6 +11,18 @@ deploy machine ip='':
     nixos-rebuild switch --fast --flake ".#{{machine}}" --use-remote-sudo --target-host "eh8@{{ip}}" --build-host "eh8@{{ip}}"
   fi
 
+up:
+  nix flake update
+
+history:
+  nix profile history --profile /nix/var/nix/profiles/system
+
+clean:
+  sudo nix profile wipe-history --profile /nix/var/nix/profiles/system --older-than 7d
+
+gc:
+  sudo nix-collect-garbage --delete-old
+
 edit-secrets:
   sops secrets/secrets.yaml
 

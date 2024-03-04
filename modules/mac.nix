@@ -7,6 +7,7 @@
 }: {
   imports = [
     inputs.nix-homebrew.darwinModules.nix-homebrew
+    ./../utils/dock.nix
   ];
 
   nixpkgs.hostPlatform = "aarch64-darwin";
@@ -42,9 +43,7 @@
   };
 
   # Mute that loud ass bootup sound
-  system.activationScripts.extraActivation.text = ''
-    nvram StartupMute=%01
-  '';
+  system.startup.chime = false;
 
   security.pam.enableSudoTouchIdAuth = true;
 
@@ -111,6 +110,21 @@
       "Microsoft Word" = 462054704;
       "OneDrive" = 823766827;
     };
+  };
+
+  local = {
+    dock.enable = true;
+    dock.entries = [
+      {path = "/Applications/Launchpad.app";}
+      {path = "/Applications/Firefox.app";}
+      {path = "/Applications/Alacritty.app";}
+      {path = "/Applications/Cursor.app";}
+      {path = "/System/Applications/Messages.app";}
+      {path = "/Applications/Messenger.app";}
+      {path = "/Applications/1Password.app";}
+      {path = "/Applications/Obsidian.app";}
+      {path = "/System/Applications/System Settings.app";}
+    ];
   };
 
   system.stateVersion = 4;

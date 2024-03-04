@@ -95,3 +95,5 @@ with how it appears on the official website.
 - [Setting up Nix on macOS](https://nixcademy.com/2024/01/15/nix-on-macos/)
 - [Users.users.<name>.packages vs home-manager
   packages](https://discourse.nixos.org/t/users-users-name-packages-vs-home-manager-packages/22240)
+- [Declaratively manage dock via
+  nix](https://github.com/dustinlyons/nixos-config/blob/8a14e1f0da074b3f9060e8c822164d922bfeec29/modules/darwin/home-manager.nix#L74)

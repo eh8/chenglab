@@ -25,7 +25,6 @@
       fortune-kind
       just
       genact
-      kitty
       kopia
       neofetch
       nil
