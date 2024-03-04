@@ -8,8 +8,8 @@
 }: {
   imports = [
     ./hardware-configuration.nix
-    ./../../modules/base.nix
-    ./../../modules/remote-unlock.nix
+    ./../../modules/nixos/base.nix
+    ./../../modules/nixos/remote-unlock.nix
     ./../../services/tailscale.nix
     inputs.home-manager.nixosModules.home-manager
   ];

@@ -7,7 +7,8 @@
   ...
 }: {
   imports = [
-    ./../../modules/base-macos.nix
+    ./../../modules/macos/base.nix
+    ./../../modules/macos/wallpaper.nix
     inputs.home-manager.darwinModules.home-manager
   ];
 

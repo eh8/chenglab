@@ -15,48 +15,52 @@
     };
     packages = with pkgs; [
       alejandra
+      asciiquarium
       bat
       btop
+      bun
       croc
       duf
-      eza
       fortune-kind
       genact
+      imagemagick
       just
       kopia
       neofetch
       nil
+      pandoc
       sops
       tealdeer
       tree
+      zola
     ];
   };
 
-  programs.git = {
-    enable = true;
-    delta = {
+  programs = {
+    git = {
       enable = true;
+      delta = {
+        enable = true;
+      };
     };
-  };
-
-  programs.helix = {
-    enable = true;
-    defaultEditor = true;
-    settings = {
-      theme = "dark_high_contrast";
+    helix = {
+      enable = true;
+      defaultEditor = true;
+      settings = {
+        theme = "dark_high_contrast";
+      };
     };
-  };
-
-  programs.fzf = {
-    enable = true;
-    enableZshIntegration = true;
-  };
-
-  programs.zellij = {
-    enable = true;
-    settings = {
-      theme = "dracula";
+    fzf = {
+      enable = true;
+      enableZshIntegration = true;
     };
+    zellij = {
+      enable = true;
+      settings = {
+        theme = "dracula";
+      };
+    };
+    eza.enable = true;
   };
 
   # Nicely reload system units when changing configs
