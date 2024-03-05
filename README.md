@@ -1,4 +1,15 @@
-# homelab
+[![NixOS Unstable](https://img.shields.io/badge/NixOS-unstable-blue.svg?style=flat-square&logo=NixOS&logoColor=white)](https://nixos.org)
+
+# Chenglab
+
+<p align="center">
+<span><img src=".github/background-1.png" height="100" /></span>
+<span><img src=".github/background-2.png" height="100" /></span>
+<span><img src=".github/background-3.png" height="100" /></span>
+</p>
+<p align="center">
+<i>it’s not just a homelab, it’s a chenglab™<i>
+</p>
 
 ## Getting set up 
 
