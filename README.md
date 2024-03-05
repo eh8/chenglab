@@ -3,9 +3,6 @@
 <p align="center">
 <img align="center" src=".github/background.gif" />
 </p>
-<p align="center">
-<i>it’s not just a homelab, it’s a chenglab™</i>
-</p>
 
 ## Getting set up 
 
