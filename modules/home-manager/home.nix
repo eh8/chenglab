@@ -31,7 +31,6 @@
       pandoc
       qrencode
       sops
-      tealdeer
       tree
       zola
     ];
@@ -60,6 +59,10 @@
       settings = {
         theme = "dracula";
       };
+    };
+    tealdeer = {
+      enable = true;
+      settings.updates.auto_update = true;
     };
     eza.enable = true;
   };
