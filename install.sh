@@ -9,15 +9,15 @@ if [ "$(uname)" == "Darwin" ]; then
   read -n 1 -s -r -p "Press any key to continue or Ctrl+C to abort..."
 
   # https://forums.developer.apple.com/forums/thread/698954
+  echo -e "\n\033[1mInstalling Xcode...\033[0m"
   if [[ -e /Library/Developer/CommandLineTools/usr/bin/git ]]; then
-    echo -e "\n\033[1mInstalling Xcode...\033[0m"
+    echo -e "\033[32mXcode already installed.\033[0m"
+  else
     # This temporary file prompts the 'softwareupdate' utility to list the Command Line Tools
     touch /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress
     PROD=$(softwareupdate -l | grep "\*.*Command Line" | tail -n 1 | sed 's/^[^C]* //')
     softwareupdate -i "$PROD" --verbose
     echo -e "\033[32mXcode installed successfully.\033[0m"
-  else
-    echo -e "\033[32mXcode already installed.\033[0m"
   fi
 
   echo -e "\n\033[1mInstalling Rosetta...\033[0m"
