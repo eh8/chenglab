@@ -9,8 +9,7 @@ if [ "$(uname)" == "Darwin" ]; then
   read -n 1 -s -r -p "Press any key to continue or Ctrl+C to abort..."
 
   # https://forums.developer.apple.com/forums/thread/698954
-  xcode-select -p &>/dev/null
-  if [ $? -ne 0 ]; then
+  if [[ -e /Library/Developer/CommandLineTools/usr/bin/git ]]; then
     echo -e "\n\033[1mInstalling Xcode...\033[0m"
     # This temporary file prompts the 'softwareupdate' utility to list the Command Line Tools
     touch /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress
