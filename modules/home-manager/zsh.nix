@@ -16,11 +16,6 @@
     };
     initExtra = ''
       fortune
-
-      if [[ -z "$ZELLIJ" ]]; then
-        zellij attach default || zellij --session default
-        exit
-      fi
     '';
     plugins = [
       {

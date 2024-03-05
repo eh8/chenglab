@@ -23,6 +23,9 @@ clean:
 gc:
   sudo nix-collect-garbage --delete-old
 
+repair:
+  sudo nix-store --verify --check-contents --repair
+
 edit-secrets:
   sops secrets/secrets.yaml
 
