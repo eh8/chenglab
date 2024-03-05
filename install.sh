@@ -10,12 +10,12 @@ if [ "$(uname)" == "Darwin" ]; then
 
   echo -e "\n\033[1mInstalling Xcode...\033[0m"
   xcode-select --install
-
-  echo -e "\n\033[1mInstalling Nix...\033[0m"
-  curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install --no-confirm
   
   echo -e "\n\033[1mInstalling Rosetta...\033[0m"  
   softwareupdate --install-rosetta
+
+  echo -e "\n\033[1mInstalling Nix...\033[0m"
+  curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install --no-confirm
 
   # Completed
   echo -e "\n\033[1;32mAll steps completed successfully. nix-darwin is now ready to be installed.\033[0m\n"
