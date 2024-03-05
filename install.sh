@@ -8,11 +8,22 @@ if [ "$(uname)" == "Darwin" ]; then
   echo -e "\n\033[1;31m**Warning:** This script will prepare system for nix-darwin installation.\033[0m"
   read -n 1 -s -r -p "Press any key to continue or Ctrl+C to abort..."
 
-  echo -e "\n\033[1mInstalling Xcode...\033[0m"
-  xcode-select --install
-  
-  echo -e "\n\033[1mInstalling Rosetta...\033[0m"  
+  # https://forums.developer.apple.com/forums/thread/698954
+  xcode-select -p &>/dev/null
+  if [ $? -ne 0 ]; then
+    echo -e "\n\033[1mInstalling Xcode...\033[0m"
+    # This temporary file prompts the 'softwareupdate' utility to list the Command Line Tools
+    touch /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress
+    PROD=$(softwareupdate -l | grep "\*.*Command Line" | tail -n 1 | sed 's/^[^C]* //')
+    softwareupdate -i "$PROD" --verbose
+    echo -e "\033[32mXcode installed successfully.\033[0m"
+  else
+    echo -e "\033[32mXcode already installed.\033[0m"
+  fi
+
+  echo -e "\n\033[1mInstalling Rosetta...\033[0m"
   softwareupdate --install-rosetta
+  echo -e "\033[32mRosetta installed successfully.\033[0m"
 
   echo -e "\n\033[1mInstalling Nix...\033[0m"
   curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install --no-confirm

@@ -55,6 +55,38 @@
         "type": "github"
       }
     },
+    "homebrew-bundle": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709571611,
+        "narHash": "sha256-A8wf2/D3pSOqeYDGi96LC+KXbJtUpiVBxwVLMdskpxE=",
+        "owner": "homebrew",
+        "repo": "homebrew-bundle",
+        "rev": "f1f866389d27c0459d17d7703864936f2fdf26ab",
+        "type": "github"
+      },
+      "original": {
+        "owner": "homebrew",
+        "repo": "homebrew-bundle",
+        "type": "github"
+      }
+    },
+    "homebrew-cask": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709600738,
+        "narHash": "sha256-o2XTrtnGc3d3lhwnGccIoxAvJncJxplxzJwiVLNNN8I=",
+        "owner": "homebrew",
+        "repo": "homebrew-cask",
+        "rev": "7440056ddd9ad8a4f5629d98585c6f40b6ff5033",
+        "type": "github"
+      },
+      "original": {
+        "owner": "homebrew",
+        "repo": "homebrew-cask",
+        "type": "github"
+      }
+    },
     "homebrew-cask-fonts": {
       "flake": false,
       "locked": {
@@ -68,6 +100,22 @@
       "original": {
         "owner": "homebrew",
         "repo": "homebrew-cask-fonts",
+        "type": "github"
+      }
+    },
+    "homebrew-core": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709603504,
+        "narHash": "sha256-DzLZJokSM86KpYx/63ceoIyXNs59fyaszsVwc73Q2UU=",
+        "owner": "homebrew",
+        "repo": "homebrew-core",
+        "rev": "c1d7f1856dc21af9704cb9330ea05eef25ec11da",
+        "type": "github"
+      },
+      "original": {
+        "owner": "homebrew",
+        "repo": "homebrew-core",
         "type": "github"
       }
     },
@@ -194,7 +242,10 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "homebrew-bundle": "homebrew-bundle",
+        "homebrew-cask": "homebrew-cask",
         "homebrew-cask-fonts": "homebrew-cask-fonts",
+        "homebrew-core": "homebrew-core",
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
         "nixpkgs": "nixpkgs_3",

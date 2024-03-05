@@ -54,7 +54,10 @@
     enableRosetta = true;
     user = "eh8";
     taps = {
+      "homebrew/homebrew-bundle" = inputs.homebrew-bundle;
+      "homebrew/homebrew-cask" = inputs.homebrew-cask;
       "homebrew/homebrew-cask-fonts" = inputs.homebrew-cask-fonts;
+      "homebrew/homebrew-core" = inputs.homebrew-core;
     };
     mutableTaps = false;
   };
