@@ -8,7 +8,7 @@
 <span><img src=".github/background-3.png" height="100" /></span>
 </p>
 <p align="center">
-<i>it’s not just a homelab, it’s a chenglab™<i>
+<i>it’s not just a homelab, it’s a chenglab™</i>
 </p>
 
 ## Getting set up 
