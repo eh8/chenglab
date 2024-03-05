@@ -1,7 +1,7 @@
 [![NixOS Unstable](https://img.shields.io/badge/NixOS-unstable-blue.svg?style=flat-square&logo=NixOS&logoColor=white)](https://nixos.org)
 
 <p align="center">
-<img align="center" src=".github/background.png" />
+<img align="center" src=".github/background.gif" />
 </p>
 <p align="center">
 <i>it’s not just a homelab, it’s a chenglab™</i>
