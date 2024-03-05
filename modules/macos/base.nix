@@ -1,4 +1,5 @@
 {
+  config,
   inputs,
   pkgs,
   ...
@@ -8,13 +9,8 @@
     ./dock.nix
   ];
 
-  nixpkgs.hostPlatform = "aarch64-darwin";
-
-  environment.systemPackages = with pkgs; [
-    nixos-rebuild
-  ];
-
   services.nix-daemon.enable = true;
+  services.tailscale.enable = true;
   nix = {
     package = pkgs.nix;
     gc = {
@@ -30,36 +26,43 @@
 
   programs.zsh.enable = true;
 
-  system.defaults = {
-    dock.autohide = true;
-    dock.mru-spaces = false;
-    finder.AppleShowAllExtensions = true;
-    finder.FXPreferredViewStyle = "clmv";
-    loginwindow.LoginwindowText = "If lost, contact eric@chengeric.com";
-    screencapture.location = "~/OneDrive/30-39 Hobbies/34 Photos/";
-    screensaver.askForPasswordDelay = 10;
+  system = {
+    startup.chime = false;
+    defaults = {
+      dock.autohide = true;
+      dock.mru-spaces = false;
+      dock.tilesize = 96;
+      dock.wvous-br-corner = 4;
+      dock.wvous-bl-corner = 11;
+      finder.AppleShowAllExtensions = true;
+      finder.FXPreferredViewStyle = "clmv";
+      loginwindow.LoginwindowText = "If lost, contact eric@chengeric.com";
+      screencapture.location = "~/OneDrive/30-39 Hobbies/34 Photos/";
+      menuExtraClock.ShowSeconds = true;
+      menuExtraClock.Show24Hour = true;
+      menuExtraClock.ShowAMPM = false;
+      NSGlobalDomain.AppleInterfaceStyle = "Dark";
+    };
   };
-
-  # Mute that loud ass bootup sound
-  system.startup.chime = false;
 
   security.pam.enableSudoTouchIdAuth = true;
 
   users.users.eh8.home = "/Users/eh8";
-
-  services.tailscale.enable = true;
+  users.users.eh8.packages = with pkgs; [
+    nixos-rebuild
+  ];
 
   nix-homebrew = {
     enable = true;
     enableRosetta = true;
     user = "eh8";
+    mutableTaps = false;
     taps = {
       "homebrew/homebrew-bundle" = inputs.homebrew-bundle;
       "homebrew/homebrew-cask" = inputs.homebrew-cask;
       "homebrew/homebrew-cask-fonts" = inputs.homebrew-cask-fonts;
       "homebrew/homebrew-core" = inputs.homebrew-core;
     };
-    mutableTaps = false;
   };
 
   homebrew = {
@@ -75,6 +78,7 @@
     brews = [
       "trash"
     ];
+    taps = builtins.attrNames config.nix-homebrew.taps;
     casks = [
       "1password"
       "1password-cli"
@@ -114,6 +118,7 @@
       "Microsoft PowerPoint" = 462062816;
       "Microsoft Word" = 462054704;
       "OneDrive" = 823766827;
+      "Tailscale" = 1475387142;
     };
   };
 
@@ -132,5 +137,6 @@
     ];
   };
 
+  nixpkgs.hostPlatform = "aarch64-darwin";
   system.stateVersion = 4;
 }
