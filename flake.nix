@@ -7,7 +7,11 @@
     sops-nix.url = "github:Mic92/sops-nix";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
-    
+
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+
     homebrew-cask-fonts = {
       url = "github:homebrew/homebrew-cask-fonts";
       flake = false;
@@ -20,14 +24,10 @@
       url = "github:homebrew/homebrew-core";
       flake = false;
     };
-    homebrew-cask= {
+    homebrew-cask = {
       url = "github:homebrew/homebrew-cask";
       flake = false;
     };
-
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
-    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -44,6 +44,7 @@
         modules = [./machines/dsk1chng/configuration.nix];
       };
     };
+
     nixosConfigurations = {
       iso1chng = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
@@ -54,6 +55,7 @@
         ];
       };
     };
+
     darwinConfigurations = {
       mac1chng = nix-darwin.lib.darwinSystem {
         specialArgs = {inherit inputs outputs;};
