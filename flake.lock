@@ -55,6 +55,22 @@
         "type": "github"
       }
     },
+    "homebrew-cask-fonts": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709526301,
+        "narHash": "sha256-F8mNLL6c//+N71GXuCsrJ+tJBJJbPGMR5qvlZJm/1/s=",
+        "owner": "homebrew",
+        "repo": "homebrew-cask-fonts",
+        "rev": "a1441b2cec31ed803de50bfe0211aac360545622",
+        "type": "github"
+      },
+      "original": {
+        "owner": "homebrew",
+        "repo": "homebrew-cask-fonts",
+        "type": "github"
+      }
+    },
     "nix-darwin": {
       "inputs": {
         "nixpkgs": [
@@ -178,6 +194,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "homebrew-cask-fonts": "homebrew-cask-fonts",
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
         "nixpkgs": "nixpkgs_3",

@@ -7,6 +7,11 @@
     sops-nix.url = "github:Mic92/sops-nix";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    
+    homebrew-cask-fonts = {
+      url = "github:homebrew/homebrew-cask-fonts";
+      flake = false;
+    };
 
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";

@@ -53,6 +53,10 @@
     enable = true;
     enableRosetta = true;
     user = "eh8";
+    taps = {
+      "homebrew/homebrew-cask-fonts" = inputs.homebrew-cask-fonts;
+    };
+    mutableTaps = false;
   };
 
   homebrew = {
