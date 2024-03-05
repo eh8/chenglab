@@ -29,6 +29,7 @@
       neofetch
       nil
       pandoc
+      qrencode
       sops
       tealdeer
       tree

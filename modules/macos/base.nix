@@ -113,7 +113,7 @@
   local = {
     dock.enable = true;
     dock.entries = [
-      {path = "/Applications/Launchpad.app";}
+      {path = "/System/Applications/Launchpad.app";}
       {path = "/Applications/Firefox.app";}
       {path = "/Applications/Alacritty.app";}
       {path = "/Applications/Cursor.app";}
