@@ -9,49 +9,6 @@
     ./dock.nix
   ];
 
-  services.nix-daemon.enable = true;
-  services.tailscale.enable = true;
-  nix = {
-    package = pkgs.nix;
-    gc = {
-      automatic = true;
-      interval.Weekday = 0;
-      options = "--delete-older-than 1w";
-    };
-    settings = {
-      experimental-features = "nix-command flakes";
-      auto-optimise-store = true;
-    };
-  };
-
-  programs.zsh.enable = true;
-
-  system = {
-    startup.chime = false;
-    defaults = {
-      dock.autohide = true;
-      dock.mru-spaces = false;
-      dock.tilesize = 96;
-      dock.wvous-br-corner = 4;
-      dock.wvous-bl-corner = 11;
-      finder.AppleShowAllExtensions = true;
-      finder.FXPreferredViewStyle = "clmv";
-      loginwindow.LoginwindowText = "If lost, contact eric@chengeric.com";
-      screencapture.location = "~/OneDrive/30-39 Hobbies/34 Photos/";
-      menuExtraClock.ShowSeconds = true;
-      menuExtraClock.Show24Hour = true;
-      menuExtraClock.ShowAMPM = false;
-      NSGlobalDomain.AppleInterfaceStyle = "Dark";
-    };
-  };
-
-  security.pam.enableSudoTouchIdAuth = true;
-
-  users.users.eh8.home = "/Users/eh8";
-  users.users.eh8.packages = with pkgs; [
-    nixos-rebuild
-  ];
-
   nix-homebrew = {
     enable = true;
     enableRosetta = true;
@@ -121,6 +78,52 @@
       "Tailscale" = 1475387142;
     };
   };
+
+  services.nix-daemon.enable = true;
+  services.tailscale.enable = true;
+  nix = {
+    package = pkgs.nix;
+    gc = {
+      automatic = true;
+      interval.Weekday = 0;
+      options = "--delete-older-than 1w";
+    };
+    settings = {
+      experimental-features = "nix-command flakes";
+      auto-optimise-store = true;
+    };
+  };
+
+  programs.zsh.enable = true;
+
+  system = {
+    startup.chime = false;
+    defaults = {
+      dock.autohide = true;
+      dock.mru-spaces = false;
+      dock.tilesize = 96;
+      dock.wvous-br-corner = 4;
+      dock.wvous-bl-corner = 11;
+      finder.AppleShowAllExtensions = true;
+      finder.FXPreferredViewStyle = "clmv";
+      loginwindow.LoginwindowText = "If lost, contact eric@chengeric.com";
+      screencapture.location = "~/OneDrive/30-39 Hobbies/34 Photos/";
+      menuExtraClock.ShowSeconds = true;
+      menuExtraClock.Show24Hour = true;
+      menuExtraClock.ShowAMPM = false;
+      NSGlobalDomain.AppleInterfaceStyle = "Dark";
+      # https://apple.stackexchange.com/questions/261163/default-value-for-nsglobaldomain-initialkeyrepeat
+      NSGlobalDomain.KeyRepeat = 2;
+      NSGlobalDomain.InitialKeyRepeat = 15;
+    };
+  };
+
+  security.pam.enableSudoTouchIdAuth = true;
+
+  users.users.eh8.home = "/Users/eh8";
+  users.users.eh8.packages = with pkgs; [
+    nixos-rebuild
+  ];
 
   local = {
     dock.enable = true;

@@ -29,4 +29,6 @@
   };
 
   networking.hostName = "mac1chng";
+  networking.computerName = "mac1chng";
+  networking.localHostName = "mac1chng";
 }
