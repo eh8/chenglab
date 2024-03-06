@@ -1,5 +1,5 @@
 <p align="center">
-<img src=".github/background.gif" width=400 alt="chenglab" />
+<img src=".github/background.gif" width=500 alt="chenglab" />
 <br>
 <a href="https://nixos.org"><img src="https://img.shields.io/badge/NixOS-unstable-blue.svg?style=flat-square&logo=NixOS&logoColor=white" alt="nixos unstable"></a>
 </p>
@@ -19,9 +19,11 @@
 - Modular architecture promotes readability for me and copy-and-paste-ability
   for you
 
-<img src=".github/servers.jpg" width=600 alt="chenglab" />
-
-*The heart of my homelab: ThinkCenter M710q Tiny's: Intel i5-7500T and 8GB RAM*
+<p align="center">
+<img src=".github/servers.jpg" width=500 alt="chenglab" />
+<br>
+The heart of my homelab: ThinkCenter M710q Tiny's: Intel i5-7500T and 8GB RAM
+</p>
 
 ## Getting set up 
 
