@@ -1,8 +1,26 @@
-[![NixOS Unstable](https://img.shields.io/badge/NixOS-unstable-blue.svg?style=flat-square&logo=NixOS&logoColor=white)](https://nixos.org)
+[![NixOS
+Unstable](https://img.shields.io/badge/NixOS-unstable-blue.svg?style=flat-square&logo=NixOS&logoColor=white)](https://nixos.org)
 
-<p align="center">
-<img align="center" src=".github/background.gif" />
-</p>
+![](./.github/background.gif)
+
+## Overview
+
+- These are the configurations for my homelab servers, desktop, and M1 MacBook
+  Air
+- Nix flakes to handle upstream dependencies
+- [home-manager](https://github.com/nix-community/home-manager to manage my
+  dotfiles
+- [nix-darwin](https://github.com/LnL7/nix-darwin) to manage my MacBook
+- [sops-nix](https://github.com/Mic92/sops-nix) to manage secrets such as my
+  Tailscale authentication key
+- `justfile` contains useful aliases for many frequent and atrociously long nix
+  commands
+- Modular architecture promotes readability for me and copy-and-paste-ability
+  for you
+
+![](./.github/servers.jpg)
+
+*The heart of my homelab: ThinkCenter M710q Tiny's: Intel i5-7500T and 8GB RAM*
 
 ## Getting set up 
 
@@ -15,8 +33,8 @@ don't already use it. I prefer the [Determine Nix
 installer](https://zero-to-nix.com/start/install). On Linux, it will prepare
 your system by partitioning drives and mounting them.
 
-> Be sure to carefully and fully examine this repository before deploying on
-> your own systems!
+> [!WARNING] These configuration files are tailored for me. Be sure to carefully
+> examine this repository if you deploy onto your own machines.
 
 ## Useful commands
 
