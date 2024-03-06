@@ -14,7 +14,7 @@
 - [nix-darwin](https://github.com/LnL7/nix-darwin) manages my MacBook
 - [sops-nix](https://github.com/Mic92/sops-nix) manages secrets such as my
   Tailscale authentication key
-- `justfile` contains useful aliases for many frequent and atrociously long nix
+- `justfile` contains useful aliases for many frequent and atrociously long `nix`
   commands
 - Modular architecture promotes readability for me and copy-and-paste-ability
   for you
@@ -63,11 +63,11 @@ just deploy MACHINE 10.0.10.2
 
 ### Edit secrets
 
-To modify `secrets/secrets.yaml`. Make sure each device public key is listed as
-entry in `.sops.yaml`.
+Make sure each machine's public key is listed as
+entry in `.sops.yaml`. To modify `secrets/secrets.yaml`:
 
 ```
-just secrets
+just edit-secrets
 ```
 
 ## Important caveats
