@@ -1,24 +1,25 @@
-[![NixOS
-Unstable](https://img.shields.io/badge/NixOS-unstable-blue.svg?style=flat-square&logo=NixOS&logoColor=white)](https://nixos.org)
-
-![](./.github/background.gif)
+<p align="center">
+<img src=".github/background.gif" width=400 alt="chenglab" />
+<br>
+<a href="https://nixos.org"><img src="https://img.shields.io/badge/NixOS-unstable-blue.svg?style=flat-square&logo=NixOS&logoColor=white" alt="nixos unstable"></a>
+</p>
 
 ## Overview
 
 - These are the configurations for my homelab servers, desktop, and M1 MacBook
   Air
-- Nix flakes to handle upstream dependencies
-- [home-manager](https://github.com/nix-community/home-manager to manage my
+- Nix flakes handle upstream dependencies
+- [home-manager](https://github.com/nix-community/home-manager) manages my
   dotfiles
-- [nix-darwin](https://github.com/LnL7/nix-darwin) to manage my MacBook
-- [sops-nix](https://github.com/Mic92/sops-nix) to manage secrets such as my
+- [nix-darwin](https://github.com/LnL7/nix-darwin) manages my MacBook
+- [sops-nix](https://github.com/Mic92/sops-nix) manages secrets such as my
   Tailscale authentication key
 - `justfile` contains useful aliases for many frequent and atrociously long nix
   commands
 - Modular architecture promotes readability for me and copy-and-paste-ability
   for you
 
-![](./.github/servers.jpg)
+<img src=".github/servers.jpg" width=600 alt="chenglab" />
 
 *The heart of my homelab: ThinkCenter M710q Tiny's: Intel i5-7500T and 8GB RAM*
 
