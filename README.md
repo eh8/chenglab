@@ -36,7 +36,8 @@ don't already use it. I prefer the [Determine Nix
 installer](https://zero-to-nix.com/start/install). On Linux, it will prepare
 your system by partitioning drives and mounting them.
 
-> [!WARNING] These configuration files are tailored for me. Be sure to carefully
+> [!WARNING] 
+> These configuration files are tailored for me. Be sure to carefully
 > examine this repository if you deploy onto your own machines.
 
 ## Useful commands
