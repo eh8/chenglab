@@ -31,15 +31,18 @@ Homelab hardware: ThinkCenter M710q Tiny, Intel i5-7500T and 8GB RAM
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/eh8/chenglab/main/install.sh)"
 ```
 
-On macOS, this script will install `nix` onto your local device if you don't
-already use it. I prefer the [Determine Nix
-installer](https://zero-to-nix.com/start/install). 
+On macOS, this script assumes your device is freshly unboxed/factory reset and
+will install `nix` using the [Determinate Systems Nix
+installer](https://zero-to-nix.com/start/install) and prompt you to install my
+configuration.
 
-On Linux, this script will prepare your system by partitioning drives and
+On Linux, this script will prepare your system for NixOS by partitioning drives
+and
 mounting them.
 
-> [!WARNING] NixOS configurations are tailored for my devices. You'll need to
-> create your own config in the `machines/` folder before you install.
+> [!WARNING] 
+> NixOS configurations are tailored for my devices. You'll need to create your
+> own config in the `machines/` folder before you install.
 
 ## Useful commands
 
