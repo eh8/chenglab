@@ -6,23 +6,23 @@
 
 ## Overview
 
-- These are the configurations for my homelab servers, desktop, and M1 MacBook
-  Air
+- These are the Nix configurations for my homelab servers, desktop, and M1
+  MacBook Air
 - Nix flakes handle upstream dependencies
 - [home-manager](https://github.com/nix-community/home-manager) manages my
   dotfiles
 - [nix-darwin](https://github.com/LnL7/nix-darwin) manages my MacBook
 - [sops-nix](https://github.com/Mic92/sops-nix) manages secrets such as my
   Tailscale authentication key
-- `justfile` contains useful aliases for many frequent and atrociously long `nix`
-  commands
+- `justfile` contains useful aliases for many frequent and atrociously long
+  `nix` commands
 - Modular architecture promotes readability for me and copy-and-paste-ability
   for you
 
 <p align="center">
 <img src=".github/servers.jpg" width=500 alt="chenglab" />
 <br>
-The heart of my homelab: ThinkCenter M710q Tiny's: Intel i5-7500T and 8GB RAM
+Homelab hardware: ThinkCenter M710q Tiny, Intel i5-7500T and 8GB RAM
 </p>
 
 ## Getting set up 
@@ -31,14 +31,15 @@ The heart of my homelab: ThinkCenter M710q Tiny's: Intel i5-7500T and 8GB RAM
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/eh8/chenglab/main/install.sh)"
 ```
 
-On macOS, this will prompt you to install `nix` onto your local machine if you
-don't already use it. I prefer the [Determine Nix
-installer](https://zero-to-nix.com/start/install). On Linux, it will prepare
-your system by partitioning drives and mounting them.
+On macOS, this script will install `nix` onto your local device if you don't
+already use it. I prefer the [Determine Nix
+installer](https://zero-to-nix.com/start/install). 
 
-> [!WARNING] 
-> These configuration files are tailored for me. Be sure to carefully
-> examine this repository if you deploy onto your own machines.
+On Linux, this script will prepare your system by partitioning drives and
+mounting them.
+
+> [!WARNING] NixOS configurations are tailored for my devices. You'll need to
+> create your own config in the `machines/` folder before you install.
 
 ## Useful commands
 
@@ -64,8 +65,8 @@ just deploy MACHINE 10.0.10.2
 
 ### Edit secrets
 
-Make sure each machine's public key is listed as
-entry in `.sops.yaml`. To modify `secrets/secrets.yaml`:
+Make sure each machine's public key is listed as entry in `.sops.yaml`. To
+modify `secrets/secrets.yaml`:
 
 ```
 just edit-secrets
@@ -109,6 +110,8 @@ with how it appears on the official website.
 
 ## Helpful references
 
+- [An outstanding beginner friendly introduction to NixOS and
+  flakes](https://nixos-and-flakes.thiscute.world/)
 - [Conditional
   implementation](https://nixos.wiki/wiki/Extend_NixOS#Conditional_Implementation)
 - [Error when using lib.mkIf and lib.mkMerge to set configuration based on
