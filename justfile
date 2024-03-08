@@ -29,11 +29,11 @@ repair:
 edit-secrets:
   sops secrets/secrets.yaml
 
-refresh-secrets:
-  sops updatekeys secrets/secrets.yaml
-
 rotate-secrets:
   sops -r secrets/secrets.yaml
+  
+update-secrets-keys:
+  sops updatekeys secrets/secrets.yaml
 
 build-iso:
   nix build .#nixosConfigurations.iso1chng.config.system.build.isoImage
