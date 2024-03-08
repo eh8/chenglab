@@ -32,7 +32,7 @@ edit-secrets:
 rotate-secrets:
   sops -r secrets/secrets.yaml
   
-update-secrets-keys:
+sync-secrets:
   sops updatekeys secrets/secrets.yaml
 
 build-iso:

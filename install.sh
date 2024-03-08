@@ -97,9 +97,14 @@ elif [ "$(uname)" == "Linux" ]; then
   ssh-keygen -t ed25519 -N "" -C "" -f /mnt/nix/secret/initrd/ssh_host_ed25519_key
   echo -e "\033[32mSSH host key generated successfully.\033[0m"
 
+  # Creating public age key for sops-nix
+  echo -e "\n\033[1mConverting initrd public SSH host key into public age key for sops-nix...\033[0m"
+  sudo nix-shell -p ssh-to-age --run 'cat /mnt/nix/secret/initrd/ssh_host_ed25519_key.pub | ssh-to-age'
+  echo -e "\033[32mAge public key generated successfully.\033[0m"
+
   # Completed
   echo -e "\n\033[1;32mAll steps completed successfully. NixOS is now ready to be installed.\033[0m\n"
+  echo -e "Remember to add the server's host public key to sops-nix before installing!"
   echo -e "To install NixOS configuration for hostname, run the following command:\n"
   echo -e "\033[1msudo nixos-install --no-root-passwd --root /mnt --flake github:eh8/chenglab#hostname\033[0m\n"
-  echo -e "Remember to add the server's host public key to sops-nix!"
 fi
