@@ -110,6 +110,7 @@
       screencapture.location = "~/OneDrive/30-39 Hobbies/34 Photos/";
       menuExtraClock.ShowSeconds = true;
       menuExtraClock.Show24Hour = true;
+      NSGlobalDomain.AppleICUForce24HourTime = true;
       menuExtraClock.ShowAMPM = false;
       NSGlobalDomain.AppleInterfaceStyle = "Dark";
       # https://apple.stackexchange.com/questions/261163/default-value-for-nsglobaldomain-initialkeyrepeat
