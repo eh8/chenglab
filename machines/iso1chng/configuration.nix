@@ -7,7 +7,6 @@
   ...
 }: {
   imports = [
-    ./../../modules/nixos/base.nix
     ./../../modules/nixos/iso.nix
     inputs.home-manager.nixosModules.home-manager
   ];
