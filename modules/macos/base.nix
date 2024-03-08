@@ -107,7 +107,7 @@
       finder.AppleShowAllExtensions = true;
       finder.FXPreferredViewStyle = "clmv";
       loginwindow.LoginwindowText = "If lost, contact eric@chengeric.com";
-      screencapture.location = "~/OneDrive/30-39 Hobbies/34 Photos/";
+      screencapture.location = "~/OneDrive/30-39 Hobbies/34 Photos/34.01 Screenshots";
       menuExtraClock.ShowSeconds = true;
       menuExtraClock.Show24Hour = true;
       NSGlobalDomain.AppleICUForce24HourTime = true;
