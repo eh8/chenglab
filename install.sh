@@ -99,7 +99,7 @@ elif [ "$(uname)" == "Linux" ]; then
 
   # Creating public age key for sops-nix
   echo -e "\n\033[1mConverting initrd public SSH host key into public age key for sops-nix...\033[0m"
-  sudo nix-shell -p ssh-to-age --run 'cat /mnt/nix/secret/initrd/ssh_host_ed25519_key.pub | ssh-to-age'
+  sudo nix-shell --extra-experimental-features flakes -p ssh-to-age --run 'cat /mnt/nix/secret/initrd/ssh_host_ed25519_key.pub | ssh-to-age'
   echo -e "\033[32mAge public key generated successfully.\033[0m"
 
   # Completed
