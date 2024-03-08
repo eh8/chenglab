@@ -32,6 +32,7 @@
   time.timeZone = "America/New_York";
 
   sops.defaultSopsFile = ./../../secrets/secrets.yaml;
+  sops.age.sshKeyPaths = ["/nix/secrets/ssh/ssh_host_ed25519_key"];
 
   sops.secrets.user-password.neededForUsers = true;
   sops.secrets.user-password = {};

@@ -28,7 +28,7 @@ Homelab hardware: ThinkCenter M710q Tiny, Intel i5-7500T and 8GB RAM
 ## Getting set up 
 
 ```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/eh8/chenglab/main/install.sh)"
+/bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/eh8/chenglab/main/install.sh)"
 ```
 
 On macOS, this script will install `nix` using the [Determinate Systems Nix
