@@ -40,12 +40,6 @@
     options = ["bind"];
   };
 
-  fileSystems."/var/lib/tailscale" = {
-    device = "/nix/persist/var/lib/tailscale";
-    fsType = "none";
-    options = ["bind"];
-  };
-
   swapDevices = [];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

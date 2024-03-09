@@ -8,6 +8,11 @@
     ./../../modules/nixos/base.nix
     ./../../modules/nixos/remote-unlock.nix
     ./../../services/tailscale.nix
+    # ./../../services/jellyfin.nix
+    # ./../../services/nextcloud.nix
+    # ./../../services/nginx.nix
+    # ./../../services/cloudflared.nix
+
     inputs.home-manager.nixosModules.home-manager
   ];
 

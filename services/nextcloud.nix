@@ -3,52 +3,33 @@
   pkgs,
   ...
 }: {
-  # Network linker
-  system.activationScripts.NextcloudNetwork = let
-    backend = config.virtualisation.oci-containers.backend;
-    backendBin = "${pkgs.${backend}}/bin/${backend}";
-  in ''
-    ${backendBin} network create nextcloud-net --subnet 172.20.0.0/16 || true
-  '';
+  sops.secrets.nextcloud-adminpassfile = {};
+  sops.secrets.nextcloud-adminpassfile.owner = "nextcloud";
+  sops.secrets.nextcloud-adminpassfile.group = "nextcloud";
 
-  # Database
-  virtualisation.oci-containers.containers."nextcloud-db" = {
-    autoStart = true;
-    image = "mariadb:10.5";
-    cmd = ["--transaction-isolation=READ-COMMITTED" "--binlog-format=ROW"];
-    volumes = [
-      "nextcloud-db:/var/lib/mysql"
-    ];
-    ports = ["3306:3306"];
-    environment = {
-      MYSQL_ROOT_PASSWORD = "nextcloud";
-      MYSQL_PASSWORD = "nextcloud";
-      MYSQL_DATABASE = "nextcloud";
-      MYSQL_USER = "nextcloud";
-    };
-    extraOptions = ["--network=nextcloud-net"];
+  services.nextcloud = {
+    enable = true;
+    package = pkgs.nextcloud28;
+    hostName = "pancake.chengeric.com";
+    https = true;
+    config.adminuser = "admin";
+    config.adminpassFile = config.sops.secrets.nextcloud-adminpassfile.path;
+    settings.trusted_domains = ["10.10.0.242" "0.0.0.0" "127.0.0.1" "pancake.chengeric.com"];
   };
 
-  # NextCloud
-  virtualisation.oci-containers.containers."nextcloud" = {
-    image = "nextcloud";
-    ports = ["8080:80"];
-    environment = {
-      MYSQL_PASSWORD = "nextcloud";
-      MYSQL_DATABASE = "nextcloud";
-      MYSQL_USER = "nextcloud";
-      MYSQL_HOST = "nextcloud-db";
+  services.nginx = {
+    enable = true;
+    virtualHosts = {
+      "${config.services.nextcloud.hostName}" = {
+        forceSSL = true;
+        useACMEHost = "chengeric.com";
+      };
     };
-    dependsOn = ["nextcloud-db"];
-    volumes = [
-      "/media/Containers/Nextcloud/data:/var/www/html"
-    ];
-    extraOptions = ["--network=nextcloud-net"];
   };
 
-  services.caddy = {
-    virtualHosts."cloud.chengeric.com".extraConfig = ''
-      reverse_proxy localhost:8080
-    '';
+  fileSystems."/var/lib/nextcloud" = {
+    device = "/nix/persist/var/lib/nextcloud";
+    fsType = "none";
+    options = ["bind"];
   };
 }
