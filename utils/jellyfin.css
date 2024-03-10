@@ -1,0 +1,75 @@
+@import url('https://cdn.jsdelivr.net/gh/CTalvio/Ultrachromic/fixes.css');
+@import url('https://cdn.jsdelivr.net/gh/CTalvio/Ultrachromic/base.css');
+@import url('https://cdn.jsdelivr.net/gh/CTalvio/Ultrachromic/accentlist.css');
+
+@import url('https://cdn.jsdelivr.net/gh/CTalvio/Ultrachromic/rounding.css');
+@import url('https://cdn.jsdelivr.net/gh/CTalvio/Ultrachromic/smallercast.css');
+@import url('https://cdn.jsdelivr.net/gh/CTalvio/Ultrachromic/episodelist/episodes_grid.css');
+@import url('https://cdn.jsdelivr.net/gh/CTalvio/Ultrachromic/header/header_transparent.css');
+@import url('https://cdn.jsdelivr.net/gh/CTalvio/Ultrachromic/login/login_frame.css');
+@import url('https://cdn.jsdelivr.net/gh/CTalvio/Ultrachromic/fields/fields_noborder.css');
+@import url('https://cdn.jsdelivr.net/gh/CTalvio/Ultrachromic/cornerindicator/indicator_floating.css');
+@import url('https://cdn.jsdelivr.net/gh/CTalvio/Ultrachromic/type/dark_withaccent.css');
+@import url('https://cdn.jsdelivr.net/gh/CTalvio/Ultrachromic/titlepage/title_banner.css');
+@import url('https://cdn.jsdelivr.net/gh/CTalvio/Ultrachromic/bottombarprogress.css');
+@import url('https://cdn.jsdelivr.net/gh/CTalvio/Ultrachromic/effects/glassy.css');
+@import url('https://cdn.jsdelivr.net/gh/CTalvio/Ultrachromic/effects/pan-animation.css');
+@import url('https://ctalvio.github.io/Monochromic/backdrop-hack_style.css');
+
+@import url("https://rsms.me/inter/inter.css");
+
+/*Style backdrop*/
+.backdropImage {
+    filter: blur(18px) saturate(120%) contrast(120%) brightness(40%);
+}
+
+/*Login background*/
+loginPage {
+    background: url(https://i.imgur.com/9vL4iNf.png) !important;
+}
+
+/*Accent and rounding*/
+:root {
+    --accent: 98, 121, 205;
+}
+
+:root {
+    --rounding: 8px;
+}
+
+@supports (font-variation-settings: normal) {
+
+    html,
+    input,
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    }
+}
+
+.emby-textarea {
+    font-family: monospace;
+    font-size: 11pt;
+}
+
+.sectionTitle {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-left: 0.2em !important;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: bold;
+}
+
+.mainDetailButtons {
+    font-size: 120% !important;
+}
