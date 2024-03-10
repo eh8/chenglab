@@ -1,5 +1,0 @@
-{...}: {
-  services.cloudflared = {
-    enable = true;
-  };
-}
