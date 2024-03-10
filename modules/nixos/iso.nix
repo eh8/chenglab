@@ -1,6 +1,5 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
-    bash
     croc
     git
     vim
