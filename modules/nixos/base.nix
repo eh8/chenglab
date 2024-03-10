@@ -8,6 +8,12 @@
     inputs.sops-nix.nixosModules.sops
   ];
 
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+    timeout = 0;
+  };
+
   nixpkgs.config.allowUnfree = true;
   nix = {
     gc = {
@@ -23,12 +29,6 @@
 
   networking.networkmanager.enable = true;
   networking.firewall.enable = true;
-
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
-    timeout = 0;
-  };
 
   time.timeZone = "America/New_York";
 
@@ -58,6 +58,7 @@
   environment.systemPackages = with pkgs; [
     git
     vim
+    ventoy
   ];
 
   services.openssh = {
