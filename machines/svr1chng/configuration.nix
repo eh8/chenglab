@@ -8,6 +8,7 @@
     ./../../modules/nixos/base.nix
     ./../../modules/nixos/remote-unlock.nix
     ./../../services/tailscale.nix
+    ./../../services/nextcloud.nix
 
     inputs.home-manager.nixosModules.home-manager
   ];
@@ -26,5 +27,5 @@
     };
   };
 
-  networking.hostName = "dsk1chng";
+  networking.hostName = "svr1chng";
 }
