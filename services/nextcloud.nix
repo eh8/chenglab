@@ -3,6 +3,10 @@
   pkgs,
   ...
 }: {
+  imports = [
+    ./acme.nix
+  ];
+
   sops.secrets.nextcloud-adminpassfile = {};
   sops.secrets.nextcloud-adminpassfile.owner = "nextcloud";
   sops.secrets.nextcloud-adminpassfile.group = "nextcloud";
@@ -12,9 +16,12 @@
     package = pkgs.nextcloud28;
     hostName = "pancake.chengeric.com";
     https = true;
+    maxUploadSize = "16G";
+    configureRedis = true;
+    database.createLocally = true;
     config.adminuser = "admin";
+    config.dbtype = "pgsql";
     config.adminpassFile = config.sops.secrets.nextcloud-adminpassfile.path;
-    settings.trusted_domains = ["10.10.0.242" "0.0.0.0" "127.0.0.1" "pancake.chengeric.com"];
   };
 
   services.nginx = {
