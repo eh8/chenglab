@@ -1,5 +1,5 @@
 {
-  description = "homelab";
+  description = "chenglab";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -38,7 +38,14 @@
     ...
   } @ inputs: let
     inherit (self) outputs;
+    systems = [
+      "x86_64-linux"
+      "aarch64-darwin"
+    ];
+    forAllSystems = nixpkgs.lib.genAttrs systems;
   in {
+    formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
+
     nixosConfigurations = {
       dsk1chng = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
