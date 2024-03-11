@@ -8,9 +8,9 @@
     ./../../modules/nixos/base.nix
     ./../../modules/nixos/remote-unlock.nix
     ./../../services/tailscale.nix
-    ./../../services/nixarr.nix
+    # ./../../services/nixarr.nix
 
-    inputs.nixarr.nixosModules.default
+    # inputs.nixarr.nixosModules.default
     inputs.home-manager.nixosModules.home-manager
   ];
 
@@ -28,5 +28,5 @@
     };
   };
 
-  networking.hostName = "svr1chng";
+  networking.hostName = "svr2chng";
 }
