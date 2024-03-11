@@ -79,6 +79,7 @@ elif [ "$(uname)" == "Linux" ]; then
   echo -e "\n\033[1mCreating filesystems...\033[0m"
   mkfs.fat -F32 -n boot $DISK_BOOT_PARTITION
   mkfs.ext4 -F -L nix -m 0 /dev/mapper/cryptroot
+  sleep 5
   echo -e "\033[32mFilesystems created successfully.\033[0m"
 
   # Mounting filesystems
