@@ -44,7 +44,7 @@ mounting them.
 
 > [!WARNING] 
 > NixOS configurations are tailored for my devices. You'll need to create your
-> own config in the `machines/` folder before you install.
+> own config in the `machines/` folder and create an entry in `flake.nix` before you install.
 
 ## Useful commands
 
