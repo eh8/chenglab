@@ -28,7 +28,7 @@
     recommendedProxySettings = true;
     recommendedTlsSettings = true;
     virtualHosts = {
-      "muffins.chengeric.com" = {
+      "home.chengeric.com" = {
         forceSSL = true;
         useACMEHost = "chengeric.com";
         locations."/" = {

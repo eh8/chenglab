@@ -14,7 +14,7 @@
   services.nextcloud = {
     enable = true;
     package = pkgs.nextcloud28;
-    hostName = "pancake.chengeric.com";
+    hostName = "cloud.chengeric.com";
     https = true;
     maxUploadSize = "16G";
     configureRedis = true;

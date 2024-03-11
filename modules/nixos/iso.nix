@@ -3,6 +3,7 @@
     croc
     git
     vim
+    zellij # useful for unattended installation
   ];
 
   users.users.nixos = {
