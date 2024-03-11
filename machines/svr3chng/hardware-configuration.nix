@@ -13,7 +13,7 @@
   ];
 
   # readlink /sys/class/net/enp0s31f6/device/driver indicates "e1000e" is the ethernet driver for this device
-  boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "nvme" "usb_storage" "sd_mod"];
+  boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "nvme" "usb_storage" "sd_mod" "e1000e"];
   boot.initrd.kernelModules = [];
   boot.kernelModules = [];
   boot.extraModulePackages = [];
