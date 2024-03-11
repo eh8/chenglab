@@ -27,7 +27,8 @@ Homelab hardware: ThinkCenter M710q Tiny, Intel i5-7500T and 8GB RAM
 
 ## Getting set up 
 
-> [!IMPORTANT] You'll need to run this script as sudo or have sudo permissions.
+> [!IMPORTANT] 
+> You'll need to run this script as sudo or have sudo permissions.
 
 ```
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/eh8/chenglab/main/install.sh)"
@@ -40,7 +41,8 @@ configuration.
 On Linux, this script will prepare your system for NixOS by partitioning drives
 and mounting them.
 
-> [!WARNING] NixOS configurations are tailored for my devices. You'll need to
+> [!WARNING] 
+> NixOS configurations are tailored for my devices. You'll need to
 > create your own config in the `machines/` folder and create an entry in
 > `flake.nix` before you install.
 
