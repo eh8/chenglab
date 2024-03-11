@@ -47,13 +47,6 @@
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
 
     nixosConfigurations = {
-      dsk1chng = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
-        modules = [./machines/dsk1chng/configuration.nix];
-      };
-    };
-
-    nixosConfigurations = {
       iso1chng = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         system = "x86_64-linux";
@@ -61,6 +54,34 @@
           (nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix")
           ./machines/iso1chng/configuration.nix
         ];
+      };
+    };
+
+    nixosConfigurations = {
+      dsk1chng = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [./machines/dsk1chng/configuration.nix];
+      };
+    };
+
+    nixosConfigurations = {
+      svr1chng = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [./machines/svr1chng/configuration.nix];
+      };
+    };
+
+    nixosConfigurations = {
+      svr2chng = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [./machines/svr2chng/configuration.nix];
+      };
+    };
+
+    nixosConfigurations = {
+      svr3chng = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [./machines/svr3chng/configuration.nix];
       };
     };
 

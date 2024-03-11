@@ -11,7 +11,7 @@
   boot.loader = {
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
-    timeout = 0;
+    timeout = 10;
   };
 
   nixpkgs.config.allowUnfree = true;
