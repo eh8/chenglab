@@ -39,4 +39,10 @@
     fsType = "none";
     options = ["bind"];
   };
+
+  fileSystems."/var/lib/postgresql" = {
+    device = "/nix/persist/var/lib/postgresql";
+    fsType = "none";
+    options = ["bind"];
+  };
 }

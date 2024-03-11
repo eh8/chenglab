@@ -59,6 +59,7 @@
     git
     vim
     ventoy
+    efibootmgr
   ];
 
   services.openssh = {
