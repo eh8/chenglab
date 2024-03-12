@@ -12,7 +12,7 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  # readlink /sys/class/net/enp0s31f6/device/driver indicates "igb" is the ethernet driver for this device
+  # readlink /sys/class/net/enp9s0/device/driver indicates "igb" is the ethernet driver for this device
   boot.initrd.availableKernelModules = ["nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" "igb"];
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-amd"];
