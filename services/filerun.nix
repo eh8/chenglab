@@ -53,9 +53,8 @@
       group = "filerun";
       isSystemUser = true;
       uid = 600;
-      extraGroups = ["filerun"];
+      extraGroups = ["filerun podman"];
     };
-
     groups.filerun = {
       gid = 600;
       members = ["filerun"];
@@ -63,9 +62,10 @@
   };
 
   systemd.tmpfiles.rules = [
-    "d /var/lib/filerun 755 filerun filerun"
-    "d /var/lib/filerun/html 755 filerun filerun"
-    "d /var/lib/filerun/user-files 755 filerun filerun"
+    "d /var/lib/filerun 775 filerun filerun"
+    "d /var/lib/filerun/db 775 filerun filerun"
+    "d /var/lib/filerun/html 775 filerun filerun"
+    "d /var/lib/filerun/user-files 775 filerun filerun"
   ];
 
   services.nginx = {
