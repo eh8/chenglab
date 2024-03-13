@@ -11,7 +11,7 @@
     ./../../modules/nixos/secondary-drive.nix
 
     ./../../services/tailscale.nix
-    ./../../services/filerun.nix
+    ./../../services/nextcloud.nix
 
     inputs.home-manager.nixosModules.home-manager
   ];
