@@ -56,10 +56,12 @@
   security.sudo.wheelNeedsPassword = false;
 
   environment.systemPackages = with pkgs; [
-    git
-    vim
-    ventoy
     efibootmgr
+    git
+    gptfdisk
+    parted
+    ventoy
+    vim
   ];
 
   services.openssh = {
