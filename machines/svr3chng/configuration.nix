@@ -5,8 +5,11 @@
 }: {
   imports = [
     ./hardware-configuration.nix
+
     ./../../modules/nixos/base.nix
     ./../../modules/nixos/remote-unlock.nix
+    ./../../modules/nixos/secondary-drive.nix
+
     ./../../services/tailscale.nix
     ./../../services/homebridge.nix
 
