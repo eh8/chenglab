@@ -18,6 +18,7 @@
   };
 
   systemd.tmpfiles.rules = ["d /var/lib/homebridge 0755 root root"];
+
   virtualisation.oci-containers.containers."homebridge" = {
     image = "homebridge/homebridge:latest";
     volumes = ["/var/lib/homebridge:/homebridge"];
@@ -41,6 +42,12 @@
 
   fileSystems."/var/lib/homebridge" = {
     device = "/nix/persist/var/lib/homebridge";
+    fsType = "none";
+    options = ["bind"];
+  };
+
+  fileSystems."/var/lib/containers" = {
+    device = "/nix/persist/var/lib/containers";
     fsType = "none";
     options = ["bind"];
   };

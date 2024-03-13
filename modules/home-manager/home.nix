@@ -19,9 +19,13 @@
       bat
       btop
       bun
+      cachix
       croc
+      du-dust
+      dua
       duf
       fortune-kind
+      gdu
       genact
       imagemagick
       just
