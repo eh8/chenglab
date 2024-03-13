@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }: {
   imports = [
@@ -22,7 +23,12 @@
     config.adminuser = "admin";
     config.dbtype = "pgsql";
     config.adminpassFile = config.sops.secrets.nextcloud-adminpassfile.path;
-    extraOptions.enabledPreviewProviders = [
+    extraApps = {
+      inherit (config.services.nextcloud.package.packages.apps) previewgenerator;
+    };
+    extraAppsEnable = true;
+    settings.defaultPhoneRegion = "US";
+    settings.enabledPreviewProviders = [
       "OC\\Preview\\BMP"
       "OC\\Preview\\GIF"
       "OC\\Preview\\JPEG"
@@ -34,8 +40,14 @@
       "OC\\Preview\\TXT"
       "OC\\Preview\\XBitmap"
       "OC\\Preview\\HEIC"
+      "OC\\Preview\\Movie"
+      "OC\\Preview\\MP4"
     ];
   };
+
+  environment.systemPackages = with pkgs; [
+    ffmpeg
+  ];
 
   services.nginx = {
     enable = true;
@@ -43,6 +55,39 @@
       "${config.services.nextcloud.hostName}" = {
         forceSSL = true;
         useACMEHost = "chengeric.com";
+      };
+    };
+  };
+
+  systemd.services = {
+    "nextcloud_all_previews" = {
+      description = "Generate all previews";
+      wantedBy = ["default.target"];
+      serviceConfig = {
+        Type = "oneshot";
+        ExecStart = "${lib.getExe config.services.nextcloud.occ} preview:generate-all";
+      };
+    };
+  };
+
+  systemd.services = {
+    "nextcloud_previews" = {
+      description = "Generate previews";
+      wantedBy = ["default.target"];
+      serviceConfig = {
+        RestartSec = 30;
+        ExecStart = "${lib.getExe config.services.nextcloud.occ} preview:pre-generate";
+      };
+    };
+  };
+
+  systemd.timers = {
+    "nextcloud_previews" = {
+      enable = true;
+      description = "Generate previews";
+      wantedBy = ["timers.target"];
+      timerConfig = {
+        OnCalendar = "*:0/10";
       };
     };
   };
