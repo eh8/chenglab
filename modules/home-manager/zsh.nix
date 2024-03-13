@@ -3,15 +3,12 @@
     enable = true;
     enableCompletion = true;
     enableAutosuggestions = true;
-    syntaxHighlighting = {
-      enable = true;
-    };
+    syntaxHighlighting.enable = true;
     shellAliases = {
       cat = "bat --style=plain --theme=base16 --paging=never ";
       e = "eza ";
       v = "vim ";
       sudo = "sudo ";
-      z = "zellij ";
       ".." = "cd ..";
     };
     initExtra = ''
