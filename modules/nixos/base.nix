@@ -56,6 +56,7 @@
   security.sudo.wheelNeedsPassword = false;
 
   environment.systemPackages = with pkgs; [
+    busybox
     efibootmgr
     git
     gptfdisk

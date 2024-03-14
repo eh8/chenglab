@@ -18,13 +18,18 @@
   hardware.opengl = {
     enable = true;
     extraPackages = with pkgs; [
+      intel-compute-runtime # OpenCL filter support (hardware tonemapping and subtitle burn-in)
       intel-media-driver
+      libvdpau-va-gl
       vaapiIntel
       vaapiVdpau
-      libvdpau-va-gl
-      intel-compute-runtime # OpenCL filter support (hardware tonemapping and subtitle burn-in)
     ];
   };
+
+  environment.systemPackages = with pkgs; [
+    # To enable `intel_gpu_top`
+    intel-gpu-tools
+  ];
 
   services.nginx = {
     enable = true;
