@@ -27,6 +27,8 @@
       inherit (config.services.nextcloud.package.packages.apps) previewgenerator;
     };
     extraAppsEnable = true;
+    # As recommended by admin panel
+    phpOptions."opcache.interned_strings_buffer" = "24";
     settings.defaultPhoneRegion = "US";
     settings.enabledPreviewProviders = [
       "OC\\Preview\\BMP"
@@ -39,12 +41,14 @@
       "OC\\Preview\\PNG"
       "OC\\Preview\\TXT"
       "OC\\Preview\\XBitmap"
+      # Not included by default
       "OC\\Preview\\HEIC"
       "OC\\Preview\\Movie"
       "OC\\Preview\\MP4"
     ];
   };
 
+  # Need ffmpeg to handle video thumbnails
   environment.systemPackages = with pkgs; [
     ffmpeg
   ];
@@ -59,16 +63,17 @@
     };
   };
 
-  systemd.services = {
-    "nextcloud_all_previews" = {
-      description = "Generate all previews";
-      wantedBy = ["default.target"];
-      serviceConfig = {
-        Type = "oneshot";
-        ExecStart = "${lib.getExe config.services.nextcloud.occ} preview:generate-all";
-      };
-    };
-  };
+  # This takes prohibitively long, so be careful when running it
+  # systemd.services = {
+  #   "nextcloud_all_previews" = {
+  #     description = "Generate all previews";
+  #     wantedBy = ["default.target"];
+  #     serviceConfig = {
+  #       Type = "oneshot";
+  #       ExecStart = "${lib.getExe config.services.nextcloud.occ} preview:generate-all";
+  #     };
+  #   };
+  # };
 
   systemd.services = {
     "nextcloud_previews" = {
