@@ -1,23 +1,8 @@
 <p align="center">
-<img src=".github/background.gif" width=500 alt="chenglab" />
-<br>
 <a href="https://nixos.org"><img src="https://img.shields.io/badge/NixOS-unstable-blue.svg?style=flat-square&logo=NixOS&logoColor=white" alt="nixos unstable"></a>
+<br>
+<img src=".github/background.gif" width=500 alt="chenglab" />
 </p>
-
-## Overview
-
-- These are the Nix configurations for my homelab servers, desktop, and M1
-  MacBook Air
-- Nix flakes handle upstream dependencies
-- [home-manager](https://github.com/nix-community/home-manager) manages my
-  dotfiles
-- [nix-darwin](https://github.com/LnL7/nix-darwin) manages my MacBook
-- [sops-nix](https://github.com/Mic92/sops-nix) manages secrets such as my
-  Tailscale authentication key
-- `justfile` contains useful aliases for many frequent and atrociously long
-  `nix` commands
-- Modular architecture promotes readability for me and copy-and-paste-ability
-  for you
 
 <p align="center">
 <img src=".github/servers.jpg" width=500 alt="chenglab" />
@@ -25,10 +10,27 @@
 Homelab hardware: ThinkCenter M710q Tiny, Intel i5-7500T and 8GB RAM
 </p>
 
+## Overview
+
+- These are the Nix configurations for my homelab servers, desktop, and M1
+  MacBook Air
+- Nix flakes handle upstream dependencies
+- [home-manager](https://github.com/nix-community/home-manager) manages dotfiles
+- [nix-darwin](https://github.com/LnL7/nix-darwin) manages MacBook
+- [sops-nix](https://github.com/Mic92/sops-nix) manages secrets
+- Remote initrd unlock system to decrypt drives on boot
+- Root on tmpfs aka impermanence
+- Automatic Let's Encrypt certificate registeration and renewal
+- Tailscale, Nextcloud, Jellyfin, Homebridge, among other nice self-hosted
+  applications
+- `justfile` contains useful aliases for many frequent and atrociously long
+  `nix` commands
+- Modular architecture promotes readability for me and copy-and-paste-ability
+  for you
+
 ## Getting set up 
 
-> [!IMPORTANT] 
-> You'll need to run this script as sudo or have sudo permissions.
+> [!IMPORTANT] You'll need to run this script as sudo or have sudo permissions.
 
 ```
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/eh8/chenglab/main/install.sh)"
@@ -41,8 +43,7 @@ configuration.
 On Linux, this script will prepare your system for NixOS by partitioning drives
 and mounting them.
 
-> [!WARNING] 
-> NixOS configurations are tailored for my devices. You'll need to
+> [!WARNING] NixOS configurations are tailored for my devices. You'll need to
 > create your own config in the `machines/` folder and create an entry in
 > `flake.nix` before you install.
 
@@ -102,9 +103,12 @@ with how it appears on the official website.
 
 ## To-do
 
-1. [Wireless remote
-   unlocking](https://discourse.nixos.org/t/wireless-connection-within-initrd/38317/13)
 1. [Secure boot](https://github.com/nix-community/lanzaboote)
+2. Write up explanatory blog post
+3. Implement binary caching
+4. [Wireless remote
+   unlocking](https://discourse.nixos.org/t/wireless-connection-within-initrd/38317/13)
+
 
 ## Frequently used resources
 
