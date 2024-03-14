@@ -104,6 +104,7 @@ with how it appears on the official website.
 
 1. [Wireless remote
    unlocking](https://discourse.nixos.org/t/wireless-connection-within-initrd/38317/13)
+1. [Secure boot](https://github.com/nix-community/lanzaboote)
 
 ## Frequently used resources
 

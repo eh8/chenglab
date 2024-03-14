@@ -8,9 +8,10 @@
     ./acme.nix
   ];
 
-  sops.secrets.nextcloud-adminpassfile = {};
-  sops.secrets.nextcloud-adminpassfile.owner = "nextcloud";
-  sops.secrets.nextcloud-adminpassfile.group = "nextcloud";
+  sops.secrets.nextcloud-adminpassfile = {
+    owner = "nextcloud";
+    group = "nextcloud";
+  };
 
   services.nextcloud = {
     enable = true;
@@ -65,7 +66,7 @@
 
   # This takes prohibitively long, so be careful when running it
   # systemd.services = {
-  #   "nextcloud_all_previews" = {
+  #   "nextcloud-generate-all-previews" = {
   #     description = "Generate all previews";
   #     wantedBy = ["default.target"];
   #     serviceConfig = {
@@ -76,7 +77,7 @@
   # };
 
   systemd.services = {
-    "nextcloud_previews" = {
+    "nextcloud-generate-previews" = {
       description = "Generate previews";
       wantedBy = ["default.target"];
       serviceConfig = {
@@ -87,7 +88,7 @@
   };
 
   systemd.timers = {
-    "nextcloud_previews" = {
+    "nextcloud-generate-previews" = {
       enable = true;
       description = "Generate previews";
       wantedBy = ["timers.target"];

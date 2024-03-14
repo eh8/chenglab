@@ -1,46 +1,52 @@
-{...}: {
+{pkgs, ...}: {
   imports = [
     ./acme.nix
+    ./cloudflared.nix
   ];
 
   nixarr = {
     enable = true;
-
     mediaDir = "/fun/media";
-    stateDir = "/var/lib/nixarr/state";
+    stateDir = "/var/lib/nixarr";
+    jellyfin.enable = true;
+  };
 
-    jellyfin = {
-      enable = true;
-      expose.https = {
-        enable = true;
-        domainName = "waffle.chengeric.com";
-        acmeMail = "admin+acme@chengeric.com"; # Required for ACME-bot
+  nixpkgs.config.packageOverrides = pkgs: {
+    vaapiIntel = pkgs.vaapiIntel.override {enableHybridCodec = true;};
+  };
+
+  hardware.opengl = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver
+      vaapiIntel
+      vaapiVdpau
+      libvdpau-va-gl
+      intel-compute-runtime # OpenCL filter support (hardware tonemapping and subtitle burn-in)
+    ];
+  };
+
+  services.nginx = {
+    enable = true;
+    recommendedProxySettings = true;
+    recommendedTlsSettings = true;
+
+    virtualHosts = {
+      "watch.chengeric.com" = {
+        forceSSL = true;
+        useACMEHost = "chengeric.com";
+        locations."/" = {
+          proxyPass = "http://127.0.0.1:8096";
+        };
       };
     };
-
-    sonarr.enable = true;
-    radarr.enable = true;
-    prowlarr.enable = true;
   };
+
+  systemd.tmpfiles.rules = ["d /var/lib/nixarr 0755 root root"];
 
   fileSystems."/var/lib/nixarr" = {
     device = "/nix/persist/var/lib/nixarr";
     fsType = "none";
     options = ["bind"];
   };
-
-  # services.nginx = {
-  #   enable = true;
-  #   recommendedProxySettings = true;
-  #   recommendedTlsSettings = true;
-  #   virtualHosts = {
-  #     "waffle.chengeric.com" = {
-  #       forceSSL = true;
-  #       useACMEHost = "chengeric.com";
-  #       locations."/" = {
-  #         proxyPass = "http://127.0.0.1:8096";
-  #       };
-  #     };
-  #   };
-  # };
 }

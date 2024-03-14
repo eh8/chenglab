@@ -30,10 +30,10 @@ edit-secrets:
   sops secrets/secrets.yaml
 
 rotate-secrets:
-  sops -r secrets/secrets.yaml
+  for file in secrets/*; do sops --rotate --in-place "$file"; done
   
 sync-secrets:
-  sops updatekeys secrets/secrets.yaml
+  for file in secrets/*; do sops updatekeys "$file"; done
 
 build-iso:
   nix build .#nixosConfigurations.iso1chng.config.system.build.isoImage

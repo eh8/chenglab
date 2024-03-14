@@ -20,6 +20,7 @@
       btop
       bun
       cachix
+      cloudflared
       croc
       du-dust
       dua

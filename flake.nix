@@ -44,8 +44,10 @@
     ];
     forAllSystems = nixpkgs.lib.genAttrs systems;
   in {
+    # Enables `nix fmt` at root of repo to format all nix files
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
 
+    # Test bench desktop
     nixosConfigurations = {
       dsk1chng = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
@@ -53,6 +55,7 @@
       };
     };
 
+    # Custom NixOS iso
     nixosConfigurations = {
       iso1chng = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
@@ -64,6 +67,15 @@
       };
     };
 
+    # M1 Macbook Air
+    darwinConfigurations = {
+      mac1chng = nix-darwin.lib.darwinSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [./machines/mac1chng/configuration.nix];
+      };
+    };
+
+    # Server 1
     nixosConfigurations = {
       svr1chng = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
@@ -71,6 +83,7 @@
       };
     };
 
+    # Server 2
     nixosConfigurations = {
       svr2chng = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
@@ -78,17 +91,11 @@
       };
     };
 
+    # Server 3
     nixosConfigurations = {
       svr3chng = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [./machines/svr3chng/configuration.nix];
-      };
-    };
-
-    darwinConfigurations = {
-      mac1chng = nix-darwin.lib.darwinSystem {
-        specialArgs = {inherit inputs outputs;};
-        modules = [./machines/mac1chng/configuration.nix];
       };
     };
   };

@@ -1,15 +1,15 @@
 keys:
   - &mac1chng age142e54afjeqajz4pgdc30tj8u6cjnyppj9ef3xjv4keqmk7pjcc2sfhk29x
+  - &dsk1chng age1xf27p02n2dvyazk44hr4hwcchza0888z3ezc282ysuwfwtfs7fxqytu7zj
   - &svr1chng age1w4tgfu8upwhpsm76sfuwls6f2suw6teurgz740lhv49v23h2scyqfzpmq7
   - &svr2chng age1z8t033fplcrwlet9am42le97v4hgrgm70grt7pt8wzhhff4hfyqql4sjf7
   - &svr3chng age19uv62f9stfhhlsyckmg5ll2t6c8dd4f6nytnd95ftl6v62js3fmq6g2ktk
-  - &dsk1chng age1xf27p02n2dvyazk44hr4hwcchza0888z3ezc282ysuwfwtfs7fxqytu7zj
 creation_rules:
-  - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
+  - path_regex: secrets/[^/]+(\.(yaml|json|env|ini))?$
     key_groups:
       - age:
           - *mac1chng
+          - *dsk1chng
           - *svr1chng
           - *svr2chng
           - *svr3chng
-          - *dsk1chng
