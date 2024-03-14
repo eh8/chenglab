@@ -264,11 +264,11 @@
         "vpnconfinement": "vpnconfinement"
       },
       "locked": {
-        "lastModified": 1710284089,
-        "narHash": "sha256-5EJ4eaF+vsjxr5SEJl+pacd+04oc/D9Upo07zhWID5A=",
+        "lastModified": 1710343197,
+        "narHash": "sha256-ZwkaHRXJ9t+F7nTM2Rt0CJuUMLBjjKWbE2HwvP0Del0=",
         "owner": "rasmus-kirk",
         "repo": "nixarr",
-        "rev": "6c1f6bfd525910303b70b68ea61596c9be935eb7",
+        "rev": "a0597889c3f8ef543a53a9e574685b95710ab659",
         "type": "github"
       },
       "original": {
