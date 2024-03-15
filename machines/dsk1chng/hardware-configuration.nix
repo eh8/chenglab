@@ -14,7 +14,7 @@
 
   # readlink /sys/class/net/enp9s0/device/driver indicates "igb" is the ethernet driver for this device
   boot.initrd.availableKernelModules = ["nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" "igb"];
-  boot.initrd.kernelModules = ["amd-gpu"];
+  boot.initrd.kernelModules = ["amdgpu"];
   boot.kernelModules = [];
   boot.extraModulePackages = [];
   boot.initrd.luks.devices."cryptroot".device = "/dev/nvme0n1p2";
