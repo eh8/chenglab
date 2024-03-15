@@ -9,6 +9,7 @@
     ./../../modules/nixos/base.nix
     ./../../modules/nixos/desktop.nix
     ./../../modules/nixos/amdgpu.nix
+    ./../../modules/nixos/1password.nix
 
     ./../../services/tailscale.nix
 
@@ -25,7 +26,6 @@
           ./../../modules/home-manager/home.nix
           ./../../modules/home-manager/zsh.nix
           ./../../modules/home-manager/alacritty.nix
-          ./../../modules/home-manager/1password.nix
           ./../../modules/home-manager/1password-agents.nix
           ./../../modules/home-manager/gnome.nix
         ];

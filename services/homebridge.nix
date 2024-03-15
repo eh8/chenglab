@@ -3,7 +3,7 @@
     ./acme.nix
   ];
 
-  # https://lmy.medium.com/from-ansible-to-nixos-3a117b140bec
+  # inspo: https://lmy.medium.com/from-ansible-to-nixos-3a117b140bec
   networking.firewall = {
     # need to add ports for each added child bridge
     allowedTCPPorts = [5353 50000 50001 50002];

@@ -113,7 +113,7 @@
       NSGlobalDomain.AppleICUForce24HourTime = true;
       menuExtraClock.ShowAMPM = false;
       NSGlobalDomain.AppleInterfaceStyle = "Dark";
-      # https://apple.stackexchange.com/questions/261163/default-value-for-nsglobaldomain-initialkeyrepeat
+      # inspo: https://apple.stackexchange.com/questions/261163/default-value-for-nsglobaldomain-initialkeyrepeat
       NSGlobalDomain.KeyRepeat = 2;
       NSGlobalDomain.InitialKeyRepeat = 15;
     };

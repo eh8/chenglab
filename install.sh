@@ -8,7 +8,7 @@ if [ "$(uname)" == "Darwin" ]; then
   echo -e "\n\033[1;31m**Warning:** This script will prepare system for nix-darwin installation.\033[0m"
   read -n 1 -s -r -p "Press any key to continue or Ctrl+C to abort..."
 
-  # https://forums.developer.apple.com/forums/thread/698954
+  # inspo: https://forums.developer.apple.com/forums/thread/698954
   echo -e "\n\033[1mInstalling Xcode...\033[0m"
   if [[ -e /Library/Developer/CommandLineTools/usr/bin/git ]]; then
     echo -e "\033[32mXcode already installed.\033[0m"
