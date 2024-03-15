@@ -19,7 +19,7 @@
           ./../../modules/home-manager/home.nix
           ./../../modules/home-manager/zsh.nix
           ./../../modules/home-manager/alacritty.nix
-          ./../../modules/home-manager/1password.nix
+          ./../../modules/home-manager/1password-agents.nix
         ];
       };
     };
