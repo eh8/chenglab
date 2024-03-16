@@ -4,9 +4,10 @@
   ...
 }: {
   imports = [
+    inputs.home-manager.darwinModules.home-manager
+
     ./../../modules/macos/base.nix
     ./../../modules/macos/wallpaper.nix
-    inputs.home-manager.darwinModules.home-manager
   ];
 
   home-manager = {

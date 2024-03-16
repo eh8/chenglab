@@ -4,6 +4,9 @@
   ...
 }: {
   imports = [
+    inputs.impermanence.nixosModules.impermanence
+    inputs.home-manager.nixosModules.home-manager
+
     ./hardware-configuration.nix
 
     ./../../modules/nixos/base.nix
@@ -12,8 +15,6 @@
 
     ./../../services/tailscale.nix
     ./../../services/nextcloud.nix
-
-    inputs.home-manager.nixosModules.home-manager
   ];
 
   home-manager = {

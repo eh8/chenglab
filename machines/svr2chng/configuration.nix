@@ -4,6 +4,10 @@
   ...
 }: {
   imports = [
+    inputs.impermanence.nixosModules.impermanence
+    inputs.home-manager.nixosModules.home-manager
+    inputs.nixarr.nixosModules.default
+
     ./hardware-configuration.nix
 
     ./../../modules/nixos/base.nix
@@ -12,9 +16,6 @@
 
     ./../../services/tailscale.nix
     ./../../services/nixarr.nix
-
-    inputs.nixarr.nixosModules.default
-    inputs.home-manager.nixosModules.home-manager
   ];
 
   home-manager = {

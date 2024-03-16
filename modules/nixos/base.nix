@@ -76,12 +76,24 @@
 
   zramSwap.enable = true;
 
-  # Persist individual files that are not covered by bind mounts
-  environment.etc."ssh/ssh_host_rsa_key".source = "/nix/persist/etc/ssh/ssh_host_rsa_key";
-  environment.etc."ssh/ssh_host_rsa_key.pub".source = "/nix/persist/etc/ssh/ssh_host_rsa_key.pub";
-  environment.etc."ssh/ssh_host_ed25519_key".source = "/nix/persist/etc/ssh/ssh_host_ed25519_key";
-  environment.etc."ssh/ssh_host_ed25519_key.pub".source = "/nix/persist/etc/ssh/ssh_host_ed25519_key.pub";
-  environment.etc."machine-id".source = "/nix/persist/etc/machine-id";
+  environment.persistence."/nix/persist" = {
+    # Hide these mount from the sidebar of file managers
+    hideMounts = true;
+
+    # Folders you want to map
+    directories = [
+      "/var/log"
+    ];
+
+    # Files you want to map
+    files = [
+      "/etc/machine-id"
+      "/etc/ssh/ssh_host_ed25519_key.pub"
+      "/etc/ssh/ssh_host_ed25519_key"
+      "/etc/ssh/ssh_host_rsa_key.pub"
+      "/etc/ssh/ssh_host_rsa_key"
+    ];
+  };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.11";

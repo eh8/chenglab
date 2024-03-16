@@ -1,7 +1,32 @@
-{pkgs, ...}: {
-  services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-  services.udev.packages = with pkgs; [gnome.gnome-settings-daemon];
-  environment.systemPackages = with pkgs; [gnomeExtensions.appindicator];
+{...}: {
+  environment.persistence."/nix/persist" = {
+    # Hide these mount from the sidebar of file managers
+    hideMounts = true;
+
+    # Folders you want to map
+    directories = [
+      "/etc/NetworkManager/system-connections"
+    ];
+
+    users."eh8" = {
+      directories = [
+        # Personal files
+        "Desktop"
+        "Documents"
+        "Downloads"
+        "Music"
+        "Pictures"
+        "Videos"
+        "git"
+
+        # Config folders
+        ".cache"
+        ".config"
+        ".gnupg"
+        ".local"
+        ".ssh"
+        ".mozilla"
+      ];
+    };
+  };
 }

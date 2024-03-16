@@ -1,4 +1,8 @@
-{...}: {
+{
+  lib,
+  pkgs,
+  ...
+}: {
   programs.alacritty = {
     enable = true;
     settings = {
@@ -40,7 +44,10 @@
         lines = 30;
         columns = 150;
       };
-      window.decorations = "transparent";
+      window.decorations = lib.mkMerge [
+        (lib.mkIf pkgs.stdenv.isLinux "Full")
+        (lib.mkIf pkgs.stdenv.isDarwin "transparent")
+      ];
       window.dynamic_padding = true;
       window.padding = {
         x = 30;
@@ -49,7 +56,10 @@
       font = {
         size = 15;
         normal = {
-          family = "Iosevka SS08";
+          family = lib.mkMerge [
+            (lib.mkIf pkgs.stdenv.isLinux "Iosevka")
+            (lib.mkIf pkgs.stdenv.isDarwin "Iosevka SS08")
+          ];
         };
       };
     };
