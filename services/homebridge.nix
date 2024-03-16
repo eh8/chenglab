@@ -40,15 +40,10 @@
     };
   };
 
-  fileSystems."/var/lib/homebridge" = {
-    device = "/nix/persist/var/lib/homebridge";
-    fsType = "none";
-    options = ["bind"];
-  };
-
-  fileSystems."/var/lib/containers" = {
-    device = "/nix/persist/var/lib/containers";
-    fsType = "none";
-    options = ["bind"];
+  environment.persistence."/nix/persist" = {
+    directories = [
+      "/var/lib/homebridge"
+      "/var/lib/containers"
+    ];
   };
 }

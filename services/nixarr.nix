@@ -49,9 +49,9 @@
 
   systemd.tmpfiles.rules = ["d /var/lib/nixarr 0755 root root"];
 
-  fileSystems."/var/lib/nixarr" = {
-    device = "/nix/persist/var/lib/nixarr";
-    fsType = "none";
-    options = ["bind"];
+  environment.persistence."/nix/persist" = {
+    directories = [
+      "/var/lib/nixarr"
+    ];
   };
 }

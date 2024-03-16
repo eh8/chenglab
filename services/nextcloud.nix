@@ -98,15 +98,10 @@
     };
   };
 
-  fileSystems."/var/lib/nextcloud" = {
-    device = "/nix/persist/var/lib/nextcloud";
-    fsType = "none";
-    options = ["bind"];
-  };
-
-  fileSystems."/var/lib/postgresql" = {
-    device = "/nix/persist/var/lib/postgresql";
-    fsType = "none";
-    options = ["bind"];
+  environment.persistence."/nix/persist" = {
+    directories = [
+      "/var/lib/nextcloud"
+      "/var/lib/postgresql"
+    ];
   };
 }

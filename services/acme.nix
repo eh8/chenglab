@@ -19,16 +19,16 @@
     };
   };
 
-  fileSystems."/var/lib/acme" = {
-    device = "/nix/persist/var/lib/acme";
-    fsType = "none";
-    options = ["bind"];
-  };
-
   users.users.nginx.extraGroups = ["acme"];
 
   networking.firewall.allowedTCPPorts = [
     80
     443
   ];
+
+  environment.persistence."/nix/persist" = {
+    directories = [
+      "/var/lib/acme"
+    ];
+  };
 }
