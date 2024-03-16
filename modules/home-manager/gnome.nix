@@ -40,6 +40,7 @@
           "appindicatorsupport@rgcjonas.gmail.com"
           "blur-my-shell@aunetx"
           "just-perfection-desktop@just-perfection"
+          "clipboard-indicator@tudmotu.com"
         ];
       };
       "org/gnome/desktop/interface" = {
@@ -52,5 +53,6 @@
     gnomeExtensions.blur-my-shell
     gnomeExtensions.just-perfection
     gnomeExtensions.appindicator
+    gnomeExtensions.clipboard-indicator
   ];
 }
