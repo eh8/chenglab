@@ -26,6 +26,10 @@
         ".local"
         ".ssh"
         ".mozilla"
+        ".vscode"
+      ];
+      files = [
+        ".zsh_history"
       ];
     };
   };

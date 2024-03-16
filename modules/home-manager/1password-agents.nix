@@ -24,7 +24,10 @@
     };
     extraConfig = {
       gpg = {format = "ssh";};
-      "gpg \"ssh\"" = {program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign";};
+      gpg."ssh".program = lib.mkMerge [
+        (lib.mkIf pkgs.stdenv.isLinux "${pkgs._1password-gui}/bin/op-ssh-sign")
+        (lib.mkIf pkgs.stdenv.isDarwin "/Applications/1Password.app/Contents/MacOS/op-ssh-sign")
+      ];
     };
   };
 }
