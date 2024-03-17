@@ -7,7 +7,6 @@
 
     users."eh8" = {
       directories = [
-        # Personal files
         "Desktop"
         "Documents"
         "Downloads"
@@ -16,7 +15,6 @@
         "Videos"
         "git"
 
-        # Config folders
         ".cache"
         ".config"
         ".gnupg"

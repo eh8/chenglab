@@ -80,15 +80,13 @@
   zramSwap.enable = true;
 
   environment.persistence."/nix/persist" = {
-    # Hide these mount from the sidebar of file managers
+    # Hide these mounts from the sidebar of file managers
     hideMounts = true;
 
-    # Folders you want to map
     directories = [
       "/var/log"
     ];
 
-    # Files you want to map
     files = [
       "/etc/machine-id"
       "/etc/ssh/ssh_host_ed25519_key.pub"
