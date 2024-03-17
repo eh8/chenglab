@@ -1,4 +1,4 @@
-{...}: {
+{
   boot.initrd.luks.devices."fun".device = "/dev/sda1";
   boot.initrd.luks.reusePassphrases = true;
 
