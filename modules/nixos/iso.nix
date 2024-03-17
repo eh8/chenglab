@@ -14,6 +14,10 @@
     ];
   };
 
+  programs.bash.shellAliases = {
+    install = "sudo bash -c '$(curl -fsSL https://raw.githubusercontent.com/eh8/chenglab/main/install.sh)'";
+  };
+
   security.sudo.wheelNeedsPassword = false;
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
