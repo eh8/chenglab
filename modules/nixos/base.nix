@@ -65,13 +65,16 @@
     vim
   ];
 
-  services.openssh = {
-    enable = true;
-    settings = {
-      PermitRootLogin = "no";
-      PasswordAuthentication = false;
+  services = {
+    openssh = {
+      enable = true;
+      settings = {
+        PermitRootLogin = "no";
+        PasswordAuthentication = false;
+      };
+      openFirewall = true;
     };
-    openFirewall = true;
+    fstrim.enable = true;
   };
 
   zramSwap.enable = true;

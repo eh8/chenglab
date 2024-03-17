@@ -57,7 +57,6 @@ elif [ "$(uname)" == "Linux" ]; then
   set +e
   umount -R /mnt
   cryptsetup close cryptroot
-  vgchange -an
   set -e
   echo -e "\033[32mPrevious changes undone.\033[0m"
 
@@ -86,10 +85,10 @@ elif [ "$(uname)" == "Linux" ]; then
   # Mounting filesystems
   echo -e "\n\033[1mMounting filesystems...\033[0m"
   mount -t tmpfs none /mnt
-  mkdir -pv /mnt/{boot,nix,etc/ssh,var/{lib,log},srv}
+  mkdir -pv /mnt/{boot,nix,etc/ssh,var/{lib,log}}
   mount /dev/disk/by-label/boot /mnt/boot
   mount /dev/disk/by-label/nix /mnt/nix
-  mkdir -pv /mnt/nix/{secret/initrd,persist/{etc/ssh,var/{lib,log},srv}}
+  mkdir -pv /mnt/nix/{secret/initrd,persist/{etc/ssh,var/{lib,log}}}
   chmod 0700 /mnt/nix/secret
   mount -o bind /mnt/nix/persist/var/log /mnt/var/log
   echo -e "\033[32mFilesystems mounted successfully.\033[0m"
