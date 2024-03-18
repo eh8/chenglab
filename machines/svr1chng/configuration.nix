@@ -14,6 +14,7 @@
     ./../../modules/nixos/secondary-drive.nix
 
     ./../../services/tailscale.nix
+    ./../../services/netdata.nix
     ./../../services/nextcloud.nix
   ];
 
