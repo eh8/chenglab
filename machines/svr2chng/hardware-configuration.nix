@@ -14,6 +14,8 @@
       availableKernelModules = ["nvme" "xhci_pci" "ahci" "usb_storage" "sd_mod" "e1000e"];
       luks.devices."cryptroot".device = "/dev/nvme0n1p2";
       luks.devices."cryptroot".allowDiscards = true;
+      luks.devices."fun".device = "/dev/sda1";
+      luks.reusePassphrases = true;
     };
   };
 
@@ -30,6 +32,10 @@
     };
     "/nix" = {
       device = "/dev/disk/by-label/nix";
+      fsType = "ext4";
+    };
+    "/fun" = {
+      device = "/dev/disk/by-label/fun";
       fsType = "ext4";
     };
   };
