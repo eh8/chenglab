@@ -20,17 +20,20 @@
       btop
       bun
       cachix
+      clolcat
       cloudflared
       croc
       du-dust
       dua
       duf
+      figlet
       fortune-kind
       gdu
       genact
       imagemagick
       just
       kopia
+      neo-cowsay
       neofetch
       nil
       pandoc
