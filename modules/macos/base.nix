@@ -73,6 +73,7 @@
       "Messenger" = 1480068668;
       "Microsoft Excel" = 462058435;
       "Microsoft PowerPoint" = 462062816;
+      "Microsoft Remote Desktop" = 1295203466;
       "Microsoft Word" = 462054704;
       "OneDrive" = 823766827;
       "Tailscale" = 1475387142;
