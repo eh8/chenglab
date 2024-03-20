@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./acme.nix
+    ./nginx.nix
     ./cloudflared.nix
   ];
 
@@ -32,10 +33,6 @@
   ];
 
   services.nginx = {
-    enable = true;
-    recommendedProxySettings = true;
-    recommendedTlsSettings = true;
-
     virtualHosts = {
       "watch.chengeric.com" = {
         forceSSL = true;

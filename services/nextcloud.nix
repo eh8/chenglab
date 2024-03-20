@@ -6,6 +6,7 @@
 }: {
   imports = [
     ./acme.nix
+    ./nginx.nix
   ];
 
   sops.secrets.nextcloud-adminpassfile = {
@@ -55,7 +56,6 @@
   ];
 
   services.nginx = {
-    enable = true;
     virtualHosts = {
       "${config.services.nextcloud.hostName}" = {
         forceSSL = true;

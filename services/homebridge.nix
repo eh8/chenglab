@@ -1,6 +1,7 @@
 {
   imports = [
     ./acme.nix
+    ./nginx.nix
   ];
 
   # inspo: https://lmy.medium.com/from-ansible-to-nixos-3a117b140bec
@@ -26,9 +27,6 @@
   };
 
   services.nginx = {
-    enable = true;
-    recommendedProxySettings = true;
-    recommendedTlsSettings = true;
     virtualHosts = {
       "home.chengeric.com" = {
         forceSSL = true;
