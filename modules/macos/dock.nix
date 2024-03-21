@@ -4,7 +4,7 @@
   lib,
   ...
 }:
-# Inspired by https://github.com/dustinlyons/nixos-config/blob/main/modules/darwin/dock/default.nix
+# inspo: https://github.com/dustinlyons/nixos-config/blob/main/modules/darwin/dock/default.nix
 with lib; let
   cfg = config.local.dock;
   inherit (pkgs) stdenv dockutil;

@@ -10,6 +10,7 @@
     ./hardware-configuration.nix
 
     ./../../modules/nixos/base.nix
+    ./../../modules/nixos/base.nix
     ./../../modules/nixos/remote-unlock.nix
 
     ./../../services/tailscale.nix
@@ -24,7 +25,8 @@
     users = {
       eh8 = {
         imports = [
-          ./../../modules/home-manager/home.nix
+          ./../../modules/home-manager/base.nix
+          ./../../modules/home-manager/packages.nix
           ./../../modules/home-manager/zsh.nix
         ];
       };

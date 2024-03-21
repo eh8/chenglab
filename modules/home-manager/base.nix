@@ -13,35 +13,6 @@
     sessionVariables = lib.mkIf (pkgs.stdenv.isDarwin) {
       SOPS_AGE_KEY_FILE = "$HOME/.config/sops/age/keys.txt";
     };
-    packages = with pkgs; [
-      alejandra
-      asciiquarium
-      bat
-      btop
-      bun
-      cachix
-      clolcat
-      cloudflared
-      croc
-      du-dust
-      dua
-      duf
-      figlet
-      fortune-kind
-      gdu
-      genact
-      imagemagick
-      just
-      kopia
-      neo-cowsay
-      neofetch
-      nil
-      pandoc
-      qrencode
-      sops
-      tree
-      zola
-    ];
   };
 
   programs = {

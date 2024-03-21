@@ -10,6 +10,7 @@
     ./hardware-configuration.nix
 
     ./../../modules/nixos/base.nix
+    ./../../modules/nixos/packages.nix
     ./../../modules/nixos/desktop.nix
     ./../../modules/nixos/gnome.nix
     ./../../modules/nixos/amdgpu.nix
@@ -25,7 +26,8 @@
     users = {
       eh8 = {
         imports = [
-          ./../../modules/home-manager/home.nix
+          ./../../modules/home-manager/base.nix
+          ./../../modules/home-manager/packages.nix
           ./../../modules/home-manager/zsh.nix
           ./../../modules/home-manager/alacritty.nix
           ./../../modules/home-manager/1password-agents.nix

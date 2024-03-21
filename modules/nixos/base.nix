@@ -27,11 +27,6 @@
     };
   };
 
-  networking.networkmanager.enable = true;
-  networking.firewall.enable = true;
-
-  time.timeZone = "America/New_York";
-
   sops = {
     defaultSopsFile = ./../../secrets/secrets.yaml;
     age.sshKeyPaths = ["/nix/secret/initrd/ssh_host_ed25519_key"];
@@ -51,19 +46,6 @@
     hashedPasswordFile = config.sops.secrets.user-password.path;
   };
 
-  programs.zsh.enable = true;
-
-  security.sudo.wheelNeedsPassword = false;
-
-  environment.systemPackages = with pkgs; [
-    efibootmgr
-    git
-    gptfdisk
-    parted
-    ventoy
-    vim
-  ];
-
   services = {
     openssh = {
       enable = true;
@@ -76,6 +58,11 @@
     fstrim.enable = true;
   };
 
+  networking.firewall.enable = true;
+  networking.networkmanager.enable = true;
+  programs.zsh.enable = true;
+  security.sudo.wheelNeedsPassword = false;
+  time.timeZone = "America/New_York";
   zramSwap.enable = true;
 
   environment.persistence."/nix/persist" = {

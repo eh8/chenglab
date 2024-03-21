@@ -1,6 +1,5 @@
 {
   environment.persistence."/nix/persist" = {
-    # Folders you want to map
     directories = [
       "/etc/NetworkManager/system-connections"
     ];

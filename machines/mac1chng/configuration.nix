@@ -7,6 +7,7 @@
     inputs.home-manager.darwinModules.home-manager
 
     ./../../modules/macos/base.nix
+    ./../../modules/macos/packages.nix
     ./../../modules/macos/wallpaper.nix
   ];
 
@@ -17,7 +18,8 @@
     users = {
       eh8 = {
         imports = [
-          ./../../modules/home-manager/home.nix
+          ./../../modules/home-manager/base.nix
+          ./../../modules/home-manager/packages.nix
           ./../../modules/home-manager/zsh.nix
           ./../../modules/home-manager/alacritty.nix
           ./../../modules/home-manager/1password-agents.nix

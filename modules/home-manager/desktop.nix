@@ -3,7 +3,6 @@
   programs.vscode.enable = true;
 
   home = {
-    username = "eh8";
     packages = with pkgs; [
       iosevka
       inter
