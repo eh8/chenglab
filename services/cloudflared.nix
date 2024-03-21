@@ -8,14 +8,14 @@
     owner = config.services.cloudflared.user;
     group = config.services.cloudflared.group;
     format = "binary";
-    sopsFile = ./../secrets/tunnel;
+    sopsFile = ./../secrets/cloudflare-tunnel;
   };
 
   sops.secrets.cloudflare-token = {
     owner = config.services.cloudflared.user;
     group = config.services.cloudflared.group;
     format = "binary";
-    sopsFile = ./../secrets/cert.pem;
+    sopsFile = ./../secrets/cloudflare-cert.pem;
   };
 
   environment.etc."cloudflared/cert.pem".source = config.sops.secrets.cloudflare-token.path;

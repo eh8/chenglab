@@ -1,4 +1,8 @@
 {
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     ./acme.nix
     ./nginx.nix
@@ -34,6 +38,34 @@
         locations."/" = {
           proxyPass = "http://127.0.0.1:8581";
         };
+      };
+    };
+  };
+
+  sops.secrets.kopia-repository-token = {};
+
+  systemd.services = {
+    "backup-homebridge" = {
+      description = "Backup Homebridge installation with Kopia";
+      wantedBy = ["default.target"];
+      serviceConfig = {
+        User = "root";
+        ExecStartPre = "${pkgs.kopia}/bin/kopia repository connect from-config --token-file ${config.sops.secrets.kopia-repository-token.path}";
+        ExecStart = "${pkgs.kopia}/bin/kopia snapshot create /var/lib/homebridge";
+        ExecStartPost = "${pkgs.kopia}/bin/kopia repository disconnect";
+      };
+    };
+  };
+
+  systemd.timers = {
+    "backup-homebridge" = {
+      enable = true;
+      description = "Backup Homebridge installation with Kopia";
+      wantedBy = ["timers.target"];
+      timerConfig = {
+        OnCalendar = "*-*-* 4:00:00";
+        RandomizedDelaySec = "1h";
+        Persistent = true;
       };
     };
   };
