@@ -87,6 +87,12 @@ modify `secrets/secrets.yaml`:
 just edit-secrets
 ```
 
+### Syncing sops keys for a new machine 
+
+```
+just sync-secrets
+```
+
 ## Important caveats
 
 ### Changing user passwords
@@ -97,7 +103,7 @@ To modify user password, first generate a hash
 echo "password" | mkpasswd -m SHA-512 -s
 ```
 
-Then run `just secrets` to replace the existing decrypted hash with the one that
+Then run `just edit-secrets` to replace the existing decrypted hash with the one that
 you just generated. If you use a password manager, sure to update the new
 password as necessary.
 
