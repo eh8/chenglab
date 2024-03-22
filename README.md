@@ -42,12 +42,18 @@ installer](https://zero-to-nix.com/start/install) and prompt you to install my
 configuration.
 
 On Linux, *running this script from the NixOS installation ISO* will prepare your
-system for NixOS by partitioning drives and mounting them.
+system for NixOS by partitioning drives and mounting them. 
+
+> [!TIP] 
+> When installing NixOS onto a headless local server, place your own custom
+> NixOS ISO file onto a USB drive with Ventoy. Ventoy can automatically load the
+> NixOS ISO file, and you can enable connectivity by building your own custom
+> ISO with your own personal SSH key.
 
 > [!WARNING] 
-> NixOS configurations are tailored for my devices. You'll need to
-> create your own config in the `machines/` folder, retool your own sops-nix
-> secrets, and create an entry in `flake.nix` before you install.
+> NixOS configurations are tailored for my devices. You'll need to create your
+> own config in the `machines/` folder, retool your own sops-nix secrets, and
+> create an entry in `flake.nix` before you install.
 
 ## Useful commands 🛠️
 
