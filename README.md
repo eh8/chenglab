@@ -12,7 +12,8 @@ Homelab hardware: ThinkCenter M710q Tiny, Intel i5-7500T and 8GB RAM
 
 ## Overview 🧩
 
-- These are the Nix configurations for my homelab servers, desktop, and M1 MacBook Air 
+- These are the Nix configurations for my homelab servers, desktop, and M1
+  MacBook Air 
 - Nix flakes handle upstream dependencies 
 - [home-manager](https://github.com/nix-community/home-manager) manages dotfiles 
 - [nix-darwin](https://github.com/LnL7/nix-darwin) manages MacBook 
@@ -20,9 +21,12 @@ Homelab hardware: ThinkCenter M710q Tiny, Intel i5-7500T and 8GB RAM
 - Remote initrd unlock system to decrypt drives on boot 
 - Root on tmpfs aka impermanence 
 - Automatic Let's Encrypt certificate registration and renewal 
-- Tailscale, Nextcloud, Jellyfin, Homebridge, among other nice self-hosted applications 
-- `justfile` contains useful aliases for many frequent and atrociously long `nix` commands 
-- Modular architecture promotes readability for me and copy-and-paste-ability for you 
+- Tailscale, Nextcloud, Jellyfin, Homebridge, among other nice self-hosted
+  applications 
+- `justfile` contains useful aliases for many frequent and atrociously long
+  `nix` commands 
+- Modular architecture promotes readability for me and copy-and-paste-ability
+  for you 
 
 ## Getting started ⚡
 
@@ -37,13 +41,13 @@ On macOS, this script will install `nix` using the [Determinate Systems Nix
 installer](https://zero-to-nix.com/start/install) and prompt you to install my
 configuration.
 
-On Linux, this script will prepare your system for NixOS by partitioning drives
-and mounting them.
+On Linux, *running this script from the NixOS installation ISO* will prepare your
+system for NixOS by partitioning drives and mounting them.
 
 > [!WARNING] 
 > NixOS configurations are tailored for my devices. You'll need to
-> create your own config in the `machines/` folder and create an entry in
-> `flake.nix` before you install.
+> create your own config in the `machines/` folder, retool your own sops-nix
+> secrets, and create an entry in `flake.nix` before you install.
 
 ## Useful commands 🛠️
 
