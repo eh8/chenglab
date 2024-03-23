@@ -6,7 +6,9 @@
   "nix": {
     "enabled": true
   },
-  "schedule": "at 6:00am",
+  "schedule": [
+    "at 6am"
+  ],
   "timezone": "America/New_York",
   "lockFileMaintenance": {
     "enabled": true,
