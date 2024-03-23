@@ -16,11 +16,11 @@ jobs:
       - run: nix flake update
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: Bump flake.lock
-          branch: main
-          commit_options: --no-verify --signoff
-          file_pattern: flake.lock
+          commit_message: "chore: bump flake.lock"
           commit_user_name: Flake Bot
+          commit_options: --no-verify --signoff
           commit_author: Flake Bot <actions@github.com>
+          branch: main
+          file_pattern: flake.lock
           skip_dirty_check: false
           skip_fetch: true
