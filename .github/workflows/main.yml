@@ -14,7 +14,7 @@ jobs:
           fetch-depth: 0
       - uses: cachix/install-nix-action@v26
       - run: nix flake update
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: bump flake.lock"
           commit_user_name: Flake Bot
