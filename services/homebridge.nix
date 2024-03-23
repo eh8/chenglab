@@ -66,7 +66,6 @@
         timerConfig = {
           OnCalendar = "*-*-* 4:00:00";
           RandomizedDelaySec = "1h";
-          Persistent = true;
         };
       };
     };
