@@ -15,6 +15,7 @@
       duf
       figlet
       fortune-kind
+      gallery-dl
       gdu
       genact
       imagemagick
@@ -29,6 +30,7 @@
       sops
       statix
       tree
+      yt-dlp
       zola
     ];
   };

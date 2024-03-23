@@ -1,33 +1,26 @@
-name: Bump flake.lock
+---
 # inspo: https://github.com/reckenrode/nixos-configs/blob/main/.github/workflows/main.yml
-
+name: Bump flake.lock
 on:
   schedule:
-    - cron: "0 6 * * *"
-
-  workflow_dispatch:
-
+    - cron: 0 6 * * *
+  workflow_dispatch: null
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-
       - uses: cachix/install-nix-action@v20
-
       - run: nix flake update
-
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Bump flake.lock
           branch: main
-          commit_options: "--no-verify --signoff"
+          commit_options: --no-verify --signoff
           file_pattern: flake.lock
-          commit_user_name: Flake Bot # defaults to "GitHub Actions"
-          #commit_user_email: my-github-actions-bot@example.org # defaults to "actions@github.com"
-          commit_author: Flake Bot <actions@github.com> # defaults to author of the commit that triggered the run
+          commit_user_name: Flake Bot
+          commit_author: Flake Bot <actions@github.com>
           skip_dirty_check: false
           skip_fetch: true

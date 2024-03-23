@@ -12,6 +12,7 @@
     ./../../modules/nixos/base.nix
     ./../../modules/nixos/packages.nix
     ./../../modules/nixos/remote-unlock.nix
+    ./../../modules/nixos/auto-update.nix
 
     ./../../services/tailscale.nix
     ./../../services/netdata.nix

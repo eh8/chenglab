@@ -2,7 +2,7 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     shellAliases = {
       cat = "bat --style=plain --theme=base16 --paging=never ";
