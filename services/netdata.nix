@@ -11,4 +11,10 @@
     package = pkgs.netdata.override {withCloud = true;};
     claimTokenFile = config.sops.secrets.netdata-token.path;
   };
+
+  environment.persistence."/nix/persist" = {
+    directories = [
+      "/var/lib/netdata"
+    ];
+  };
 }

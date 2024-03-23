@@ -4,6 +4,7 @@
       alejandra
       asciiquarium
       bat
+      bind
       btop
       bun
       cachix
