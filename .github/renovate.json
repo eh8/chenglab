@@ -6,10 +6,10 @@
   "nix": {
     "enabled": true
   },
-  "schedule": [
-    "every weekend"
-  ],
+  "schedule": "at 6:00am",
+  "timezone": "America/New_York",
   "lockFileMaintenance": {
-    "enabled": true
+    "enabled": true,
+    "automerge": true
   }
 }
