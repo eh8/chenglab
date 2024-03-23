@@ -28,7 +28,7 @@
         default = "http_status:404";
         ingress = {
           "watch.chengeric.com" = {
-            service = "https://watch.chengeric.com";
+            service = "http://localhost:8096";
           };
         };
       };
