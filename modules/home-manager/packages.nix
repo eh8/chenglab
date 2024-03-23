@@ -27,6 +27,7 @@
       pandoc
       qrencode
       sops
+      statix
       tree
       zola
     ];

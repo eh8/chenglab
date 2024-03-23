@@ -12,10 +12,18 @@
     initrd = {
       # `readlink /sys/class/net/enp0s31f6/device/driver` indicates "e1000e" is the ethernet driver for this device
       availableKernelModules = ["nvme" "xhci_pci" "ahci" "usb_storage" "sd_mod" "e1000e"];
-      luks.devices."cryptroot".device = "/dev/nvme0n1p2";
-      luks.devices."cryptroot".allowDiscards = true;
-      luks.devices."fun".device = "/dev/sda1";
-      luks.reusePassphrases = true;
+      luks = {
+        reusePassphrases = true;
+        devices = {
+          "cryptroot" = {
+            device = "/dev/nvme0n1p2";
+            allowDiscards = true;
+          };
+          "fun" = {
+            device = "/dev/sda1";
+          };
+        };
+      };
     };
   };
 

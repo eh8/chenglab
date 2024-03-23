@@ -16,11 +16,17 @@
 
         ".cache"
         ".config"
-        ".gnupg"
-        ".local"
-        ".ssh"
         ".mozilla"
         ".vscode"
+        ".local"
+        {
+          directory = ".gnupg";
+          mode = "0700";
+        }
+        {
+          directory = ".ssh";
+          mode = "0700";
+        }
       ];
       files = [
         ".zsh_history"

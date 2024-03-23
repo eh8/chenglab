@@ -6,14 +6,14 @@
 }: {
   sops.secrets.cloudflare-tunnel = {
     owner = config.services.cloudflared.user;
-    group = config.services.cloudflared.group;
+    inherit (config.services.cloudflared) group;
     format = "binary";
     sopsFile = ./../secrets/cloudflare-tunnel;
   };
 
   sops.secrets.cloudflare-token = {
     owner = config.services.cloudflared.user;
-    group = config.services.cloudflared.group;
+    inherit (config.services.cloudflared) group;
     format = "binary";
     sopsFile = ./../secrets/cloudflare-cert.pem;
   };

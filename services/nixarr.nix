@@ -9,8 +9,6 @@
     ./cloudflared.nix
   ];
 
-  systemd.tmpfiles.rules = ["d /var/lib/nixarr 0755 root root"];
-
   nixarr = {
     enable = true;
     mediaDir = "/fun/media";
@@ -52,28 +50,32 @@
 
   sops.secrets.kopia-repository-token = {};
 
-  systemd.services = {
-    "backup-nixarr" = {
-      description = "Backup Nixarr installation with Kopia";
-      wantedBy = ["default.target"];
-      serviceConfig = {
-        User = "root";
-        ExecStartPre = "${pkgs.kopia}/bin/kopia repository connect from-config --token-file ${config.sops.secrets.kopia-repository-token.path}";
-        ExecStart = "${pkgs.kopia}/bin/kopia snapshot create /var/lib/nixarr";
-        ExecStartPost = "${pkgs.kopia}/bin/kopia repository disconnect";
+  systemd = {
+    tmpfiles.rules = ["d /var/lib/nixarr 0755 root root"];
+
+    services = {
+      "backup-nixarr" = {
+        description = "Backup Nixarr installation with Kopia";
+        wantedBy = ["default.target"];
+        serviceConfig = {
+          User = "root";
+          ExecStartPre = "${pkgs.kopia}/bin/kopia repository connect from-config --token-file ${config.sops.secrets.kopia-repository-token.path}";
+          ExecStart = "${pkgs.kopia}/bin/kopia snapshot create /var/lib/nixarr";
+          ExecStartPost = "${pkgs.kopia}/bin/kopia repository disconnect";
+        };
       };
     };
-  };
 
-  systemd.timers = {
-    "backup-nixarr" = {
-      enable = true;
-      description = "Backup Nixarr installation with Kopia";
-      wantedBy = ["timers.target"];
-      timerConfig = {
-        OnCalendar = "*-*-* 4:00:00";
-        RandomizedDelaySec = "1h";
-        Persistent = true;
+    timers = {
+      "backup-nixarr" = {
+        enable = true;
+        description = "Backup Nixarr installation with Kopia";
+        wantedBy = ["timers.target"];
+        timerConfig = {
+          OnCalendar = "*-*-* 4:00:00";
+          RandomizedDelaySec = "1h";
+          Persistent = true;
+        };
       };
     };
   };

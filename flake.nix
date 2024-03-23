@@ -4,28 +4,46 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     impermanence.url = "github:nix-community/impermanence";
-    home-manager.url = "github:nix-community/home-manager";
-    sops-nix.url = "github:Mic92/sops-nix";
-    nix-darwin.url = "github:LnL7/nix-darwin";
-    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
-    nixarr.url = "github:rasmus-kirk/nixarr";
 
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
-    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nixarr = {
+      url = "github:rasmus-kirk/nixarr";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-darwin = {
+      url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nix-homebrew = {
+      url = "github:zhaofengli-wip/nix-homebrew";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     homebrew-cask-fonts = {
       url = "github:homebrew/homebrew-cask-fonts";
       flake = false;
     };
+
     homebrew-bundle = {
       url = "github:homebrew/homebrew-bundle";
       flake = false;
     };
+
     homebrew-core = {
       url = "github:homebrew/homebrew-core";
       flake = false;
     };
+
     homebrew-cask = {
       url = "github:homebrew/homebrew-cask";
       flake = false;

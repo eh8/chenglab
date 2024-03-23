@@ -13,8 +13,15 @@
       # `readlink /sys/class/net/enp9s0/device/driver` indicates "igb" is the ethernet driver for this device
       availableKernelModules = ["nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" "igb"];
       kernelModules = ["amdgpu"];
-      luks.devices."cryptroot".device = "/dev/nvme0n1p2";
-      luks.devices."cryptroot".allowDiscards = true;
+      luks = {
+        reusePassphrases = true;
+        devices = {
+          "cryptroot" = {
+            device = "/dev/nvme0n1p2";
+            allowDiscards = true;
+          };
+        };
+      };
     };
   };
 
