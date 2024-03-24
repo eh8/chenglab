@@ -7,7 +7,7 @@
     "enabled": true
   },
   "schedule": [
-    "at 6am"
+    "before 6am"
   ],
   "timezone": "America/New_York",
   "lockFileMaintenance": {
