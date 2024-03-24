@@ -11,6 +11,7 @@
       clolcat
       cloudflared
       croc
+      devenv
       du-dust
       dua
       duf
