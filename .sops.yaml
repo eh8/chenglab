@@ -2,7 +2,7 @@ keys:
   - &mac1chng age142e54afjeqajz4pgdc30tj8u6cjnyppj9ef3xjv4keqmk7pjcc2sfhk29x
   - &dsk1chng age1tazzcv0l5r3lxwhah0nhgych2t6najenza5w9s753az444qr5ekq68fp3v
   - &svr1chng age1w4tgfu8upwhpsm76sfuwls6f2suw6teurgz740lhv49v23h2scyqfzpmq7
-  - &svr2chng age1z8t033fplcrwlet9am42le97v4hgrgm70grt7pt8wzhhff4hfyqql4sjf7
+  - &svr2chng age1xtv542cqwc2rsw9ywfvqw4ccpenvr6680z0vj8zk5vp6gtk4edgqph86uq
   - &svr3chng age19uv62f9stfhhlsyckmg5ll2t6c8dd4f6nytnd95ftl6v62js3fmq6g2ktk
 creation_rules:
   - path_regex: secrets/[^/]+(\.(yaml|json|env|ini))?$
