@@ -3,7 +3,8 @@
 name: Bump flake.lock
 on:
   schedule:
-    - cron: 0 6 * * *
+    # 10am UTC is 6am EDT/5am EST
+    - cron: 0 10 * * *
   workflow_dispatch: null
 jobs:
   build:

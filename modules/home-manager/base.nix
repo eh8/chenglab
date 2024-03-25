@@ -43,7 +43,11 @@
       enable = true;
       settings.updates.auto_update = true;
     };
-    eza.enable = true;
+    lsd = {
+      enable = true;
+      enableAliases = true;
+    };
+    ranger.enable = true;
   };
 
   # Nicely reload system units when changing configs

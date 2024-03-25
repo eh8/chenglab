@@ -15,7 +15,6 @@
     taps = {
       "homebrew/homebrew-bundle" = inputs.homebrew-bundle;
       "homebrew/homebrew-cask" = inputs.homebrew-cask;
-      "homebrew/homebrew-cask-fonts" = inputs.homebrew-cask-fonts;
       "homebrew/homebrew-core" = inputs.homebrew-core;
     };
   };
@@ -46,8 +45,6 @@
       "discord"
       "dropbox"
       "firefox"
-      "font-inter"
-      "font-iosevka-ss08"
       "google-chrome"
       "handbrake"
       "inkscape"
@@ -59,7 +56,6 @@
       "raycast"
       "screen-studio"
       "spotify"
-      "sublime-text"
       "the-unarchiver"
       "transmission"
       "visual-studio-code"

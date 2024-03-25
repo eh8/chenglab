@@ -15,7 +15,7 @@
     initExtra = ''
       fortune
 
-      if [[ $(uname -m) == 'arm64' ]]; then
+      if [[ $(uname -m) == 'arm64' ]] && [[ $(uname -s) == 'Darwin' ]]; then
         eval "$(/opt/homebrew/bin/brew shellenv)"
       fi
     '';
@@ -25,9 +25,10 @@
         src = pkgs.zsh-powerlevel10k;
         file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
       }
+      # inspo: https://discourse.nixos.org/t/zsh-zplug-powerlevel10k-zshrc-is-readonly/30333/3
       {
         name = "powerlevel10k-config";
-        src = ./.;
+        src = ./p10k;
         file = "p10k.zsh";
       }
     ];

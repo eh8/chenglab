@@ -30,11 +30,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    homebrew-cask-fonts = {
-      url = "github:homebrew/homebrew-cask-fonts";
-      flake = false;
-    };
-
     homebrew-bundle = {
       url = "github:homebrew/homebrew-bundle";
       flake = false;

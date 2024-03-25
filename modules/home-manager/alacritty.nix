@@ -64,10 +64,7 @@
           (lib.mkIf pkgs.stdenv.isDarwin 15)
         ];
         normal = {
-          family = lib.mkMerge [
-            (lib.mkIf pkgs.stdenv.isLinux "Iosevka")
-            (lib.mkIf pkgs.stdenv.isDarwin "Iosevka SS08")
-          ];
+          family = "Iosevka Nerd Font";
         };
       };
     };

@@ -1,11 +1,11 @@
 <p align="center">
 <a href="https://nixos.org"><img src="https://img.shields.io/badge/NixOS-unstable-blue.svg?style=flat-square&logo=NixOS&logoColor=white" alt="nixos unstable"></a>
 <br>
-<img src=".github/background.gif" width=500 alt="chenglab" />
+<img src=".github/images/background.gif" width=500 alt="chenglab" />
 </p>
 
 <p align="center">
-<img src=".github/servers.jpg" width=500 alt="chenglab" />
+<img src=".github/images/servers.jpg" width=500 alt="chenglab" />
 <br>
 Homelab hardware: ThinkCenter M710q Tiny, Intel i5-7500T and 8GB RAM
 </p>
@@ -34,11 +34,10 @@ Homelab hardware: ThinkCenter M710q Tiny, Intel i5-7500T and 8GB RAM
 
 > [!IMPORTANT] You'll need to run this script as sudo or have sudo permissions.
 
-> [!WARNING] 
-> This script is primarily meant for my own use. Using it to install NixOS on
-> your own hardware will fail. At minimum, you'll need modify  to create your
-> own config in the `machines/` folder, retool your own sops-nix secrets, and
-> create an entry in `flake.nix` before you install.
+> [!WARNING] This script is primarily meant for my own use. Using it to install
+> NixOS on your own hardware will fail. At minimum, you'll need modify  to
+> create your own config in the `machines/` folder, retool your own sops-nix
+> secrets, and create an entry in `flake.nix` before you install.
 
 ```
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/eh8/chenglab/main/install.sh)"
@@ -48,14 +47,13 @@ On macOS, this script will install `nix` using the [Determinate Systems Nix
 installer](https://zero-to-nix.com/start/install) and prompt you to install my
 configuration.
 
-On Linux, *running this script from the NixOS installation ISO* will prepare your
-system for NixOS by partitioning drives and mounting them. 
+On Linux, *running this script from the NixOS installation ISO* will prepare
+your system for NixOS by partitioning drives and mounting them. 
 
-> [!TIP] 
-> When installing NixOS onto a headless local server, place your own custom
-> NixOS ISO file onto a USB drive with Ventoy. Ventoy can automatically load the
-> NixOS ISO file, and you can enable connectivity by building your own custom
-> ISO with your own personal SSH key.
+> [!TIP] When installing NixOS onto a headless local server, place your own
+> custom NixOS ISO file onto a USB drive with Ventoy. Ventoy can automatically
+> load the NixOS ISO file, and you can enable connectivity by building your own
+> custom ISO with your own personal SSH key.
 
 ## Useful commands 🛠️
 
@@ -104,8 +102,8 @@ To modify user password, first generate a hash
 echo "password" | mkpasswd -m SHA-512 -s
 ```
 
-Then run `just edit-secrets` to replace the existing decrypted hash with the one that
-you just generated. If you use a password manager, sure to update the new
+Then run `just edit-secrets` to replace the existing decrypted hash with the one
+that you just generated. If you use a password manager, sure to update the new
 password as necessary.
 
 ### Changing SSH keys
@@ -152,3 +150,5 @@ with how it appears on the official website.
   packages](https://discourse.nixos.org/t/users-users-name-packages-vs-home-manager-packages/22240)
 - [Declaratively manage dock via
   nix](https://github.com/dustinlyons/nixos-config/blob/8a14e1f0da074b3f9060e8c822164d922bfeec29/modules/darwin/home-manager.nix#L74)
+- [Dealing with post nix-flake god
+  complex](https://www.reddit.com/r/NixOS/comments/kauf1m/dealing_with_post_nixflake_god_complex/)

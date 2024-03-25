@@ -1,39 +1,51 @@
 {pkgs, ...}: {
   home = {
     packages = with pkgs; [
-      alejandra
+      # fun
       asciiquarium
+      cbonsai
+      cmatrix
+      pipes-rs
+      clolcat
+      figlet
+      fortune-kind
+      genact
+      gti
+      neo-cowsay
+      neofetch
+
+      # development
+      alejandra
+      bun
+      cachix
+      cloudflared
+      devenv
+      just
+      nixos-rebuild # need for macos
+      pandoc
+      sops
+      statix
+      zola
+
+      # quality of life
       bat
       bind
       btop
-      bun
-      cachix
-      clolcat
-      cloudflared
       croc
-      devenv
       du-dust
       dua
       duf
-      figlet
-      fortune-kind
       gallery-dl
       gdu
-      genact
       imagemagick
-      just
       kopia
-      neo-cowsay
-      neofetch
-      nil
-      nixos-rebuild # need for macos
-      pandoc
       qrencode
-      sops
-      statix
       tree
       yt-dlp
-      zola
+
+      # fonts
+      inter
+      nerdfonts
     ];
   };
 }
