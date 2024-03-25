@@ -14,7 +14,7 @@ Homelab hardware: ThinkCenter M710q Tiny, Intel i5-7500T and 8GB RAM
 
 - These are the Nix configurations for my homelab servers, desktop, and M1
   MacBook Air 
-- Nix flakes handle upstream dependencies 
+- Nix flakes handle upstream dependencies, tracks unstable channel of Nixpkgs
 - [home-manager](https://github.com/nix-community/home-manager) manages dotfiles 
 - [nix-darwin](https://github.com/LnL7/nix-darwin) manages MacBook 
 - [sops-nix](https://github.com/Mic92/sops-nix) manages secrets 
@@ -25,13 +25,14 @@ Homelab hardware: ThinkCenter M710q Tiny, Intel i5-7500T and 8GB RAM
   applications 
 - `justfile` contains useful aliases for many frequent and atrociously long
   `nix` commands 
+- `flake.lock` updated daily via GitHub Action, servers are configured to
+  automatically upgrade daily
 - Modular architecture promotes readability for me and copy-and-paste-ability
   for you 
 
 ## Getting started ⚡
 
-> [!IMPORTANT] 
-> You'll need to run this script as sudo or have sudo permissions.
+> [!IMPORTANT] You'll need to run this script as sudo or have sudo permissions.
 
 > [!WARNING] 
 > This script is primarily meant for my own use. Using it to install NixOS on
