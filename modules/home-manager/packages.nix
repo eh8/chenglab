@@ -21,6 +21,7 @@
       cloudflared
       devenv
       just
+      nil
       nixos-rebuild # need for macos
       pandoc
       sops
@@ -42,10 +43,6 @@
       qrencode
       tree
       yt-dlp
-
-      # fonts
-      inter
-      nerdfonts
     ];
   };
 }
