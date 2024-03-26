@@ -26,11 +26,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1708939976,
-        "narHash": "sha256-O5+nFozxz2Vubpdl1YZtPrilcIXPcRAjqNdNE8oCRoA=",
+        "lastModified": 1711099426,
+        "narHash": "sha256-HzpgM/wc3aqpnHJJ2oDqPBkNsqWbW0WfWUO8lKu8nGk=",
         "owner": "numtide",
         "repo": "devshell",
-        "rev": "5ddecd67edbd568ebe0a55905273e56cc82aabe3",
+        "rev": "2d45b54ca4a183f2fdcf4b19c895b64fbf620ee8",
         "type": "github"
       },
       "original": {
@@ -150,11 +150,11 @@
     "homebrew-cask": {
       "flake": false,
       "locked": {
-        "lastModified": 1711361460,
-        "narHash": "sha256-pX3BTTaLmWJE8g7gPx9XzBemkyel7bh+EespHNGQEzM=",
+        "lastModified": 1711440814,
+        "narHash": "sha256-QtTR7LNJsdBEdgNx2mcvsjNJhjbsa8b+m535Rmc9fO8=",
         "owner": "homebrew",
         "repo": "homebrew-cask",
-        "rev": "f29ec79fb5e490f52a5515efe6c25051ca517b43",
+        "rev": "f7e8b6a1df1967065c72d3e52782c89779307e94",
         "type": "github"
       },
       "original": {
@@ -166,11 +166,11 @@
     "homebrew-core": {
       "flake": false,
       "locked": {
-        "lastModified": 1711356002,
-        "narHash": "sha256-Exb49B9LszHPZt5ELq4r2qC2/+e2RP2UwVbxJC90Al8=",
+        "lastModified": 1711440647,
+        "narHash": "sha256-GovGHwytgK02k6sFPlnDzcmYhJIfUIegToSuaS1pQPI=",
         "owner": "homebrew",
         "repo": "homebrew-core",
-        "rev": "049b52e138e5ca65bc36f5b951355f8270024e79",
+        "rev": "e5de4ba483591a216772662d47800bee85346b6f",
         "type": "github"
       },
       "original": {
@@ -267,11 +267,11 @@
         "vpnconfinement": "vpnconfinement"
       },
       "locked": {
-        "lastModified": 1711312490,
-        "narHash": "sha256-K2VUTr0n8mTauaM6e4eifklo3+ll+VLfqRpcpc7mZRk=",
+        "lastModified": 1711370011,
+        "narHash": "sha256-PpaiwmQ8EjDogQJLsk1R0J+mKmXLnQ0yygPApIm8tPE=",
         "owner": "rasmus-kirk",
         "repo": "nixarr",
-        "rev": "874392f191e82b39b10f2c170f68d003005723b9",
+        "rev": "b3f42c2f5f5cb316374a25017df0959d01649a3b",
         "type": "github"
       },
       "original": {
@@ -398,11 +398,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1709546977,
-        "narHash": "sha256-R0bi8zAWt1s1q7lSvwiFI8+kEL29rm4WtYTqPgjlEBs=",
+        "lastModified": 1710781103,
+        "narHash": "sha256-nehQK/XTFxfa6rYKtbi8M1w+IU1v5twYhiyA4dg1vpg=",
         "owner": "numtide",
         "repo": "treefmt-nix",
-        "rev": "e7a277c5d12bf570efa2427d9cfdb760b9a0512f",
+        "rev": "7ee5aaac63c30d3c97a8c56efe89f3b2aa9ae564",
         "type": "github"
       },
       "original": {
@@ -419,11 +419,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1709597689,
-        "narHash": "sha256-6pSgM6s2Rm2zAA/dYKAOK7wLNkzox5hBKOC5E5TJoO8=",
+        "lastModified": 1711303689,
+        "narHash": "sha256-XelIFUk1AdOzPuotnhCzj4jYJ9LlrJ3qEptzkYppQMk=",
         "owner": "Maroka-chan",
         "repo": "VPN-Confinement",
-        "rev": "2f5fffe81305e731593b1923acdf1c7653f1b17c",
+        "rev": "5964d68b584799ed9b4eb3d41b81b0c0bb1f7720",
         "type": "github"
       },
       "original": {
