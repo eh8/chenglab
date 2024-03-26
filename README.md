@@ -32,9 +32,11 @@ Homelab hardware: ThinkCenter M710q Tiny, Intel i5-7500T and 8GB RAM
 
 ## Getting started ⚡
 
-> [!IMPORTANT] You'll need to run this script as sudo or have sudo permissions.
+> [!IMPORTANT]
+> You'll need to run this script as sudo or have sudo permissions.
 
-> [!WARNING] This script is primarily meant for my own use. Using it to install
+> [!WARNING]
+> This script is primarily meant for my own use. Using it to install
 > NixOS on your own hardware will fail. At minimum, you'll need modify  to
 > create your own config in the `machines/` folder, retool your own sops-nix
 > secrets, and create an entry in `flake.nix` before you install.
@@ -50,7 +52,8 @@ configuration.
 On Linux, *running this script from the NixOS installation ISO* will prepare
 your system for NixOS by partitioning drives and mounting them. 
 
-> [!TIP] When installing NixOS onto a headless local server, place your own
+> [!TIP]
+> When installing NixOS onto a headless local server, place your own
 > custom NixOS ISO file onto a USB drive with Ventoy. Ventoy can automatically
 > load the NixOS ISO file, and you can enable connectivity by building your own
 > custom ISO with your own personal SSH key.
