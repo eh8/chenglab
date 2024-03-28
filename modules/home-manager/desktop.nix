@@ -40,10 +40,11 @@
 
         # `gnome-extensions list` for a list
         enabled-extensions = [
+          "AlphabeticalAppGrid@stuarthayhurst"
           "appindicatorsupport@rgcjonas.gmail.com"
           "blur-my-shell@aunetx"
-          "just-perfection-desktop@just-perfection"
           "clipboard-indicator@tudmotu.com"
+          "just-perfection-desktop@just-perfection"
         ];
       };
       "org/gnome/desktop/interface" = {
@@ -53,9 +54,10 @@
   };
 
   home.packages = with pkgs; [
-    gnomeExtensions.blur-my-shell
-    gnomeExtensions.just-perfection
+    gnomeExtensions.alphabetical-app-grid
     gnomeExtensions.appindicator
+    gnomeExtensions.blur-my-shell
     gnomeExtensions.clipboard-indicator
+    gnomeExtensions.just-perfection
   ];
 }
