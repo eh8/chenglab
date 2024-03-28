@@ -11,7 +11,6 @@
     ./hardware-configuration.nix
 
     ./../../modules/nixos/base.nix
-    ./../../modules/nixos/packages.nix
     ./../../modules/nixos/remote-unlock.nix
     ./../../modules/nixos/auto-update.nix
 
@@ -28,8 +27,6 @@
       eh8 = {
         imports = [
           ./../../modules/home-manager/base.nix
-          ./../../modules/home-manager/packages.nix
-          ./../../modules/home-manager/zsh.nix
         ];
       };
     };

@@ -1,4 +1,15 @@
-{
+{pkgs, ...}: {
+  services.xserver = {
+    enable = true;
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
+  };
+
+  services.udev.packages = with pkgs; [gnome.gnome-settings-daemon];
+
+  programs._1password.enable = true;
+  programs._1password-gui.enable = true;
+
   environment.persistence."/nix/persist" = {
     directories = [
       "/etc/NetworkManager/system-connections"

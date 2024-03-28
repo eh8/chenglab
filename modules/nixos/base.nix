@@ -6,6 +6,8 @@
 }: {
   imports = [
     inputs.sops-nix.nixosModules.sops
+
+    ./packages.nix
   ];
 
   boot.loader = {

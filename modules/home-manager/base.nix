@@ -3,6 +3,11 @@
   pkgs,
   ...
 }: {
+  imports = [
+    ./packages.nix
+    ./zsh.nix
+  ];
+
   home = {
     username = "eh8";
     homeDirectory = lib.mkMerge [
