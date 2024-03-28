@@ -28,7 +28,7 @@
       # inspo: https://discourse.nixos.org/t/zsh-zplug-powerlevel10k-zshrc-is-readonly/30333/3
       {
         name = "powerlevel10k-config";
-        src = ./p10k;
+        src = ./_p10k;
         file = "p10k.zsh";
       }
     ];

@@ -4,15 +4,15 @@
       # fun
       asciiquarium
       cbonsai
-      cmatrix
-      pipes-rs
       clolcat
+      cmatrix
       figlet
       fortune-kind
       genact
       gti
       neo-cowsay
       neofetch
+      pipes-rs
 
       # development
       alejandra
