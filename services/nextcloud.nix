@@ -5,8 +5,8 @@
   ...
 }: {
   imports = [
-    ./acme.nix
-    ./nginx.nix
+    ./_acme.nix
+    ./_nginx.nix
   ];
 
   sops.secrets.nextcloud-adminpassfile = {

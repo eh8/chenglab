@@ -4,8 +4,8 @@
   ...
 }: {
   imports = [
-    ./packages.nix
-    ./zsh.nix
+    ./_packages.nix
+    ./_zsh.nix
   ];
 
   home = {

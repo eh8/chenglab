@@ -4,8 +4,8 @@
   ...
 }: {
   imports = [
-    ./acme.nix
-    ./nginx.nix
+    ./_acme.nix
+    ./_nginx.nix
   ];
 
   # inspo: https://lmy.medium.com/from-ansible-to-nixos-3a117b140bec

@@ -7,7 +7,6 @@
     inputs.home-manager.darwinModules.home-manager
 
     ./../../modules/macos/base.nix
-    ./../../modules/macos/wallpaper.nix
   ];
 
   home-manager = {

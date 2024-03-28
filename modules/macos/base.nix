@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   imports = [
-    ./dock.nix
-    ./packages.nix
+    ./_dock.nix
+    ./_packages.nix
   ];
 
   nix = {
@@ -78,6 +78,11 @@
       ];
     };
   };
+
+  system.activationScripts.Wallpaper.text = ''
+    echo >&2 "Setting up wallpaper..."
+    osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/System/Library/Desktop Pictures/Solid Colors/Black.png"'
+  '';
 
   nixpkgs.hostPlatform = "aarch64-darwin";
   system.stateVersion = 4;
