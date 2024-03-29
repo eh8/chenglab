@@ -1,9 +1,6 @@
 {pkgs, ...}: {
-  environment.systemPackages = with pkgs; [
-    croc
-    git
-    vim
-    zellij # useful for unattended installation
+  imports = [
+    ./_packages.nix
   ];
 
   users.users.nixos = {
