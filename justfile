@@ -14,12 +14,6 @@ deploy machine ip='':
 up:
   nix flake update
 
-history:
-  nix profile history --profile /nix/var/nix/profiles/system
-
-clean:
-  sudo nix profile wipe-history --profile /nix/var/nix/profiles/system --older-than 7d
-
 lint:
   statix check .
 

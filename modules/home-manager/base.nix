@@ -52,6 +52,11 @@
       enable = true;
       enableAliases = true;
     };
+    direnv = {
+      enable = true;
+      enableZshIntegration = true;
+      nix-direnv.enable = true;
+    };
     ranger.enable = true;
   };
 

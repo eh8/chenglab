@@ -17,12 +17,12 @@
       # development
       alejandra
       bun
-      cachix
       cloudflared
       devenv
       just
       nil
       nixos-rebuild # need for macos
+      poetry
       pandoc
       sops
       statix
