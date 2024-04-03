@@ -25,7 +25,7 @@
   };
 
   virtualisation.oci-containers.containers."homebridge" = {
-    image = "homebridge/homebridge:latest";
+    image = "homebridge/homebridge:2024-01-08";
     volumes = ["/var/lib/homebridge:/homebridge"];
     extraOptions = [
       "--network=host"
