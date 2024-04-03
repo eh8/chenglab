@@ -25,11 +25,11 @@
   };
 
   virtualisation.oci-containers.containers."homebridge" = {
-    image = "homebridge/homebridge:2024-01-08";
+    image = "homebridge/homebridge:2024-01-08"; # don't use "latest" image or else container won't update
     volumes = ["/var/lib/homebridge:/homebridge"];
     extraOptions = [
       "--network=host"
-      "--dns=1.1.1.1"
+      "--dns=1.1.1.1,1.0.0.1" # without this, host DNS points to tailscale which doesn't work in container
     ];
   };
 
