@@ -10,7 +10,6 @@
 
   # inspo: https://lmy.medium.com/from-ansible-to-nixos-3a117b140bec
   networking = {
-    useHostResolvConf = true;
     firewall = {
       # need to add ports for each added child bridge
       allowedTCPPorts = [5353 50000 50001 50002];
@@ -28,7 +27,10 @@
   virtualisation.oci-containers.containers."homebridge" = {
     image = "homebridge/homebridge:latest";
     volumes = ["/var/lib/homebridge:/homebridge"];
-    # extraOptions = ["--network=host"];
+    extraOptions = [
+      "--network=host"
+      "--dns=1.1.1.1"
+    ];
   };
 
   services.nginx = {
