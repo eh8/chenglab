@@ -63,8 +63,11 @@
     fstrim.enable = true;
   };
 
-  networking.firewall.enable = true;
-  networking.networkmanager.enable = true;
+  networking = {
+    firewall.enable = true;
+    networkmanager.enable = true;
+  };
+
   programs.zsh.enable = true;
   security.sudo.wheelNeedsPassword = false;
   time.timeZone = "America/New_York";

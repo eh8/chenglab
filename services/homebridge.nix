@@ -9,19 +9,20 @@
   ];
 
   # inspo: https://lmy.medium.com/from-ansible-to-nixos-3a117b140bec
-  networking.firewall = {
-    # need to add ports for each added child bridge
-    allowedTCPPorts = [5353 50000 50001 50002];
-    allowedUDPPorts = [5353];
-
-    allowedTCPPortRanges = [
-      {
-        from = 52100;
-        to = 52150;
-      }
-    ];
-
+  networking = {
     useHostResolvConf = true;
+    firewall = {
+      # need to add ports for each added child bridge
+      allowedTCPPorts = [5353 50000 50001 50002];
+      allowedUDPPorts = [5353];
+
+      allowedTCPPortRanges = [
+        {
+          from = 52100;
+          to = 52150;
+        }
+      ];
+    };
   };
 
   virtualisation.oci-containers.containers."homebridge" = {
