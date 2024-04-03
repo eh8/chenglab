@@ -21,18 +21,13 @@
       }
     ];
 
-    # inspo: https://github.com/NixOS/nixpkgs/issues/226365
-    # "it's always DNS!"
-    interfaces."podman+".allowedUDPPorts = [53];
+    useHostResolvConf = true;
   };
 
   virtualisation.oci-containers.containers."homebridge" = {
     image = "homebridge/homebridge:latest";
     volumes = ["/var/lib/homebridge:/homebridge"];
-    extraOptions = [
-      "--network=host"
-      "--dns=127.0.0.1"
-    ];
+    extraOptions = ["--network=host"];
   };
 
   services.nginx = {
