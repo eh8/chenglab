@@ -10,27 +10,27 @@
 Homelab hardware: ThinkCenter M710q Tiny, Intel i5-7500T and 8GB RAM
 </p>
 
-## Overview 🧩
+## Highlights
 
-- These are the Nix configurations for my homelab servers, desktop, and M1
-  MacBook Air 
-- Nix flakes handle upstream dependencies, tracks unstable channel of Nixpkgs
-- [home-manager](https://github.com/nix-community/home-manager) manages dotfiles 
-- [nix-darwin](https://github.com/LnL7/nix-darwin) manages MacBook 
-- [sops-nix](https://github.com/Mic92/sops-nix) manages secrets 
-- Remote initrd unlock system to decrypt drives on boot 
-- Root on tmpfs aka impermanence 
-- Automatic Let's Encrypt certificate registration and renewal 
-- Tailscale, Nextcloud, Jellyfin, Homebridge, among other nice self-hosted
+These are the Nix configurations for my homelab servers, desktop, and M1 MacBook Air 
+
+- ❄️ Nix flakes handle upstream dependencies, tracks unstable channel of Nixpkgs
+- 🏠 [home-manager](https://github.com/nix-community/home-manager) manages dotfiles 
+- 🍎 [nix-darwin](https://github.com/LnL7/nix-darwin) manages MacBook 
+- 🤫 [sops-nix](https://github.com/Mic92/sops-nix) manages secrets 
+- 🔑 Remote initrd unlock system to decrypt drives on boot 
+- 🌬️ Root on tmpfs aka impermanence 
+- 🔒 Automatic Let's Encrypt certificate registration and renewal 
+- 🧩 Tailscale, Nextcloud, Jellyfin, Homebridge, among other nice self-hosted
   applications 
-- `justfile` contains useful aliases for many frequent and atrociously long
+- ⚡️ `justfile` contains useful aliases for many frequent and atrociously long
   `nix` commands 
-- `flake.lock` updated daily via GitHub Action, servers are configured to
+- 🤖 `flake.lock` updated daily via GitHub Action, servers are configured to
   automatically upgrade daily
-- Modular architecture promotes readability for me and copy-and-paste-ability
+- 🧱 Modular architecture promotes readability for me and copy-and-paste-ability
   for you 
 
-## Getting started ⚡
+## Getting started
 
 > [!IMPORTANT]
 > You'll need to run this script as sudo or have sudo permissions.
