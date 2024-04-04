@@ -17,13 +17,10 @@
       # development
       alejandra
       bun
-      cloudflared
       devenv
       just
       nil
-      nixos-rebuild # need for macos
-      poetry
-      pandoc
+      nixos-rebuild # need for macOS
       sops
       statix
       zola
@@ -40,6 +37,7 @@
       gdu
       imagemagick
       kopia
+      pandoc
       qrencode
       tree
       yt-dlp

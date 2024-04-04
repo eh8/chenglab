@@ -21,7 +21,7 @@ if [ "$(uname)" == "Darwin" ]; then
   fi
 
   echo -e "\n\033[1mInstalling Rosetta...\033[0m"
-  softwareupdate --install-rosetta
+  softwareupdate --install-rosetta --agree-to-license
   echo -e "\033[32mRosetta installed successfully.\033[0m"
 
   echo -e "\n\033[1mInstalling Nix...\033[0m"
