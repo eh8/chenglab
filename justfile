@@ -18,7 +18,7 @@ lint:
   statix check .
 
 gc:
-  sudo nix-collect-garbage --delete-old
+  sudo nix profile wipe-history --profile /nix/var/nix/profiles/system --older-than 7d && sudo nix store gc
 
 repair:
   sudo nix-store --verify --check-contents --repair
