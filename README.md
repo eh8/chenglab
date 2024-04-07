@@ -86,13 +86,13 @@ Make sure each machine's public key is listed as entry in `.sops.yaml`. To
 modify `secrets/secrets.yaml`:
 
 ```
-just edit-secrets
+just secrets-edit
 ```
 
 ### Syncing sops keys for a new machine 
 
 ```
-just sync-secrets
+just secrets-sync
 ```
 
 ## Important caveats
