@@ -38,12 +38,14 @@ Air
 > You'll need to run this script as sudo or have sudo permissions.
 
 > [!WARNING] 
-> This script is primarily meant for my own use. Using it to install
-> NixOS on your own hardware will fail. At minimum, you'll need to do the
-> following before attemping installation.
-> 1. create your own config in the `machines/` folder
-> 1. retool your own sops-nix secrets
-> 1. create an entry in `flake.nix`
+> This script is primarily meant for my own use. Using it to install NixOS on
+> your own hardware will fail. At minimum, you'll need to do the following
+> before attemping installation:
+> 
+> 1. Create a configuration for your own device in the `machines/` folder
+> 1. Retool your own sops-nix secrets or remove them entirely if you don't use
+>    sops-nix
+> 1. Add an entry to flake.nix referencing the configuration created in step 1
 
 ```
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/eh8/chenglab/main/install.sh)"
