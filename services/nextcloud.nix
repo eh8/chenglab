@@ -111,7 +111,6 @@
 
     timers = {
       "nextcloud-generate-previews" = {
-        enable = true;
         description = "Generate previews";
         wantedBy = ["timers.target"];
         timerConfig = {
@@ -120,7 +119,6 @@
       };
 
       "backup-nextcloud" = {
-        enable = true;
         description = "Backup Nextcloud data with Kopia";
         wantedBy = ["timers.target"];
         timerConfig = {

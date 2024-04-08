@@ -68,7 +68,6 @@
 
     timers = {
       "backup-nixarr" = {
-        enable = true;
         description = "Backup Nixarr installation with Kopia";
         wantedBy = ["timers.target"];
         timerConfig = {

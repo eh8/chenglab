@@ -110,7 +110,6 @@
       "podman-auto-update".wantedBy = ["timers.target"];
 
       "backup-homebridge" = {
-        enable = true;
         description = "Backup Homebridge installation with Kopia";
         wantedBy = ["timers.target"];
         timerConfig = {

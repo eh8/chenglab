@@ -118,7 +118,6 @@
       "podman-auto-update".wantedBy = ["timers.target"];
 
       "backup-scrypted" = {
-        enable = true;
         description = "Backup Scrypted installation with Kopia";
         wantedBy = ["timers.target"];
         timerConfig = {
