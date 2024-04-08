@@ -107,7 +107,13 @@
     };
 
     timers = {
-      "podman-auto-update".wantedBy = ["timers.target"];
+      "podman-auto-update" = {
+        wantedBy = ["timers.target"];
+        timerConfig = {
+          OnCalendar = "*-*-* 7:00:00";
+          RandomizedDelaySec = "1h";
+        };
+      };
 
       "backup-homebridge" = {
         description = "Backup Homebridge installation with Kopia";
