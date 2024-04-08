@@ -82,6 +82,8 @@
   };
 
   systemd = {
+    tmpfiles.rules = ["d /var/lib/scrypted 0755 root root"];
+
     # Root service
     # When started, this will automatically create all resources and start
     # the containers. When stopped, this will teardown all resources.
