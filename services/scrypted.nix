@@ -1,10 +1,13 @@
-# Auto-generated using compose2nix v0.1.9.
 {
   config,
   pkgs,
   lib,
   ...
 }: {
+  # Auto-generated using compose2nix v0.1.9.
+  # Based off of https://github.com/koush/scrypted/blob/main/install/docker/docker-compose.yml
+  # Heavily modified by eh8
+
   networking.firewall = {
     # Homekit requires random port to connect with accessories. It is easier to
     # whitelist an entire trusted network rather than tediously open ports for
