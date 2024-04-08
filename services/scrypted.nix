@@ -4,9 +4,13 @@
   lib,
   ...
 }: {
-  # Auto-generated using compose2nix v0.1.9.
+  imports = [
+    ./_acme.nix
+    ./_nginx.nix
+  ];
+
+  # Initially generated using compose2nix v0.1.9.
   # Based off of https://github.com/koush/scrypted/blob/main/install/docker/docker-compose.yml
-  # Heavily modified by eh8
 
   networking.firewall = {
     # Homekit requires random port to connect with accessories. It is easier to
@@ -40,15 +44,13 @@
       "scrypted" = {
         image = "ghcr.io/koush/scrypted";
         environment = {
-          SCRYPTED_WEBHOOK_UPDATE = "http://localhost:10444/v1/update";
-          SCRYPTED_WEBHOOK_UPDATE_AUTHORIZATION = "Bearer 40dfdcaa593149f2a1e735675800d6e39ad4f8feac1d03eba1156037f3c32325";
           SCRYPTED_DOCKER_AVAHI = "true";
         };
         volumes = [
           "/var/lib/scrypted:/server/volume:rw"
         ];
         labels = {
-          "com.centurylinklabs.watchtower.scope" = "scrypted";
+          "io.containers.autoupdate" = "registry";
         };
         log-driver = "journald";
         extraOptions = [
@@ -56,31 +58,6 @@
           "--log-opt=max-size=10m"
           "--network=host"
           "--security-opt=apparmor:unconfined"
-        ];
-      };
-
-      "scrypted-watchtower" = {
-        image = "containrrr/watchtower";
-        environment = {
-          WATCHTOWER_HTTP_API_PERIODIC_POLLS = "true";
-          WATCHTOWER_HTTP_API_TOKEN = "40dfdcaa593149f2a1e735675800d6e39ad4f8feac1d03eba1156037f3c32325";
-          WATCHTOWER_HTTP_API_UPDATE = "true";
-          WATCHTOWER_SCOPE = "scrypted";
-        };
-        volumes = [
-          "/var/run/podman/podman.sock:/var/run/docker.sock:rw"
-        ];
-        ports = [
-          "10444:8080/tcp"
-        ];
-        cmd = ["--interval" "3600" "--cleanup" "--scope" "scrypted"];
-        labels = {
-          "com.centurylinklabs.watchtower.scope" = "scrypted";
-        };
-        log-driver = "journald";
-        extraOptions = [
-          "--network-alias=watchtower"
-          "--network=scrypted_default"
         ];
       };
     };
@@ -111,24 +88,6 @@
     };
 
     services = {
-      "podman-scrypted-watchtower" = {
-        serviceConfig = {
-          Restart = lib.mkOverride 500 "always";
-        };
-        after = [
-          "podman-network-scrypted_default.service"
-        ];
-        requires = [
-          "podman-network-scrypted_default.service"
-        ];
-        partOf = [
-          "podman-compose-scrypted-root.target"
-        ];
-        wantedBy = [
-          "podman-compose-scrypted-root.target"
-        ];
-      };
-
       "podman-scrypted" = {
         serviceConfig = {
           Restart = lib.mkOverride 500 "always";
@@ -139,20 +98,6 @@
         wantedBy = [
           "podman-compose-scrypted-root.target"
         ];
-      };
-
-      "podman-network-scrypted_default" = {
-        path = [pkgs.podman];
-        serviceConfig = {
-          Type = "oneshot";
-          RemainAfterExit = true;
-          ExecStop = "${pkgs.podman}/bin/podman network rm -f scrypted_default";
-        };
-        script = ''
-          podman network inspect scrypted_default || podman network create scrypted_default
-        '';
-        partOf = ["podman-compose-scrypted-root.target"];
-        wantedBy = ["podman-compose-scrypted-root.target"];
       };
 
       "backup-scrypted" = {
@@ -170,6 +115,8 @@
     };
 
     timers = {
+      "podman-auto-update".wantedBy = ["timers.target"];
+
       "backup-scrypted" = {
         enable = true;
         description = "Backup Scrypted installation with Kopia";
