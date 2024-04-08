@@ -12,17 +12,19 @@ Homelab hardware: ThinkCenter M710q Tiny, Intel i5-7500T and 8GB RAM
 
 ## Highlights
 
-These are the Nix configurations for my homelab servers, desktop, and M1 MacBook Air 
+These are the Nix configurations for my homelab servers, desktop, and M1 MacBook
+Air 
 
 - ❄️ Nix flakes handle upstream dependencies, tracks unstable channel of Nixpkgs
-- 🏠 [home-manager](https://github.com/nix-community/home-manager) manages dotfiles 
+- 🏠 [home-manager](https://github.com/nix-community/home-manager) manages
+  dotfiles 
 - 🍎 [nix-darwin](https://github.com/LnL7/nix-darwin) manages MacBook 
 - 🤫 [sops-nix](https://github.com/Mic92/sops-nix) manages secrets 
 - 🔑 Remote initrd unlock system to decrypt drives on boot 
 - 🌬️ Root on tmpfs aka impermanence 
 - 🔒 Automatic Let's Encrypt certificate registration and renewal 
-- 🧩 Tailscale, Nextcloud, Jellyfin, Homebridge, among other nice self-hosted
-  applications 
+- 🧩 Tailscale, Nextcloud, Jellyfin, Homebridge, Scrypted, among other nice
+  self-hosted applications 
 - ⚡️ `justfile` contains useful aliases for many frequent and atrociously long
   `nix` commands 
 - 🤖 `flake.lock` updated daily via GitHub Action, servers are configured to
@@ -32,10 +34,10 @@ These are the Nix configurations for my homelab servers, desktop, and M1 MacBook
 
 ## Getting started
 
-> [!IMPORTANT]
+> [!IMPORTANT] 
 > You'll need to run this script as sudo or have sudo permissions.
 
-> [!WARNING]
+> [!WARNING] 
 > This script is primarily meant for my own use. Using it to install
 > NixOS on your own hardware will fail. At minimum, you'll need modify  to
 > create your own config in the `machines/` folder, retool your own sops-nix
@@ -52,7 +54,7 @@ configuration.
 On Linux, *running this script from the NixOS installation ISO* will prepare
 your system for NixOS by partitioning drives and mounting them. 
 
-> [!TIP]
+> [!TIP] 
 > When installing NixOS onto a headless local server, place your own
 > custom NixOS ISO file onto a USB drive with Ventoy. Ventoy can automatically
 > load the NixOS ISO file, and you can enable connectivity by building your own
