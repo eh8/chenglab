@@ -5,7 +5,22 @@
   lib,
   ...
 }: {
-  # Runtime
+  networking.firewall = {
+    # Homekit requires random port to connect with accessories. It is easier to
+    # whitelist an entire trusted network rather than tediously open ports for
+    # each camera.
+
+    # inspo: https://discourse.nixos.org/t/open-firewall-ports-only-towards-local-network/13037/2
+    extraCommands = ''
+      iptables -A nixos-fw -p tcp --source 10.0.10.0/24 -j nixos-fw-accept
+      iptables -A nixos-fw -p udp --source 10.0.10.0/24 -j nixos-fw-accept
+    '';
+    extraStopCommands = ''
+      iptables -D nixos-fw -p tcp --source 10.0.10.0/24 -j nixos-fw-accept || true
+      iptables -D nixos-fw -p udp --source 10.0.10.0/24 -j nixos-fw-accept || true
+    '';
+  };
+
   virtualisation.podman = {
     enable = true;
     autoPrune.enable = true;
@@ -16,7 +31,6 @@
     };
   };
 
-  # Containers
   virtualisation.oci-containers = {
     backend = "podman";
     containers = {
@@ -51,7 +65,7 @@
           WATCHTOWER_SCOPE = "scrypted";
         };
         volumes = [
-          "/var/run/docker.sock:/var/run/docker.sock:rw"
+          "/var/run/podman/podman.sock:/var/run/docker.sock:rw"
         ];
         ports = [
           "10444:8080/tcp"
@@ -84,9 +98,6 @@
   systemd = {
     tmpfiles.rules = ["d /var/lib/scrypted 0755 root root"];
 
-    # Root service
-    # When started, this will automatically create all resources and start
-    # the containers. When stopped, this will teardown all resources.
     targets = {
       "podman-compose-scrypted-root" = {
         unitConfig = {
@@ -144,6 +155,8 @@
       "backup-scrypted" = {
         description = "Backup Scrypted installation with Kopia";
         wantedBy = ["default.target"];
+        # warning: following line is needed to prevent race condition with homebridge.nix
+        after = ["backup-homebridge.service"];
         serviceConfig = {
           User = "root";
           ExecStartPre = "${pkgs.kopia}/bin/kopia repository connect from-config --token-file ${config.sops.secrets.kopia-repository-token.path}";
