@@ -16,6 +16,7 @@
     ./../../services/tailscale.nix
     ./../../services/netdata.nix
     ./../../services/homebridge.nix
+    ./../../services/scrypted.nix
   ];
 
   home-manager = {

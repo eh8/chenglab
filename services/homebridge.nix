@@ -12,7 +12,7 @@
   networking = {
     firewall = {
       # need to add ports for each added child bridge
-      allowedTCPPorts = [5353 50000 50001 50002 50003];
+      allowedTCPPorts = [5353 50000 50001 50002];
       allowedUDPPorts = [5353];
 
       allowedTCPPortRanges = [
