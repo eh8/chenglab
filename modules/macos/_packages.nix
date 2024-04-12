@@ -49,7 +49,6 @@
       "handbrake"
       "inkscape"
       "mac-mouse-fix"
-      "mpv"
       "ngrok"
       "obsidian"
       "rar"
