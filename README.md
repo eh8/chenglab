@@ -1,11 +1,12 @@
-<div style="width: 500px;margin: 0 auto;" align="center">
-  <img src=".github/images/background.gif" alt="chenglab" />
+<p align="center">
+  <img src=".github/images/background.gif" width=500 alt="chenglab" />
   <br>
-  <img src=".github/images/servers.jpg" alt="chenglab" style="border-radius: 12px;"/>
+  <img src=".github/images/servers.jpg" alt="chenglab" width=500 style="border-radius: 12px;"/>
   <br>
-  <p>Homelab hardware: ThinkCenter M710q Tiny, Intel i5-7500T and 8GB RAM</p>
+  Homelab hardware: ThinkCenter M710q Tiny, Intel i5-7500T and 8GB RAM
   <br>
-</div>
+  <br>
+</p>
 
 [![nixos unstable](https://img.shields.io/badge/NixOS-unstable-blue.svg?&logo=NixOS&logoColor=white)](https://nixos.org)
 [![blog post](https://img.shields.io/badge/blog%20post-snazzy-purple.svg)](https://chengeric.com/homelab?gh)
