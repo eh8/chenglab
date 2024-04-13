@@ -2,9 +2,6 @@
 <a href="https://nixos.org"><img src="https://img.shields.io/badge/NixOS-unstable-blue.svg?style=flat-square&logo=NixOS&logoColor=white" alt="nixos unstable"></a>
 <br>
 <img src=".github/images/background.gif" width=500 alt="chenglab" />
-</p>
-
-<p align="center">
 <img src=".github/images/servers.jpg" width=500 alt="chenglab" />
 <br>
 Homelab hardware: ThinkCenter M710q Tiny, Intel i5-7500T and 8GB RAM
