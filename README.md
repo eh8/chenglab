@@ -1,11 +1,15 @@
-<p align="center">
-<a href="https://nixos.org"><img src="https://img.shields.io/badge/NixOS-unstable-blue.svg?style=flat-square&logo=NixOS&logoColor=white" alt="nixos unstable"></a>
-<br>
-<img src=".github/images/background.gif" width=500 alt="chenglab" />
-<img src=".github/images/servers.jpg" width=500 alt="chenglab" />
-<br>
-Homelab hardware: ThinkCenter M710q Tiny, Intel i5-7500T and 8GB RAM
-</p>
+<div style="width: 500px;margin: 0 auto;" align="center">
+  <img src=".github/images/background.gif" alt="chenglab" />
+  <br>
+  <img src=".github/images/servers.jpg" alt="chenglab" style="border-radius: 12px;"/>
+  <br>
+  <p>Homelab hardware: ThinkCenter M710q Tiny, Intel i5-7500T and 8GB RAM</p>
+  <br>
+</div>
+
+[![nixos unstable](https://img.shields.io/badge/NixOS-unstable-blue.svg?&logo=NixOS&logoColor=white)](https://nixos.org)
+[![blog post](https://img.shields.io/badge/blog%20post-snazzy-purple.svg)](https://chengeric.com/homelab?gh)
+![stars](https://img.shields.io/github/stars/eh8/chenglab?logo=github&style=flat&color)
 
 ## Highlights
 
@@ -124,9 +128,8 @@ with how it appears on the official website.
 ## To-do
 
 1. [Secure boot](https://github.com/nix-community/lanzaboote)
-2. Write up explanatory blog post
-3. Implement binary caching
-4. [Wireless remote
+2. Implement binary caching
+3. [Wireless remote
    unlocking](https://discourse.nixos.org/t/wireless-connection-within-initrd/38317/13)
 
 
