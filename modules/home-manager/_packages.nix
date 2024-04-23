@@ -18,6 +18,7 @@
       alejandra
       bun
       devenv
+      doppler
       just
       nil
       nixos-rebuild # need for macOS
