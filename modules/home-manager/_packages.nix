@@ -19,6 +19,7 @@
       bun
       devenv
       doppler
+      flyctl
       just
       nil
       nixos-rebuild # need for macOS
