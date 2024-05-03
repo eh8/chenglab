@@ -134,4 +134,11 @@
       };
     };
   };
+
+  environment.persistence."/nix/persist" = {
+    directories = [
+      "/var/lib/scrypted"
+      "/var/lib/containers"
+    ];
+  };
 }

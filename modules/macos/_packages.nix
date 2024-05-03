@@ -49,6 +49,7 @@
       "handbrake"
       "inkscape"
       "mac-mouse-fix"
+      "mullvadvpn"
       "ngrok"
       "obsidian"
       "rar"
