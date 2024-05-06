@@ -5,7 +5,7 @@ keys:
   - &svr2chng age1xtv542cqwc2rsw9ywfvqw4ccpenvr6680z0vj8zk5vp6gtk4edgqph86uq
   - &svr3chng age19uv62f9stfhhlsyckmg5ll2t6c8dd4f6nytnd95ftl6v62js3fmq6g2ktk
 creation_rules:
-  - path_regex: secrets/[^/]+(\.(yaml|json|env|ini))?$
+  - path_regex: secrets/[^/]+(\.(yaml|json|env|ini|conf))?$
     key_groups:
       - age:
           - *mac1chng

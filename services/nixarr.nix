@@ -9,11 +9,30 @@
     ./_cloudflared.nix
   ];
 
+  sops.secrets.wg-conf = {
+    format = "binary";
+    sopsFile = ./../secrets/wg.conf;
+  };
+
   nixarr = {
     enable = true;
     mediaDir = "/fun/media";
     stateDir = "/var/lib/nixarr";
+
     jellyfin.enable = true;
+    prowlarr.enable = true;
+    radarr.enable = true;
+    sonarr.enable = true;
+
+    transmission = {
+      enable = false;
+      # vpn.enable = true;
+    };
+
+    # vpn = {
+    #   enable = true;
+    #   wgConf = config.sops.secrets.wg-conf.path;
+    # };
   };
 
   nixpkgs.config.packageOverrides = pkgs: {
@@ -34,6 +53,8 @@
   environment.systemPackages = with pkgs; [
     # To enable `intel_gpu_top`
     intel-gpu-tools
+    # because nixarr does not include it by default
+    wireguard-tools
   ];
 
   services.nginx = {
@@ -43,6 +64,38 @@
         useACMEHost = "chengeric.com";
         locations."/" = {
           proxyPass = "http://127.0.0.1:8096";
+        };
+      };
+
+      "prowlarr.chengeric.com" = {
+        forceSSL = true;
+        useACMEHost = "chengeric.com";
+        locations."/" = {
+          proxyPass = "http://127.0.0.1:9696";
+        };
+      };
+
+      "radarr.chengeric.com" = {
+        forceSSL = true;
+        useACMEHost = "chengeric.com";
+        locations."/" = {
+          proxyPass = "http://127.0.0.1:7878";
+        };
+      };
+
+      "sonarr.chengeric.com" = {
+        forceSSL = true;
+        useACMEHost = "chengeric.com";
+        locations."/" = {
+          proxyPass = "http://127.0.0.1:8989";
+        };
+      };
+
+      "transmission.chengeric.com" = {
+        forceSSL = true;
+        useACMEHost = "chengeric.com";
+        locations."/" = {
+          proxyPass = "http://127.0.0.1:9091";
         };
       };
     };
