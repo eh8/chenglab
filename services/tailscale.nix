@@ -5,6 +5,9 @@
     enable = true;
     openFirewall = true;
     authKeyFile = config.sops.secrets.tailscale-authkey.path;
+    extraUpFlags = [
+      "--advertise-routes 10.0.0.8"
+    ];
   };
 
   environment.persistence."/nix/persist" = {
