@@ -62,9 +62,10 @@ your system for NixOS by partitioning drives and mounting them.
 
 > [!TIP] 
 > When installing NixOS onto a headless local server, place your own
-> custom NixOS ISO file onto a USB drive with Ventoy. Ventoy can automatically
-> load the NixOS ISO file, and you can enable connectivity by building your own
-> custom ISO with your own personal SSH key.
+> custom NixOS ISO file onto a USB drive with Ventoy. [Ventoy can automatically
+> load the NixOS ISO file](https://chengeric.com/homelab/#remotely-entering-nixos-installer),
+> and you can enable connectivity by building your own custom ISO with your
+> own personal SSH key.
 
 ## Useful commands 🛠️
 
