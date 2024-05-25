@@ -17,7 +17,7 @@
   services = {
     nextcloud = {
       enable = true;
-      package = pkgs.nextcloud28;
+      package = pkgs.nextcloud29;
       hostName = "cloud.chengeric.com";
 
       https = true;
@@ -78,25 +78,6 @@
 
   systemd = {
     services = {
-      "nextcloud-generate-previews" = {
-        description = "Generate previews";
-        wantedBy = ["default.target"];
-        serviceConfig = {
-          RestartSec = 30;
-          ExecStart = "${lib.getExe config.services.nextcloud.occ} preview:pre-generate";
-        };
-      };
-
-      # This takes prohibitively long, so be careful when running it
-      # "nextcloud-generate-all-previews" = {
-      #   description = "Generate all previews";
-      #   wantedBy = ["default.target"];
-      #   serviceConfig = {
-      #     Type = "oneshot";
-      #     ExecStart = "${lib.getExe config.services.nextcloud.occ} preview:generate-all";
-      #   };
-      # };
-
       "backup-nextcloud" = {
         description = "Backup Nextcloud data with Kopia";
         wantedBy = ["default.target"];
@@ -110,14 +91,6 @@
     };
 
     timers = {
-      "nextcloud-generate-previews" = {
-        description = "Generate previews";
-        wantedBy = ["timers.target"];
-        timerConfig = {
-          OnCalendar = "*:0/10";
-        };
-      };
-
       "backup-nextcloud" = {
         description = "Backup Nextcloud data with Kopia";
         wantedBy = ["timers.target"];
