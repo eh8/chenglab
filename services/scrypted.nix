@@ -138,7 +138,8 @@
   environment.persistence."/nix/persist" = {
     directories = [
       "/var/lib/scrypted"
-      "/var/lib/containers"
+      # Commented out since this is already enabled in homebridge.nix
+      # /var/lib/containers
     ];
   };
 }
