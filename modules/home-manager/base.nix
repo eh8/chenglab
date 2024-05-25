@@ -58,6 +58,7 @@
       nix-direnv.enable = true;
     };
     ranger.enable = true;
+    fastfetch.enable = true;
   };
 
   # Nicely reload system units when changing configs

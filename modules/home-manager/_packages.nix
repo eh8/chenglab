@@ -11,7 +11,6 @@
       genact
       gti
       neo-cowsay
-      neofetch
       pipes-rs
 
       # development
