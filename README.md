@@ -49,7 +49,7 @@ M1 MacBook Air
 >    sops-nix
 > 1. Add an entry to flake.nix referencing the configuration created in step 1
 
-```
+```bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/eh8/chenglab/main/install.sh)"
 ```
 
