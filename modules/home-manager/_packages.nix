@@ -39,6 +39,7 @@
       imagemagick
       kopia
       pandoc
+      poppler_utils
       qrencode
       tree
       yt-dlp
