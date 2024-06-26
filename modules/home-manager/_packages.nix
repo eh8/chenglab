@@ -37,6 +37,7 @@
       gallery-dl
       gdu
       imagemagick
+      jdupes
       kopia
       pandoc
       poppler_utils

@@ -44,6 +44,7 @@
       "cursor"
       "discord"
       "dropbox"
+      "exifcleaner"
       "figma-agent"
       "figma"
       "firefox"
