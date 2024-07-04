@@ -22,6 +22,7 @@
       just
       nil
       nixos-rebuild # need for macOS
+      nodejs
       sops
       statix
       zola
