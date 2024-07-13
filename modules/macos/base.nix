@@ -43,6 +43,7 @@
         tilesize = 96;
         wvous-br-corner = 4;
         wvous-bl-corner = 11;
+        wvous-tr-corner = 5;
       };
 
       finder = {
