@@ -140,11 +140,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1721852138,
-        "narHash": "sha256-JH8N5uoqoVA6erV4O40VtKKHsnfmhvMGbxMNDLtim5o=",
+        "lastModified": 1722067813,
+        "narHash": "sha256-nxpzoKXwn+8RsxpxwD86mtEscOMw64ZD/vGSNWzGMlA=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "304a011325b7ac7b8c9950333cd215a7aa146b0e",
+        "rev": "975b83ca560d17db51a66cb2b0dc0e44213eab27",
         "type": "github"
       },
       "original": {
@@ -172,11 +172,11 @@
     "homebrew-cask": {
       "flake": false,
       "locked": {
-        "lastModified": 1721988680,
-        "narHash": "sha256-6uxwaEU+L2AQ7Abj1nkY2SBno6j3VeeGSMwVqtbRiC0=",
+        "lastModified": 1722074256,
+        "narHash": "sha256-ido76KasKAQ75P7Krc+6m+LCMnKKKDD/Hsak/k0kDa4=",
         "owner": "homebrew",
         "repo": "homebrew-cask",
-        "rev": "dde307eb529c4ab1610575de1e49a7dc01cab45a",
+        "rev": "ec0fd7823c3dfc3ce723f1bc3443ec2bb0045b60",
         "type": "github"
       },
       "original": {
@@ -188,11 +188,11 @@
     "homebrew-core": {
       "flake": false,
       "locked": {
-        "lastModified": 1721986133,
-        "narHash": "sha256-6YwOWguQNISh+uaWI8R7Z3qxkuHisXJJR8Ht4F04f8A=",
+        "lastModified": 1722066230,
+        "narHash": "sha256-gZC7blPLD6JhjAVqT3DAqwEh3Bz6TLHx3uJei5Lljx8=",
         "owner": "homebrew",
         "repo": "homebrew-core",
-        "rev": "395b0f1ae11e7ff4df383a002aaa55f39806c7f1",
+        "rev": "87e96013a1516e59f51557fdc5a601a7e3a31f83",
         "type": "github"
       },
       "original": {
@@ -223,11 +223,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1721719500,
-        "narHash": "sha256-nnkqjv4Y37Hydjh6HE9wW4kSkV5Q7q4iIXlL5lwUFOw=",
+        "lastModified": 1722009762,
+        "narHash": "sha256-KV3H6BA9UNPDdkubDMQCWKz6Z4XokHsYazRkJJZZurA=",
         "owner": "LnL7",
         "repo": "nix-darwin",
-        "rev": "884f3fe6d9bf056ba0017c132c39c1f0d07d4fec",
+        "rev": "72bbc11aedcaba6f9a748786bb0aff9213d8fb36",
         "type": "github"
       },
       "original": {
@@ -289,11 +289,11 @@
         "vpnconfinement": "vpnconfinement"
       },
       "locked": {
-        "lastModified": 1721806788,
-        "narHash": "sha256-9ohvdiBExhZZdLTi+LlZ5t9aHN0ckQwNHaK2UxPnkYs=",
+        "lastModified": 1721999393,
+        "narHash": "sha256-BjrPxYEH1OPpGfm7aD71CvnR1m4Qlmioc2OaGaBRF8I=",
         "owner": "rasmus-kirk",
         "repo": "nixarr",
-        "rev": "fc5d2f69579979c0b04fb7fa825aeec4ddad0dde",
+        "rev": "8036fe35e98f618148f38b5321fe3fa1e929bbf4",
         "type": "github"
       },
       "original": {
