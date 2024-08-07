@@ -1,0 +1,40 @@
+name: "build"
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - nixos-wsl-starter-*
+  pull_request: {}
+  workflow_call: {}
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: cachix/install-nix-action@v27
+        with:
+          extra_nix_config: "access-tokens = github.com=${{ github.token }}"
+
+      - name: Build tarball
+        run: |
+          nix_bin=$(which nix)
+          sudo $nix_bin run .#nixosConfigurations.workchng.config.system.build.tarballBuilder
+
+      - name: Upload tarball
+        uses: actions/upload-artifact@v3
+        with:
+          name: nixos-wsl.tar.gz
+          path: nixos-wsl.tar.gz
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: nixos-wsl.tar.gz
