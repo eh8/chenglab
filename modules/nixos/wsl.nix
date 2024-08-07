@@ -19,8 +19,11 @@
   };
 
   programs.zsh.enable = true;
-  wsl.enable = true;
+  security.sudo.wheelNeedsPassword = false;
+  time.timeZone = "America/New_York";
   wsl.defaultUser = "eh8";
+  wsl.enable = true;
+  zramSwap.enable = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "24.05";
