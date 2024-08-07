@@ -14,7 +14,7 @@
 
 ## Highlights
 
-These are the Nix/NixOS configurations for my homelab servers, desktop, and 
+These are the Nix/NixOS configurations for my homelab servers, WSL setup, and 
 M1 MacBook Air 
 
 - ❄️ Nix flakes handle upstream dependencies, tracks unstable channel of Nixpkgs
@@ -32,7 +32,8 @@ M1 MacBook Air
 - 🤖 `flake.lock` updated daily via GitHub Action, servers are configured to
   automatically upgrade daily via `modules/nixos/auto-update.nix`
 - 🧱 Modular architecture promotes readability for me and copy-and-paste-ability
-  for you 
+  for you
+- 📦 Continously deployed custom NixOS on WSL tarball and ISO file
 
 ## Getting started
 
