@@ -23,16 +23,20 @@ jobs:
       - uses: cachix/install-nix-action@v27
 
       - name: Build tarball
-        run: sudo nix run .#nixosConfigurations.workchng.config.system.build.tarballBuilder
+        run: |
+          nix_bin=$(which nix)
+          sudo $nix_bin run .#nixosConfigurations.workchng.config.system.build.tarballBuilder
+
+      - name: Build ISO
+        run: |
+          nix_bin=$(which nix)
+          sudo $nix_bin run .#nixosConfigurations.iso1chng.config.system.build.isoImage
 
       - name: Upload tarball
         uses: actions/upload-artifact@v3
         with:
           name: nixos-wsl.tar.gz
           path: nixos-wsl.tar.gz
-
-      - name: Build ISO
-        run: sudo nix run .#nixosConfigurations.iso1chng.config.system.build.isoImage
 
       - name: Rename ISO
         run: sudo mv nixos-*.iso nixos.iso
