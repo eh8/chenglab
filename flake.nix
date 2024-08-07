@@ -44,6 +44,11 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     };
+
+    nixos-wsl = {
+      url = "github:nix-community/NixOS-WSL/main";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -72,9 +77,9 @@
     };
 
     nixosConfigurations = {
-      dsk1chng = nixpkgs.lib.nixosSystem {
+      workchng = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = [./machines/dsk1chng/configuration.nix];
+        modules = [./machines/workchng/configuration.nix];
       };
 
       iso1chng = nixpkgs.lib.nixosSystem {

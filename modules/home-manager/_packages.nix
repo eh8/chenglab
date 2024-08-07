@@ -15,6 +15,7 @@
 
       # development
       alejandra
+      azure-cli
       bun
       devenv
       doppler

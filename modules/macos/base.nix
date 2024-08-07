@@ -90,6 +90,5 @@
     osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/System/Library/Desktop Pictures/Solid Colors/Black.png"'
   '';
 
-  nixpkgs.hostPlatform = "aarch64-darwin";
   system.stateVersion = 4;
 }
