@@ -30,16 +30,16 @@ jobs:
       - name: Build ISO
         run: |
           nix_bin=$(which nix)
-          sudo $nix_bin run .#nixosConfigurations.iso1chng.config.system.build.isoImage
+          sudo $nix_bin build .#nixosConfigurations.iso1chng.config.system.build.isoImage
+
+      - name: Rename ISO
+        run: sudo mv result/iso/nixos-*.iso nixos.iso
 
       - name: Upload tarball
         uses: actions/upload-artifact@v3
         with:
           name: nixos-wsl.tar.gz
           path: nixos-wsl.tar.gz
-
-      - name: Rename ISO
-        run: sudo mv nixos-*.iso nixos.iso
 
       - name: Upload ISO
         uses: actions/upload-artifact@v3
