@@ -21,13 +21,9 @@ jobs:
           fetch-depth: 0
 
       - uses: cachix/install-nix-action@v27
-        with:
-          extra_nix_config: "access-tokens = github.com=${{ github.token }}"
 
       - name: Build tarball
-        run: |
-          nix_bin=$(which nix)
-          sudo $nix_bin run .#nixosConfigurations.workchng.config.system.build.tarballBuilder
+        run: nix run .#nixosConfigurations.workchng.config.system.build.tarballBuilder
 
       - name: Upload tarball
         uses: actions/upload-artifact@v3
@@ -36,9 +32,7 @@ jobs:
           path: nixos-wsl.tar.gz
 
       - name: Build ISO
-        run: |
-          nix_bin=$(which nix)
-          sudo $nix_bin build .#nixosConfigurations.iso1chng.config.system.build.isoImage
+        run: nix run .#nixosConfigurations.iso1chng.config.system.build.isoImage
 
       - name: Rename ISO
         run: mv nixos-*.iso nixos.iso
