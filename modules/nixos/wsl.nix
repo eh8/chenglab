@@ -12,7 +12,6 @@
     };
   };
 
-  users.mutableUsers = false;
   users.users.eh8 = {
     isNormalUser = true;
     description = "eh8";
