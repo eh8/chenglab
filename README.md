@@ -33,7 +33,6 @@ desktop/M1 MacBook Air, and WSL setup for work.
   automatically upgrade daily via `modules/nixos/auto-update.nix`
 - 🧱 Modular architecture promotes readability for me and copy-and-paste-ability
   for you
-- 📦 Continously deployed custom NixOS on WSL tarball and ISO file
 
 ## Getting started
 
@@ -61,12 +60,16 @@ configuration.
 On Linux, _running this script from the NixOS installation ISO_ will prepare
 your system for NixOS by partitioning drives and mounting them.
 
+To use my Windows Subsystem for Linux configuration, I encourage you to visit
+the [NixOS-WSL repo](https://github.com/nix-community/NixOS-WSL) and follow the steps 
+there, but to replace their tarball [_with the latest release of mine_.](https://github.com/eh8/chenglab/releases)
+
 > [!TIP]
 > When installing NixOS onto a headless local server, place your own
 > custom NixOS ISO file onto a USB drive with Ventoy. [Ventoy can automatically
 > load the NixOS ISO file](https://chengeric.com/homelab/#remotely-entering-nixos-installer),
 > and you can enable connectivity by building your own custom ISO with your
-> own personal SSH key.
+> own personal SSH key. My custom ISO is baked with my own key.
 
 ## Useful commands 🛠️
 
