@@ -47,7 +47,8 @@ On macOS, this script will install `nix` using the
 [Determinate Systems Nix installer](https://zero-to-nix.com/start/install) and
 prompt you to install my configuration.
 
-> [!IMPORTANT] You'll need to run this script as sudo or have sudo permissions.
+> [!IMPORTANT] 
+> You'll need to run this script as sudo or have sudo permissions.
 
 ```bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/eh8/chenglab/main/install.sh)"
@@ -55,9 +56,11 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/eh8/chenglab/main/instal
 
 ### NixOS (Linux)
 
-> [!IMPORTANT] You'll need to run this script as sudo or have sudo permissions.
+> [!IMPORTANT] 
+> You'll need to run this script as sudo or have sudo permissions.
 
-> [!WARNING] This script is primarily meant for my own use. Using it to install
+> [!WARNING] 
+> This script is primarily meant for my own use. Using it to install
 > NixOS on your own hardware will fail. At minimum, you'll need to do the
 > following before attemping installation:
 >
@@ -73,7 +76,8 @@ your system for NixOS by partitioning drives and mounting them.
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/eh8/chenglab/main/install.sh)"
 ```
 
-> [!TIP] When installing NixOS onto a headless local server, place your own
+> [!TIP] 
+> When installing NixOS onto a headless local server, place your own
 > custom NixOS ISO file onto a USB drive with Ventoy.
 > [Ventoy can automatically load the NixOS ISO file](https://chengeric.com/homelab/#remotely-entering-nixos-installer),
 > and you can enable connectivity by building your own custom ISO with your own
