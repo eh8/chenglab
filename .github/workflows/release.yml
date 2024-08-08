@@ -1,10 +1,11 @@
 ---
 # inspo: https://github.com/LGUG2Z/nixos-wsl-starter/blob/master/.github/workflows/build.yml
-name: "Release tarball and ISO"
+name: "Release WSL tarball and ISO"
 on:
   push:
     tags:
       - v*
+  workflow_dispatch: null
 jobs:
   build:
     runs-on: ubuntu-latest
