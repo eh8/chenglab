@@ -14,21 +14,21 @@
 
 ## Highlights
 
-These are the Nix/NixOS configurations for my homelab servers, WSL setup, and 
-M1 MacBook Air 
+These are the Nix-based configurations for my homelab servers, personal
+desktop/M1 MacBook Air, and WSL setup for work.
 
-- ❄️ Nix flakes handle upstream dependencies, tracks unstable channel of Nixpkgs
+- ❄️ Nix flakes handle upstream dependencies and track Nixpkgs unstable
 - 🏠 [home-manager](https://github.com/nix-community/home-manager) manages
-  dotfiles 
-- 🍎 [nix-darwin](https://github.com/LnL7/nix-darwin) manages MacBook 
-- 🤫 [sops-nix](https://github.com/Mic92/sops-nix) manages secrets 
-- 🔑 Remote initrd unlock system to decrypt drives on boot 
-- 🌬️ Root on tmpfs aka impermanence 
-- 🔒 Automatic Let's Encrypt certificate registration and renewal 
+  dotfiles
+- 🍎 [nix-darwin](https://github.com/LnL7/nix-darwin) manages MacBook
+- 🤫 [sops-nix](https://github.com/Mic92/sops-nix) manages secrets
+- 🔑 Remote initrd unlock system to decrypt drives on boot
+- 🌬️ Root on tmpfs aka impermanence
+- 🔒 Automatic Let's Encrypt certificate registration and renewal
 - 🧩 Tailscale, Nextcloud, Jellyfin, Homebridge, Scrypted, among other nice
-  self-hosted applications 
+  self-hosted applications
 - ⚡️ `justfile` contains useful aliases for many frequent and atrociously long
-  `nix` commands 
+  `nix` commands
 - 🤖 `flake.lock` updated daily via GitHub Action, servers are configured to
   automatically upgrade daily via `modules/nixos/auto-update.nix`
 - 🧱 Modular architecture promotes readability for me and copy-and-paste-ability
@@ -37,14 +37,14 @@ M1 MacBook Air
 
 ## Getting started
 
-> [!IMPORTANT] 
+> [!IMPORTANT]
 > You'll need to run this script as sudo or have sudo permissions.
 
-> [!WARNING] 
+> [!WARNING]
 > This script is primarily meant for my own use. Using it to install NixOS on
 > your own hardware will fail. At minimum, you'll need to do the following
 > before attemping installation:
-> 
+>
 > 1. Create a configuration for your own device in the `machines/` folder
 > 1. Retool your own sops-nix secrets or remove them entirely if you don't use
 >    sops-nix
@@ -58,10 +58,10 @@ On macOS, this script will install `nix` using the [Determinate Systems Nix
 installer](https://zero-to-nix.com/start/install) and prompt you to install my
 configuration.
 
-On Linux, *running this script from the NixOS installation ISO* will prepare
-your system for NixOS by partitioning drives and mounting them. 
+On Linux, _running this script from the NixOS installation ISO_ will prepare
+your system for NixOS by partitioning drives and mounting them.
 
-> [!TIP] 
+> [!TIP]
 > When installing NixOS onto a headless local server, place your own
 > custom NixOS ISO file onto a USB drive with Ventoy. [Ventoy can automatically
 > load the NixOS ISO file](https://chengeric.com/homelab/#remotely-entering-nixos-installer),
@@ -99,7 +99,7 @@ modify `secrets/secrets.yaml`:
 just secrets-edit
 ```
 
-### Syncing sops keys for a new machine 
+### Syncing sops keys for a new machine
 
 ```
 just secrets-sync
@@ -134,7 +134,6 @@ with how it appears on the official website.
 2. Implement binary caching
 3. [Wireless remote
    unlocking](https://discourse.nixos.org/t/wireless-connection-within-initrd/38317/13)
-
 
 ## Frequently used resources
 

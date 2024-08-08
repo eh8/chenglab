@@ -1,18 +1,12 @@
 ---
 # inspo: https://github.com/LGUG2Z/nixos-wsl-starter/blob/master/.github/workflows/build.yml
-name: "Build tarball and ISO"
+name: "Release tarball and ISO"
 on:
   push:
-    branches:
-      - main
     tags:
       - v*
-  pull_request: {}
-  workflow_call: {}
-
 jobs:
   build:
-    name: Build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
