@@ -82,6 +82,11 @@
         modules = [./machines/workchng/configuration.nix];
       };
 
+      dsk1chng = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [./machines/dsk1chng/configuration.nix];
+      };
+
       iso1chng = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs outputs;};
