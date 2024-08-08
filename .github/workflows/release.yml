@@ -1,6 +1,6 @@
 ---
 # inspo: https://github.com/LGUG2Z/nixos-wsl-starter/blob/master/.github/workflows/build.yml
-name: "Release WSL tarball and ISO"
+name: "Release custom WSL tarball and NixOS ISO"
 on:
   push:
     tags:
