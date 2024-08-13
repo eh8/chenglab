@@ -74,7 +74,7 @@
     ffmpeg
   ];
 
-  sops.secrets.kopia-repository-token = {};
+  sops.secrets."kopia-repository-token" = {};
 
   systemd = {
     services = {
@@ -83,7 +83,7 @@
         wantedBy = ["default.target"];
         serviceConfig = {
           User = "root";
-          ExecStartPre = "${pkgs.kopia}/bin/kopia repository connect from-config --token-file ${config.sops.secrets.kopia-repository-token.path}";
+          ExecStartPre = "${pkgs.kopia}/bin/kopia repository connect from-config --token-file ${config.sops.secrets."kopia-repository-token".path}";
           ExecStart = "${pkgs.kopia}/bin/kopia snapshot create /fun/nextcloud";
           ExecStartPost = "${pkgs.kopia}/bin/kopia repository disconnect";
         };

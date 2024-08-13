@@ -9,14 +9,19 @@
     ./_cloudflared.nix
   ];
 
-  sops.secrets.wg-conf = {
-    format = "binary";
-    sopsFile = ./../secrets/wg.conf;
+  sops = {
+    secrets = {
+      "kopia-repository-token" = {};
+      "wg.conf" = {
+        format = "binary";
+        sopsFile = ./../secrets/wg.conf;
+      };
+    };
   };
 
   nixarr = {
     enable = true;
-    mediaDir = "/fun/media";
+    mediaDir = "/fun";
     stateDir = "/var/lib/nixarr";
 
     jellyfin.enable = true;
@@ -25,21 +30,30 @@
     sonarr.enable = true;
 
     transmission = {
-      enable = false;
-      # vpn.enable = true;
+      enable = true;
+      peerPort = 46634;
+      vpn.enable = true;
+      extraSettings = {
+        incomplete-dir-enabled = false;
+        rpc-authentication-required = true;
+        rpc-username = "eh8";
+        # I sure hope I don't regret this!
+        rpc-whitelist-enabled = false;
+        rpc-password = "{7d827abfb09b77e45fe9e72d97956ab8fb53acafoPNV1MpJ";
+      };
     };
 
-    # vpn = {
-    #   enable = true;
-    #   wgConf = config.sops.secrets.wg-conf.path;
-    # };
+    vpn = {
+      enable = true;
+      wgConf = config.sops.secrets."wg.conf".path;
+    };
   };
 
   nixpkgs.config.packageOverrides = pkgs: {
     vaapiIntel = pkgs.vaapiIntel.override {enableHybridCodec = true;};
   };
 
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
       intel-compute-runtime # OpenCL filter support (hardware tonemapping and subtitle burn-in)
@@ -63,6 +77,7 @@
         forceSSL = true;
         useACMEHost = "chengeric.com";
         locations."/" = {
+          recommendedProxySettings = true;
           proxyPass = "http://127.0.0.1:8096";
         };
       };
@@ -71,6 +86,7 @@
         forceSSL = true;
         useACMEHost = "chengeric.com";
         locations."/" = {
+          recommendedProxySettings = true;
           proxyPass = "http://127.0.0.1:9696";
         };
       };
@@ -79,6 +95,7 @@
         forceSSL = true;
         useACMEHost = "chengeric.com";
         locations."/" = {
+          recommendedProxySettings = true;
           proxyPass = "http://127.0.0.1:7878";
         };
       };
@@ -87,6 +104,7 @@
         forceSSL = true;
         useACMEHost = "chengeric.com";
         locations."/" = {
+          recommendedProxySettings = true;
           proxyPass = "http://127.0.0.1:8989";
         };
       };
@@ -101,8 +119,6 @@
     };
   };
 
-  sops.secrets.kopia-repository-token = {};
-
   systemd = {
     tmpfiles.rules = ["d /var/lib/nixarr 0755 root root"];
 
@@ -112,7 +128,7 @@
         wantedBy = ["default.target"];
         serviceConfig = {
           User = "root";
-          ExecStartPre = "${pkgs.kopia}/bin/kopia repository connect from-config --token-file ${config.sops.secrets.kopia-repository-token.path}";
+          ExecStartPre = "${pkgs.kopia}/bin/kopia repository connect from-config --token-file ${config.sops.secrets."kopia-repository-token".path}";
           ExecStart = "${pkgs.kopia}/bin/kopia snapshot create /var/lib/nixarr";
           ExecStartPost = "${pkgs.kopia}/bin/kopia repository disconnect";
         };

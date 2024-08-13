@@ -70,6 +70,7 @@
         forceSSL = true;
         useACMEHost = "chengeric.com";
         locations."/" = {
+          recommendedProxySettings = true;
           proxyPass = "https://127.0.0.1:10443";
         };
       };
@@ -108,7 +109,7 @@
         after = ["backup-homebridge.service"];
         serviceConfig = {
           User = "root";
-          ExecStartPre = "${pkgs.kopia}/bin/kopia repository connect from-config --token-file ${config.sops.secrets.kopia-repository-token.path}";
+          ExecStartPre = "${pkgs.kopia}/bin/kopia repository connect from-config --token-file ${config.sops.secrets."kopia-repository-token".path}";
           ExecStart = "${pkgs.kopia}/bin/kopia snapshot create /var/lib/scrypted";
           ExecStartPost = "${pkgs.kopia}/bin/kopia repository disconnect";
         };

@@ -64,13 +64,14 @@
         forceSSL = true;
         useACMEHost = "chengeric.com";
         locations."/" = {
+          recommendedProxySettings = true;
           proxyPass = "http://127.0.0.1:8581";
         };
       };
     };
   };
 
-  sops.secrets.kopia-repository-token = {};
+  sops.secrets."kopia-repository-token" = {};
 
   systemd = {
     tmpfiles.rules = ["d /var/lib/homebridge 0755 root root"];
@@ -100,7 +101,7 @@
         wantedBy = ["default.target"];
         serviceConfig = {
           User = "root";
-          ExecStartPre = "${pkgs.kopia}/bin/kopia repository connect from-config --token-file ${config.sops.secrets.kopia-repository-token.path}";
+          ExecStartPre = "${pkgs.kopia}/bin/kopia repository connect from-config --token-file ${config.sops.secrets."kopia-repository-token".path}";
           ExecStart = "${pkgs.kopia}/bin/kopia snapshot create /var/lib/homebridge";
           ExecStartPost = "${pkgs.kopia}/bin/kopia repository disconnect";
         };
