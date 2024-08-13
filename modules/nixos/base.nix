@@ -35,8 +35,8 @@
   sops = {
     defaultSopsFile = ./../../secrets/secrets.yaml;
     age.sshKeyPaths = ["/nix/secret/initrd/ssh_host_ed25519_key"];
-    secrets.user-password.neededForUsers = true;
-    secrets.user-password = {};
+    secrets."user-password".neededForUsers = true;
+    secrets."user-password" = {};
   };
 
   users.mutableUsers = false;
@@ -48,7 +48,7 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIkcgwjYMHqUDnx0JIOSXQ/TN80KEaFvvUWA2qH1AHFC"
     ];
     shell = pkgs.zsh;
-    hashedPasswordFile = config.sops.secrets.user-password.path;
+    hashedPasswordFile = config.sops.secrets."user-password".path;
   };
 
   services = {
