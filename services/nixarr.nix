@@ -31,14 +31,15 @@
 
     transmission = {
       enable = true;
+      # todo: figure out how to update this easier
       peerPort = 46634;
       vpn.enable = true;
       extraSettings = {
         incomplete-dir-enabled = false;
         rpc-authentication-required = true;
         rpc-username = "eh8";
-        # I sure hope I don't regret this!
         rpc-whitelist-enabled = false;
+        # todo: figure out how to integrate rpc-password into sops-nix
         rpc-password = "{7d827abfb09b77e45fe9e72d97956ab8fb53acafoPNV1MpJ";
       };
     };
