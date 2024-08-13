@@ -1,6 +1,8 @@
 {config, ...}: {
-  sops.secrets.cloudflare-api-email = {};
-  sops.secrets.cloudflare-api-key = {};
+  sops.secrets = {
+    "cloudflare-api-email" = {};
+    "cloudflare-api-key" = {};
+  };
 
   # inspo: https://carjorvaz.com/posts/setting-up-wildcard-lets-encrypt-certificates-on-nixos/
   security.acme = {
@@ -14,7 +16,7 @@
       dnsPropagationCheck = true;
       # inspo: https://go-acme.github.io/lego/dns/cloudflare/
       credentialFiles = {
-        "CLOUDFLARE_DNS_API_TOKEN_FILE" = config.sops.secrets.cloudflare-api-key.path;
+        "CLOUDFLARE_DNS_API_TOKEN_FILE" = config.sops.secrets."cloudflare-api-key".path;
       };
     };
   };
