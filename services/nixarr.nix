@@ -36,6 +36,8 @@
       vpn.enable = true;
       extraSettings = {
         incomplete-dir-enabled = false;
+        speed-limit-up = 500;
+        speed-limit-up-enabled = true;
         rpc-authentication-required = true;
         rpc-username = "eh8";
         rpc-whitelist-enabled = false;
