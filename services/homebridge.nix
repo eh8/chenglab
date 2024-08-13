@@ -10,8 +10,7 @@
   ];
 
   # Initially generated using compose2nix v0.1.9.
-  # Based off of https://github.com/homebridge/homebridge/wiki/Install-Homebridge-on-Docker
-
+  # inspo: https://github.com/homebridge/homebridge/wiki/Install-Homebridge-on-Docker
   # inspo: https://lmy.medium.com/from-ansible-to-nixos-3a117b140bec
   networking.firewall = {
     # need to add ports for each added child bridge
