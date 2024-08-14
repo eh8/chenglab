@@ -13,7 +13,7 @@
         Hour = 0;
         Minute = 0;
       };
-      options = "--delete-older-than 1w";
+      options = "--delete-older-than 7d";
     };
     settings = {
       experimental-features = "nix-command flakes";
