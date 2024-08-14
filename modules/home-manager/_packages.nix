@@ -23,10 +23,13 @@
         gdu
         genact
         gti
+        htop
+        iftop
         imagemagick
         jdupes
         kopia
         neo-cowsay
+        nethogs
         pandoc
         pipes-rs
         poppler_utils
