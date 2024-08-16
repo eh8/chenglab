@@ -24,6 +24,7 @@
         genact
         gti
         htop
+        hyperfine
         iftop
         imagemagick
         jdupes
@@ -34,6 +35,7 @@
         pipes-rs
         poppler_utils
         qrencode
+        trashy
         tree
         yt-dlp
       ]
