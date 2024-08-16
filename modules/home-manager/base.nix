@@ -23,9 +23,9 @@
   programs = {
     git = {
       enable = true;
-      delta = {
-        enable = true;
-      };
+      # delta = {
+      #   enable = true;
+      # };
     };
     helix = {
       enable = true;
