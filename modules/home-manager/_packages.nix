@@ -25,17 +25,14 @@
         gti
         htop
         hyperfine
-        iftop
         imagemagick
         jdupes
         kopia
         neo-cowsay
-        nethogs
         pandoc
         pipes-rs
         poppler_utils
         qrencode
-        trashy
         tree
         yt-dlp
       ]
