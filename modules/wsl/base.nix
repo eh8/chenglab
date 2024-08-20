@@ -1,4 +1,9 @@
 {pkgs, ...}: {
+  wsl = {
+    enable = true;
+    defaultUser = "eh8";
+  };
+
   nixpkgs.config.allowUnfree = true;
   nix = {
     gc = {
@@ -21,8 +26,6 @@
   programs.zsh.enable = true;
   security.sudo.wheelNeedsPassword = false;
   time.timeZone = "America/New_York";
-  wsl.defaultUser = "eh8";
-  wsl.enable = true;
   zramSwap.enable = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
