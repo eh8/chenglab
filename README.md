@@ -114,11 +114,11 @@ Install `just` to access the simple aliases below
 
 ### Locally deploy changes
 
-```
+```bash
 just deploy macos
 ```
 
-```
+```bash
 just deploy MACHINE
 ```
 
@@ -126,7 +126,7 @@ just deploy MACHINE
 
 To remotely deploy `MACHINE`, which has an IP address of `10.0.10.2`
 
-```
+```bash
 just deploy MACHINE 10.0.10.2
 ```
 
@@ -135,13 +135,13 @@ just deploy MACHINE 10.0.10.2
 Make sure each machine's public key is listed as entry in `.sops.yaml`. To
 modify `secrets/secrets.yaml`:
 
-```
+```bash
 just secrets-edit
 ```
 
 ### Syncing sops keys for a new machine
 
-```
+```bash
 just secrets-sync
 ```
 
@@ -151,7 +151,7 @@ just secrets-sync
 
 To modify user password, first generate a hash
 
-```
+```bash
 echo "password" | mkpasswd -m SHA-512 -s
 ```
 
