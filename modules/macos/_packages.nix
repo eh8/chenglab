@@ -42,7 +42,6 @@
       "caffeine"
       "camo-studio"
       "cursor"
-      "displaylink"
       "discord"
       "dropbox"
       "exifcleaner"
