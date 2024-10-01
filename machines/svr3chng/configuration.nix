@@ -14,7 +14,7 @@
     ./../../modules/nixos/auto-update.nix
 
     ./../../services/tailscale.nix
-    ./../../services/netdata.nix
+    # ./../../services/netdata.nix
     ./../../services/homebridge.nix
     ./../../services/scrypted.nix
   ];
