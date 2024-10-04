@@ -15,7 +15,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: cachix/install-nix-action@V28
+      - uses: cachix/install-nix-action@v29
 
       - name: Build tarball
         run: |
