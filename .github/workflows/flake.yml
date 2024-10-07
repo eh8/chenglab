@@ -14,7 +14,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: cachix/install-nix-action@v29
+      - uses: cachix/install-nix-action@v30
 
       - run: nix flake update
 
