@@ -64,7 +64,7 @@
           (lib.mkIf pkgs.stdenv.isDarwin 15)
         ];
         normal = {
-          family = "Iosevka Nerd Font";
+          family = "Iosevka NF";
         };
       };
     };
