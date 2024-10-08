@@ -50,7 +50,6 @@
           flyctl
           just
           kubectl
-          kubernetes-helm
           nil
           nixos-rebuild # need for macOS
           nodejs
