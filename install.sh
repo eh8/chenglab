@@ -105,7 +105,7 @@ elif [ "$(uname)" == "Linux" ]; then
 
   # Completed
   echo -e "\n\033[1;32mAll steps completed successfully. NixOS is now ready to be installed.\033[0m\n"
-  echo -e "Remember to add the server's host public key to sops-nix before installing!"
+  echo -e "Remember to commit and push the new server's public host key to sops-nix/update all sops encrypted files before installing!"
   echo -e "To install NixOS configuration for hostname, run the following command:\n"
   echo -e "\033[1msudo nixos-install --no-root-passwd --root /mnt --flake github:eh8/chenglab#hostname\033[0m\n"
 fi

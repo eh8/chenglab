@@ -23,13 +23,13 @@ gc:
 repair:
   sudo nix-store --verify --check-contents --repair
 
-secrets-edit:
+sopsedit:
   sops secrets/secrets.yaml
 
-secrets-rotate:
+sopsrotate:
   for file in secrets/*; do sops --rotate --in-place "$file"; done
   
-secrets-sync:
+sopsupdate:
   for file in secrets/*; do sops updatekeys "$file"; done
 
 build-iso:
