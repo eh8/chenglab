@@ -42,8 +42,6 @@
         if builtins.substring 0 3 osConfig.networking.hostName != "svr"
         then [
           alejandra
-          # inspo: https://mynixos.com/nixpkgs/package/azure-cli
-          (azure-cli.withExtensions [azure-cli.extensions.k8s-extension])
           bun
           devenv
           doppler
@@ -55,6 +53,7 @@
           nodejs
           sops
           statix
+          stripe-cli
           zola
         ]
         else []

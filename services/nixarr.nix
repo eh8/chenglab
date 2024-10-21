@@ -31,6 +31,7 @@
 
     transmission = {
       enable = true;
+      package = pkgs.transmission_4;
       # todo: figure out how to update this easier
       peerPort = 46634;
       vpn.enable = true;
@@ -56,7 +57,7 @@
     vaapiIntel = pkgs.vaapiIntel.override {enableHybridCodec = true;};
   };
 
-  hardware.graphics = {
+  hardware.opengl = {
     enable = true;
     extraPackages = with pkgs; [
       intel-compute-runtime # OpenCL filter support (hardware tonemapping and subtitle burn-in)
