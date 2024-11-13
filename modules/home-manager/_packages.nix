@@ -43,11 +43,9 @@
         then [
           alejandra
           bun
-          devenv
           doppler
           flyctl
           just
-          kubectl
           nil
           nixos-rebuild # need for macOS
           nodejs
