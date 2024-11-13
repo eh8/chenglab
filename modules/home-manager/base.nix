@@ -23,9 +23,6 @@
   programs = {
     git = {
       enable = true;
-      # delta = {
-      #   enable = true;
-      # };
     };
     helix = {
       enable = true;
@@ -57,7 +54,6 @@
       enableZshIntegration = true;
       nix-direnv.enable = true;
     };
-    ranger.enable = true;
     fastfetch.enable = true;
   };
 
