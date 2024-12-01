@@ -52,6 +52,7 @@
           sops
           statix
           stripe-cli
+          wrangler
           zola
         ]
         else []

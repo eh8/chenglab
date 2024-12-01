@@ -8,7 +8,7 @@
   <br>
 </p>
 
-[![nixos 24.05](https://img.shields.io/badge/NixOS-24.05-blue.svg?&logo=NixOS&logoColor=white)](https://nixos.org)
+[![nixos 24.11](https://img.shields.io/badge/NixOS-24.11-blue.svg?&logo=NixOS&logoColor=white)](https://nixos.org)
 [![blog post](https://img.shields.io/badge/blog%20post-snazzy-purple.svg)](https://chengeric.com/homelab?gh)
 ![stars](https://img.shields.io/github/stars/eh8/chenglab?logo=github&style=flat&color)
 
@@ -17,7 +17,7 @@
 This repo contains the Nix configurations for my homelab, AMD Ryzen desktop, M1
 MacBook Air, and work WSL setup.
 
-- ❄️ Nix flakes handle upstream dependencies and track latest stable release of Nixpkgs (currently 24.05)
+- ❄️ Nix flakes handle upstream dependencies and track latest stable release of Nixpkgs (currently 24.11)
 - 🏠 [home-manager](https://github.com/nix-community/home-manager) manages
   dotfiles
 - 🍎 [nix-darwin](https://github.com/LnL7/nix-darwin) manages MacBook
