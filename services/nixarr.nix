@@ -9,6 +9,15 @@
     ./_cloudflared.nix
   ];
 
+  # temp
+  # inspo: https://discourse.nixos.org/t/solved-sonarr-is-broken-in-24-11-unstable-aka-how-the-hell-do-i-use-nixpkgs-config-permittedinsecurepackages/56828/2
+  nixpkgs.config.permittedInsecurePackages = [
+    "aspnetcore-runtime-6.0.36"
+    "aspnetcore-runtime-wrapped-6.0.36"
+    "dotnet-sdk-6.0.428"
+    "dotnet-sdk-wrapped-6.0.428"
+  ];
+
   sops = {
     secrets = {
       "kopia-repository-token" = {};
