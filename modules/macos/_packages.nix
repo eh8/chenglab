@@ -58,7 +58,6 @@
     ];
     masApps = {
       "1Password for Safari" = 1569813296;
-      "GarageBand" = 682658836;
       "Infuse" = 1136220934;
       "Messenger" = 1480068668;
       "Microsoft Excel" = 462058435;
