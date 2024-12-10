@@ -2,7 +2,7 @@
   home = {
     packages = with pkgs; [
       inter
-      iosevka-bin
+      iosevka
     ];
   };
 }
