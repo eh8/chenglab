@@ -2,7 +2,7 @@
   home = {
     packages = with pkgs; [
       inter
-      nerdfonts
+      iosevka-bin
     ];
   };
 }
