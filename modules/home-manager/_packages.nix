@@ -44,8 +44,8 @@
           alejandra
           bun
           doppler
-          flyctl
           just
+          gnupg1
           nil
           nixos-rebuild # need for macOS
           nodejs
