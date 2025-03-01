@@ -93,13 +93,14 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/eh8/chenglab/main/instal
 wsl --install --no-distribution
 ```
 
-2. Download `nixos-wsl.tar.gz` from
+1. Download `nixos.wsl` from
    [the latest release](https://github.com/eh8/chenglab/releases).
 
-3. Import the tarball into WSL:
+2. Either double-click the `nixos.wsl` file once downloaded or import 
+   the tarball into WSL:
 
 ```powershell
-wsl --import NixOS $env:USERPROFILE\NixOS\ nixos-wsl.tar.gz
+wsl --install --from-file nixos.wsl
 ```
 
 4. You can now run NixOS:

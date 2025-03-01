@@ -33,8 +33,8 @@ jobs:
       - name: Upload tarball
         uses: actions/upload-artifact@v4
         with:
-          name: nixos-wsl.tar.gz
-          path: nixos-wsl.tar.gz
+          name: nixos.wsl
+          path: nixos.wsl
 
       - name: Upload ISO
         uses: actions/upload-artifact@v4
