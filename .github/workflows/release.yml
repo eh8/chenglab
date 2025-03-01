@@ -47,5 +47,5 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
-            nixos-wsl.tar.gz
+            nixos.wsl
             nixos.iso
