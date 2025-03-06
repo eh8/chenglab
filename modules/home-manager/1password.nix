@@ -30,4 +30,11 @@
       ];
     };
   };
+
+  xdg.configFile."1Password/ssh/agent.toml" = {
+    text = ''
+      [[ssh-keys]]
+      item = "SSH Key - Personal"
+    '';
+  };
 }
