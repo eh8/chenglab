@@ -1,4 +1,5 @@
 {
+  # note: replace these values with your own
   fullName = "Eric Cheng";
   userName = "eh8";
   userEmail = "eric@chengeric.com";
