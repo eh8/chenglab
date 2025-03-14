@@ -1,11 +1,15 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  vars,
+  ...
+}: {
   imports = [
     ./_packages.nix
   ];
 
   wsl = {
     enable = true;
-    defaultUser = "eh8";
+    defaultUser = vars.userName;
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -21,9 +25,9 @@
     };
   };
 
-  users.users.eh8 = {
+  users.users.${vars.userName} = {
     isNormalUser = true;
-    description = "eh8";
+    description = vars.userName;
     shell = pkgs.zsh;
   };
 

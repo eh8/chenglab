@@ -1,6 +1,7 @@
 {
   lib,
   pkgs,
+  vars,
   ...
 }: {
   imports = [
@@ -9,10 +10,10 @@
   ];
 
   home = {
-    username = "eh8";
+    username = vars.userName;
     homeDirectory = lib.mkMerge [
-      (lib.mkIf pkgs.stdenv.isLinux "/home/eh8")
-      (lib.mkIf pkgs.stdenv.isDarwin "/Users/eh8")
+      (lib.mkIf pkgs.stdenv.isLinux "/home/${vars.userName}")
+      (lib.mkIf pkgs.stdenv.isDarwin "/Users/${vars.userName}")
     ];
     stateVersion = "23.11";
     sessionVariables = lib.mkIf pkgs.stdenv.isDarwin {

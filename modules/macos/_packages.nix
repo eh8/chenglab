@@ -1,6 +1,7 @@
 {
   config,
   inputs,
+  vars,
   ...
 }: {
   imports = [
@@ -10,7 +11,7 @@
   nix-homebrew = {
     enable = true;
     enableRosetta = true;
-    user = "eh8";
+    user = vars.userName;
     mutableTaps = false;
     taps = {
       "homebrew/homebrew-bundle" = inputs.homebrew-bundle;
@@ -44,6 +45,7 @@
       "exifcleaner"
       "figma-agent"
       "firefox"
+      "google-chrome"
       "handbrake"
       "linearmouse"
       "obsidian"

@@ -1,6 +1,7 @@
 {
   inputs,
   outputs,
+  vars,
   ...
 }: {
   imports = [
@@ -23,7 +24,7 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     users = {
-      eh8 = {
+      ${vars.userName} = {
         imports = [
           ./../../modules/home-manager/base.nix
         ];

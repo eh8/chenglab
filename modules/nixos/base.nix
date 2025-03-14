@@ -2,6 +2,7 @@
   inputs,
   config,
   pkgs,
+  vars,
   ...
 }: {
   imports = [
@@ -42,12 +43,12 @@
   };
 
   users.mutableUsers = false;
-  users.users.eh8 = {
+  users.users.${vars.userName} = {
     isNormalUser = true;
-    description = "eh8";
+    description = vars.userName;
     extraGroups = ["networkmanager" "wheel"];
     openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIkcgwjYMHqUDnx0JIOSXQ/TN80KEaFvvUWA2qH1AHFC"
+      vars.sshPublicKey
     ];
     shell = pkgs.zsh;
     hashedPasswordFile = config.sops.secrets."user-password".path;

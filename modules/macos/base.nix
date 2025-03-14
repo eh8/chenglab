@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  vars,
+  ...
+}: {
   imports = [
     ./_dock.nix
     ./_packages.nix
@@ -35,12 +39,12 @@
     tailscale.enable = true;
   };
 
-  users.users.eh8.home = "/Users/eh8";
+  users.users.${vars.userName}.home = "/Users/${vars.userName}";
 
   system = {
     startup.chime = false;
     defaults = {
-      loginwindow.LoginwindowText = "If lost, contact eric@chengeric.com";
+      loginwindow.LoginwindowText = "If lost, contact ${vars.userEmail}";
       screencapture.location = "~/OneDrive/30-39 Hobbies/34 Photos/34.01 Screenshots";
 
       dock = {

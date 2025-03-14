@@ -1,6 +1,7 @@
 {
   inputs,
   outputs,
+  vars,
   ...
 }: {
   imports = [
@@ -12,15 +13,16 @@
   ];
 
   home-manager = {
-    extraSpecialArgs = {inherit inputs outputs;};
+    extraSpecialArgs = {inherit inputs outputs vars;};
     useGlobalPkgs = true;
     useUserPackages = true;
     users = {
-      eh8 = {
+      ${vars.userName} = {
         imports = [
           ./../../modules/home-manager/base.nix
           ./../../modules/home-manager/fonts.nix
           ./../../modules/home-manager/alacritty.nix
+          ./../../modules/home-manager/git.nix
           ./../../modules/home-manager/1password.nix
         ];
       };

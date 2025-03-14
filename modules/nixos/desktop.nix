@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  vars,
+  ...
+}: {
   services.xserver = {
     enable = true;
     displayManager.gdm.enable = true;
@@ -15,7 +19,7 @@
       "/etc/NetworkManager/system-connections"
     ];
 
-    users."eh8" = {
+    users.${vars.userName} = {
       directories = [
         "Desktop"
         "Documents"
