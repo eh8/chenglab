@@ -1,4 +1,4 @@
-{
+{vars, ...}: {
   imports = [
     ./../../modules/nixos/iso.nix
   ];
