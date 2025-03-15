@@ -67,7 +67,7 @@
     vaapiIntel = pkgs.vaapiIntel.override {enableHybridCodec = true;};
   };
 
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
       intel-compute-runtime # OpenCL filter support (hardware tonemapping and subtitle burn-in)
