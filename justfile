@@ -32,5 +32,5 @@ sopsrotate:
 sopsupdate:
   for file in secrets/*; do sops updatekeys "$file"; done
 
-build-iso:
+buildiso:
   nix build .#nixosConfigurations.iso1chng.config.system.build.isoImage
