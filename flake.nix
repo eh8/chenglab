@@ -4,7 +4,6 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     impermanence.url = "github:nix-community/impermanence";
-    vscode-server.url = "github:nix-community/nixos-vscode-server";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
@@ -48,6 +47,11 @@
 
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL/main";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    vscode-server = {
+      url = "github:nix-community/nixos-vscode-server";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
