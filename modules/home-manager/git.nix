@@ -6,11 +6,5 @@
       key = vars.sshPublicKey;
       signByDefault = true;
     };
-    extraConfig = {
-      core = {
-        autocrlf = false;
-        filemode = false;
-      };
-    };
   };
 }

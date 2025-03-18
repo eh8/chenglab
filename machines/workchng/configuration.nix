@@ -7,6 +7,7 @@
   imports = [
     inputs.home-manager.nixosModules.home-manager
     inputs.nixos-wsl.nixosModules.default
+    inputs.vscode-server.nixosModules.default
 
     ./hardware-configuration.nix
 
