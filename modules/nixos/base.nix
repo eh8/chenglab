@@ -48,7 +48,7 @@
     description = vars.userName;
     extraGroups = ["networkmanager" "wheel"];
     openssh.authorizedKeys.keys = [
-      vars.sshPublicKey
+      vars.sshPublicKeyPersonal
     ];
     shell = pkgs.zsh;
     hashedPasswordFile = config.sops.secrets."user-password".path;

@@ -1,9 +1,16 @@
-{vars, ...}: {
+{
+  vars,
+  osConfig,
+  ...
+}: {
   programs.git = {
     userName = vars.fullName;
     userEmail = vars.userEmail;
     signing = {
-      key = vars.sshPublicKey;
+      key =
+        if osConfig.networking.hostName == "workchng"
+        then vars.sshPublicKeyWork
+        else vars.sshPublicKeyPersonal;
       signByDefault = true;
     };
   };
