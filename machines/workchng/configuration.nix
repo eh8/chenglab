@@ -22,7 +22,6 @@
       ${vars.userName} = {
         imports = [
           ./../../modules/home-manager/base.nix
-          ./../../modules/home-manager/git.nix
         ];
       };
     };
