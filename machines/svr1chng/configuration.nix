@@ -10,12 +10,12 @@
 
     ./hardware-configuration.nix
 
+    ./../../modules/nixos/auto-update.nix
     ./../../modules/nixos/base.nix
     ./../../modules/nixos/remote-unlock.nix
-    ./../../modules/nixos/auto-update.nix
 
-    ./../../services/tailscale.nix
     ./../../services/nextcloud.nix
+    ./../../services/tailscale.nix
   ];
 
   home-manager = {

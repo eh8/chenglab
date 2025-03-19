@@ -11,12 +11,12 @@
 
     ./hardware-configuration.nix
 
+    ./../../modules/nixos/auto-update.nix
     ./../../modules/nixos/base.nix
     ./../../modules/nixos/remote-unlock.nix
-    ./../../modules/nixos/auto-update.nix
 
-    ./../../services/tailscale.nix
     ./../../services/nixarr.nix
+    ./../../services/tailscale.nix
   ];
 
   home-manager = {
