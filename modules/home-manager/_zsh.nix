@@ -18,6 +18,11 @@
       if [[ $(uname -m) == 'arm64' ]] && [[ $(uname -s) == 'Darwin' ]]; then
         eval "$(/opt/homebrew/bin/brew shellenv)"
       fi
+
+      if [ -z "$SSH_AUTH_SOCK" ]; then
+        eval "$(ssh-agent -s)" &> /dev/null
+        ssh-add ~/.ssh/id_ed25519 &> /dev/null
+      fi
     '';
     plugins = [
       {
