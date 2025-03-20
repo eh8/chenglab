@@ -25,6 +25,7 @@
         "Documents"
         "Downloads"
         "Music"
+        "OneDrive"
         "Pictures"
         "Videos"
         "git"
