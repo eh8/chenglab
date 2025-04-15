@@ -14,6 +14,7 @@
         clolcat
         cmatrix
         croc
+        curl
         du-dust
         dua
         duf
@@ -34,6 +35,7 @@
         poppler_utils
         qrencode
         tree
+        wget
         yt-dlp
       ]
       ++ (
