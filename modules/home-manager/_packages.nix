@@ -15,6 +15,7 @@
         cmatrix
         croc
         curl
+        dig
         du-dust
         dua
         duf
@@ -27,6 +28,7 @@
         htop
         hyperfine
         imagemagick
+        openssl
         jdupes
         kopia
         neo-cowsay

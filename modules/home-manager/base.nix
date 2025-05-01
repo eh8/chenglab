@@ -54,6 +54,7 @@
       nix-direnv.enable = true;
     };
     fastfetch.enable = true;
+    vim.enable = true;
   };
 
   # Nicely reload system units when changing configs

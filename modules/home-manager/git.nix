@@ -15,7 +15,7 @@
     git = {
       enable = true;
       userName = vars.fullName;
-      userEmail = vars.userEmail;
+      inherit (vars) userEmail;
       extraConfig = {
         commit.gpgsign = true;
         gpg.format = "ssh";
