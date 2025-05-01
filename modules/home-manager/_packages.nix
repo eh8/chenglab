@@ -30,6 +30,7 @@
         imagemagick
         openssl
         jdupes
+        jq
         kopia
         neo-cowsay
         pandoc
