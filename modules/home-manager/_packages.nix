@@ -6,6 +6,7 @@
   home = {
     packages = with pkgs;
       [
+        asciinema
         asciiquarium
         bat
         bind
