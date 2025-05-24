@@ -32,16 +32,16 @@
   };
 
   programs.zsh.enable = true;
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
 
   services = {
-    nix-daemon.enable = true;
     tailscale.enable = true;
   };
 
   users.users.${vars.userName}.home = "/Users/${vars.userName}";
 
   system = {
+    primaryUser = vars.userName;
     startup.chime = false;
     defaults = {
       loginwindow.LoginwindowText = "If lost, contact ${vars.userEmail}";
@@ -80,6 +80,7 @@
   local = {
     dock = {
       enable = true;
+      username = vars.userName;
       entries = [
         {path = "/System/Applications/Launchpad.app";}
         {path = "/Applications/Firefox.app";}

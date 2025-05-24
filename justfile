@@ -4,7 +4,7 @@ default:
 deploy machine ip='':
   #!/usr/bin/env sh
   if [ {{machine}} = "macos" ]; then
-    darwin-rebuild switch --flake .
+    sudo darwin-rebuild switch --flake .
   elif [ -z "{{ip}}" ]; then
     sudo nixos-rebuild switch --fast --flake ".#{{machine}}"
   else

@@ -12,7 +12,7 @@
       v = "vim ";
     };
     # inspo: https://discourse.nixos.org/t/brew-not-on-path-on-m1-mac/26770/4
-    initExtra = ''
+    initContent = ''
       fortune
 
       if [[ $(uname -m) == 'arm64' ]] && [[ $(uname -s) == 'Darwin' ]]; then
