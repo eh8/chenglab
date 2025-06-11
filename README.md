@@ -28,7 +28,7 @@ MacBook Air, and work WSL setup.
 - 🔒 Automatic Let's Encrypt certificate registration and renewal
 - 🧩 Tailscale, Nextcloud, Jellyfin, Homebridge, Scrypted, among other nice
   self-hosted applications
-- ⚡️ `justfile` contains useful aliases for many frequent and atrociously long
+- ⚡️ `.justfile` contains useful aliases for many frequent and atrociously long
   `nix` commands
 - 🤖 `flake.lock` updated daily via GitHub Action, servers are configured to
   automatically upgrade daily via
