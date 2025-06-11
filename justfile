@@ -3,7 +3,7 @@ default:
 
 deploy machine='' ip='':
     @if [ "$(uname)" = "Darwin" ]; then \
-      darwin-rebuild switch --flake .; \
+      sudo darwin-rebuild switch --flake .; \
     elif [ -z "{{ machine }}" ] && [ -z "{{ ip }}" ]; then \
       nixos-rebuild switch --use-remote-sudo --flake .; \
     elif [ -z "{{ ip }}" ]; then \
