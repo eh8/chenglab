@@ -31,6 +31,9 @@
     };
   };
 
+  # inspo: https://github.com/nix-darwin/nix-darwin/issues/1339
+  ids.gids.nixbld = 350;
+
   programs.zsh.enable = true;
   security.pam.services.sudo_local.touchIdAuth = true;
 
