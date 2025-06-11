@@ -1,36 +1,38 @@
 default:
-  just --list
+    just --list
 
 deploy machine ip='':
-  #!/usr/bin/env sh
-  if [ {{machine}} = "macos" ]; then
-    sudo darwin-rebuild switch --flake .
-  elif [ -z "{{ip}}" ]; then
-    sudo nixos-rebuild switch --fast --flake ".#{{machine}}"
-  else
-    nixos-rebuild switch --fast --flake ".#{{machine}}" --use-remote-sudo --target-host "eh8@{{ip}}" --build-host "eh8@{{ip}}"
-  fi
+    @if [ "{{ machine }}" = "macos" ]; then \
+      darwin-rebuild switch --flake .; \
+    elif [ -z "{{ ip }}" ]; then \
+      nixos-rebuild switch --use-remote-sudo --flake ".#{{ machine }}"; \
+    else \
+      nixos-rebuild switch --flake ".#{{ machine }}" --use-remote-sudo --target-host "eh8@{{ ip }}" --build-host "eh8@{{ ip }}"; \
+    fi
 
 up:
-  nix flake update
+    nix flake update
 
 lint:
-  statix check .
+    statix check .
+
+fmt:
+    nix fmt .     
 
 gc:
-  sudo nix-collect-garbage -d && nix-collect-garbage -d
+    sudo nix-collect-garbage -d && nix-collect-garbage -d
 
 repair:
-  sudo nix-store --verify --check-contents --repair
+    sudo nix-store --verify --check-contents --repair
 
-sopsedit:
-  sops secrets/secrets.yaml
+sops-edit:
+    sops secrets/secrets.yaml
 
-sopsrotate:
-  for file in secrets/*; do sops --rotate --in-place "$file"; done
-  
-sopsupdate:
-  for file in secrets/*; do sops updatekeys "$file"; done
+sops-rotate:
+    for file in secrets/*; do sops --rotate --in-place "$file"; done
 
-buildiso:
-  nix build .#nixosConfigurations.iso1chng.config.system.build.isoImage
+sops-update:
+    for file in secrets/*; do sops updatekeys "$file"; done
+
+build-iso:
+    nix build .#nixosConfigurations.iso1chng.config.system.build.isoImage

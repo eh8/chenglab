@@ -137,13 +137,13 @@ Make sure each machine's public key is listed as entry in `.sops.yaml`. To
 modify `secrets/secrets.yaml`:
 
 ```bash
-just sopsedit
+just sops-edit
 ```
 
 ### Syncing sops keys for a new machine
 
 ```bash
-just sopsupdate
+just sops-update
 ```
 
 ## Important caveats
