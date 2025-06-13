@@ -35,8 +35,14 @@
   systemd.services = {
     "cloudflared-route-tunnel" = {
       description = "Point traffic to tunnel subdomain";
-      after = ["cloudflared-tunnel-chenglab-01.service"];
-      wants = ["cloudflared-tunnel-chenglab-01.service"];
+      after = [
+        "network-online.target"
+        "cloudflared-tunnel-chenglab-01.service"
+      ];
+      wants = [
+        "network-online.target"
+        "cloudflared-tunnel-chenglab-01.service"
+      ];
       wantedBy = ["default.target"];
       serviceConfig = {
         Type = "oneshot";
