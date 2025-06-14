@@ -8,9 +8,7 @@
       [
         asciinema
         asciiquarium
-        bat
         bind
-        btop
         cbonsai
         clolcat
         cmatrix
@@ -22,11 +20,9 @@
         duf
         figlet
         fortune-kind
-        gallery-dl
         gdu
         genact
         gti
-        htop
         hyperfine
         imagemagick
         openssl
@@ -40,7 +36,6 @@
         qrencode
         tree
         wget
-        yt-dlp
       ]
       ++ (
         if builtins.substring 0 3 osConfig.networking.hostName != "svr"

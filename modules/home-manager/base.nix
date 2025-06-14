@@ -44,16 +44,19 @@
       enable = true;
       settings.updates.auto_update = true;
     };
-    lsd = {
-      enable = true;
-    };
     direnv = {
       enable = true;
       enableZshIntegration = true;
       nix-direnv.enable = true;
     };
+    bat.enable = true;
+    btop.enable = true;
+    gallery-dl.enable = true;
     fastfetch.enable = true;
+    htop.enable = true;
+    lsd.enable = true;
     vim.enable = true;
+    yt-dlp.enable = true;
   };
 
   # Nicely reload system units when changing configs
