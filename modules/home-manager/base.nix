@@ -55,6 +55,7 @@
     fastfetch.enable = true;
     htop.enable = true;
     lsd.enable = true;
+    nh.enable = true;
     vim.enable = true;
     yt-dlp.enable = true;
   };
