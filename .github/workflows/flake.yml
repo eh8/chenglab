@@ -18,7 +18,7 @@ jobs:
 
       - run: nix flake update
 
-      - uses: stefanzweifel/git-auto-commit-action@v5
+      - uses: stefanzweifel/git-auto-commit-action@v6
         with:
           commit_message: "chore(deps): bump flake.lock"
           commit_user_name: Flake Bot
