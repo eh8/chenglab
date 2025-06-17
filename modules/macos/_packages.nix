@@ -43,7 +43,6 @@
       "discord"
       "dropbox"
       "exifcleaner"
-      "figma-agent"
       "firefox"
       "google-chrome"
       "handbrake"
