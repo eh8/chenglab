@@ -91,11 +91,11 @@
     "homebrew-cask": {
       "flake": false,
       "locked": {
-        "lastModified": 1750068150,
-        "narHash": "sha256-OiAT93eMTiw4GFBk82e7U3acahnrbzfA1vB6jXZhaAI=",
+        "lastModified": 1750144150,
+        "narHash": "sha256-ppmhIS37JiHF/GpoevySLxfWtagoO3DsmqjM3kX/+qE=",
         "owner": "homebrew",
         "repo": "homebrew-cask",
-        "rev": "c4ffa6a6e814f4eb693c33395a1391c43453dd7f",
+        "rev": "b560bf92d54c807cea09dc17631a6d082b331672",
         "type": "github"
       },
       "original": {
@@ -107,11 +107,11 @@
     "homebrew-core": {
       "flake": false,
       "locked": {
-        "lastModified": 1750059379,
-        "narHash": "sha256-fFuE4r3WB7ofpwnG39Z3VMAcKFRVB0ftf6XvgfFo5WA=",
+        "lastModified": 1750155264,
+        "narHash": "sha256-OlVG41rbxc6cDE19AF8grmWQg1HQQP5tYYjN4CcWEpw=",
         "owner": "homebrew",
         "repo": "homebrew-core",
-        "rev": "ec3a6cc582c6f55f53e2be452330f17f83f5a4e7",
+        "rev": "0e0cc607506960133d4a1ba7af1ee13c0b8c25a0",
         "type": "github"
       },
       "original": {
@@ -183,11 +183,11 @@
         "website-builder": "website-builder"
       },
       "locked": {
-        "lastModified": 1750066493,
-        "narHash": "sha256-6xRNFF2lL7ofACuc8Uc5KUgUVlfaaKRaOWgDzXwwY3w=",
+        "lastModified": 1750078297,
+        "narHash": "sha256-X3cKYw203B+YeERTm+uTZTw7znlWnrnTIvCy8pvL/mA=",
         "owner": "rasmus-kirk",
         "repo": "nixarr",
-        "rev": "e1b096d8560df3f601360110b7b8553c0648afa4",
+        "rev": "c0dd44c660a4395c7f856c92bf173f3d61b99c7a",
         "type": "github"
       },
       "original": {
@@ -220,11 +220,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1749857119,
-        "narHash": "sha256-tG5xUn3hFaPpAHYIvr2F88b+ovcIO5k1HqajFy7ZFPM=",
+        "lastModified": 1750005367,
+        "narHash": "sha256-h/aac1dGLhS3qpaD2aZt25NdKY7b+JT0ZIP2WuGsJMU=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "5f4f306bea96741f1588ea4f450b2a2e29f42b98",
+        "rev": "6c64dabd3aa85e0c02ef1cdcb6e1213de64baee3",
         "type": "github"
       },
       "original": {
@@ -257,11 +257,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1749592509,
-        "narHash": "sha256-VunQzfZFA+Y6x3wYi2UE4DEQ8qKoAZZCnZPUlSoqC+A=",
+        "lastModified": 1750119275,
+        "narHash": "sha256-Rr7Pooz9zQbhdVxux16h7URa6mA80Pb/G07T4lHvh0M=",
         "owner": "Mic92",
         "repo": "sops-nix",
-        "rev": "50754dfaa0e24e313c626900d44ef431f3210138",
+        "rev": "77c423a03b9b2b79709ea2cb63336312e78b72e2",
         "type": "github"
       },
       "original": {
@@ -329,11 +329,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1750027175,
-        "narHash": "sha256-6XM+hg3Zal2EqeDmTSpFyrvYLgM81BhFtLjA93nYA6Q=",
+        "lastModified": 1750076849,
+        "narHash": "sha256-si3V9rU0U9PXQ6/+h6CnnXFpBJCdYTnykx3+6bRtymU=",
         "owner": "rasmus-kirk",
         "repo": "website-builder",
-        "rev": "3825733413b78fe6cd4498cef8b339ae1e0a6a0e",
+        "rev": "437ab27159ca0b0f0675cd5890fdafeac385b25d",
         "type": "github"
       },
       "original": {
