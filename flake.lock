@@ -91,11 +91,11 @@
     "homebrew-cask": {
       "flake": false,
       "locked": {
-        "lastModified": 1750144150,
-        "narHash": "sha256-ppmhIS37JiHF/GpoevySLxfWtagoO3DsmqjM3kX/+qE=",
+        "lastModified": 1750241624,
+        "narHash": "sha256-udtJsKVW8JNW5bg9p69p8l4dsWagN2W2oxIKYXUdVe8=",
         "owner": "homebrew",
         "repo": "homebrew-cask",
-        "rev": "b560bf92d54c807cea09dc17631a6d082b331672",
+        "rev": "5bbd5013162e0889e51316274870eec083bc5ea9",
         "type": "github"
       },
       "original": {
@@ -107,11 +107,11 @@
     "homebrew-core": {
       "flake": false,
       "locked": {
-        "lastModified": 1750155264,
-        "narHash": "sha256-OlVG41rbxc6cDE19AF8grmWQg1HQQP5tYYjN4CcWEpw=",
+        "lastModified": 1750233061,
+        "narHash": "sha256-uLDLUpOrcpSbDZ1fqC14TjHCeO77HwX1ToUDltneWfs=",
         "owner": "homebrew",
         "repo": "homebrew-core",
-        "rev": "0e0cc607506960133d4a1ba7af1ee13c0b8c25a0",
+        "rev": "3549c8bda875c32b5b2d60c7bd3c2ce8963d2b57",
         "type": "github"
       },
       "original": {
@@ -183,11 +183,11 @@
         "website-builder": "website-builder"
       },
       "locked": {
-        "lastModified": 1750078297,
-        "narHash": "sha256-X3cKYw203B+YeERTm+uTZTw7znlWnrnTIvCy8pvL/mA=",
+        "lastModified": 1750157900,
+        "narHash": "sha256-u7BQLF2u3OESnAQdkT+AMijeYzx06jx0ejKy2e0J+6g=",
         "owner": "rasmus-kirk",
         "repo": "nixarr",
-        "rev": "c0dd44c660a4395c7f856c92bf173f3d61b99c7a",
+        "rev": "b19ddfaced3849567ce8ac0cbf3ca34ec9adfa91",
         "type": "github"
       },
       "original": {
@@ -220,11 +220,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1750005367,
-        "narHash": "sha256-h/aac1dGLhS3qpaD2aZt25NdKY7b+JT0ZIP2WuGsJMU=",
+        "lastModified": 1750133334,
+        "narHash": "sha256-urV51uWH7fVnhIvsZIELIYalMYsyr2FCalvlRTzqWRw=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "6c64dabd3aa85e0c02ef1cdcb6e1213de64baee3",
+        "rev": "36ab78dab7da2e4e27911007033713bab534187b",
         "type": "github"
       },
       "original": {
@@ -329,11 +329,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1750076849,
-        "narHash": "sha256-si3V9rU0U9PXQ6/+h6CnnXFpBJCdYTnykx3+6bRtymU=",
+        "lastModified": 1750078291,
+        "narHash": "sha256-VfEXZ2gcOB4M9y0fjxazJcChJyzNe5WiP7v3tgH04kM=",
         "owner": "rasmus-kirk",
         "repo": "website-builder",
-        "rev": "437ab27159ca0b0f0675cd5890fdafeac385b25d",
+        "rev": "f4605389da7159424a53bcd8781be0e59c63a325",
         "type": "github"
       },
       "original": {
