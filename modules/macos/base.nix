@@ -88,7 +88,7 @@
         {path = "/System/Applications/Launchpad.app";}
         {path = "/Applications/Firefox.app";}
         {path = "/Applications/Alacritty.app";}
-        {path = "/Applications/Visual Studio Code.app";}
+        {path = "/Applications/Zed.app";}
         {path = "/Applications/Discord.app";}
         {path = "/System/Applications/Messages.app";}
         {path = "/Applications/Messenger.app";}
