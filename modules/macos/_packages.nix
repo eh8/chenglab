@@ -44,6 +44,7 @@
       "dropbox"
       "exifcleaner"
       "firefox"
+      "figma-agent"
       "google-chrome"
       "handbrake"
       "linearmouse"
