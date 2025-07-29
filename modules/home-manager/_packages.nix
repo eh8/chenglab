@@ -47,6 +47,7 @@
           doppler
           just
           gnupg1
+          ffmpeg
           nil
           nixos-rebuild # need for macOS
           nodejs

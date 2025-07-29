@@ -38,6 +38,7 @@
       "1password-cli"
       "1password"
       "alacritty"
+      "audacity"
       "betterdisplay"
       "caffeine"
       "discord"
