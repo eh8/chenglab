@@ -8,6 +8,7 @@
     ./_packages.nix
   ];
 
+  nixpkgs.config.allowUnfree = true;
   nix = {
     package = pkgs.nix;
     gc = {

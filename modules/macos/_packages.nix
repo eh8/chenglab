@@ -46,7 +46,7 @@
       "exifcleaner"
       "firefox"
       "figma-agent"
-      "google-chrome"
+      "grandperspective"
       "handbrake"
       "linearmouse"
       "obsidian"
@@ -65,10 +65,6 @@
       "1Password for Safari" = 1569813296;
       "Infuse" = 1136220934;
       "Messenger" = 1480068668;
-      "Microsoft Excel" = 462058435;
-      "Microsoft PowerPoint" = 462062816;
-      "Microsoft Remote Desktop" = 1295203466;
-      "Microsoft Word" = 462054704;
       "OneDrive" = 823766827;
       "Tailscale" = 1475387142;
     };

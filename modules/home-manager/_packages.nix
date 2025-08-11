@@ -1,8 +1,14 @@
 {
   pkgs,
+  inputs,
   osConfig,
   ...
-}: {
+}: let
+  pkgs-unstable = import inputs.nixpkgs-unstable {
+    system = pkgs.system;
+    config.allowUnfree = true;
+  };
+in {
   home = {
     packages = with pkgs;
       [
@@ -51,6 +57,7 @@
           nil
           nixos-rebuild # need for macOS
           nodejs
+          pkgs-unstable.claude-code
           sops
           statix
           stripe-cli
