@@ -42,7 +42,6 @@
       "betterdisplay"
       "caffeine"
       "discord"
-      "dropbox"
       "exifcleaner"
       "firefox"
       "figma-agent"
