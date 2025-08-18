@@ -9,6 +9,7 @@
     k9s
     kubectl
     kubectl-cnpg
+    kubectx
     kubernetes-helm
     terraform
     trashy
