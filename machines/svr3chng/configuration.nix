@@ -7,6 +7,7 @@
   imports = [
     inputs.home-manager.nixosModules.home-manager
     inputs.impermanence.nixosModules.impermanence
+    inputs.nixarr.nixosModules.default
 
     ./hardware-configuration.nix
 
@@ -14,8 +15,7 @@
     ./../../modules/nixos/base.nix
     ./../../modules/nixos/remote-unlock.nix
 
-    ./../../services/homebridge.nix
-    ./../../services/scrypted.nix
+    ./../../services/nixarr.nix
     ./../../services/tailscale.nix
   ];
 

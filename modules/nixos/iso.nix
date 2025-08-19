@@ -11,9 +11,14 @@
     ];
   };
 
-  programs.bash.shellAliases = {
-    install = "sudo bash -c '$(curl -fsSL https://raw.githubusercontent.com/eh8/chenglab/main/install.sh)'";
-  };
+  users.motd = ''
+    Welcome to the Chenglab ISO installer!
+
+    To install the system, copy and paste the following command:
+
+    sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/eh8/chenglab/main/install.sh)"
+
+  '';
 
   security.sudo.wheelNeedsPassword = false;
 

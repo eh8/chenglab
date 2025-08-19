@@ -51,7 +51,7 @@ prompt you to install my configuration.
 > You'll need to run this script as sudo or have sudo permissions.
 
 ```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/eh8/chenglab/main/install.sh)"
+sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/eh8/chenglab/main/install.sh)"
 ```
 
 ### NixOS (Linux)
@@ -73,7 +73,7 @@ On Linux, _running this script from the NixOS installation ISO_ will prepare
 your system for NixOS by partitioning drives and mounting them.
 
 ```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/eh8/chenglab/main/install.sh)"
+sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/eh8/chenglab/main/install.sh)"
 ```
 
 > [!TIP]
