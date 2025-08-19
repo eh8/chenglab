@@ -3,7 +3,7 @@ keys:
   - &dsk1chng age1tazzcv0l5r3lxwhah0nhgych2t6najenza5w9s753az444qr5ekq68fp3v
   - &svr1chng age1w4tgfu8upwhpsm76sfuwls6f2suw6teurgz740lhv49v23h2scyqfzpmq7
   - &svr2chng age1me9pdcvr9yq2qgn8uzndgjste72hq8kdhdnk00n2k9zaungvvuvs3m97va
-  - &svr3chng age19uv62f9stfhhlsyckmg5ll2t6c8dd4f6nytnd95ftl6v62js3fmq6g2ktk
+  - &svr3chng age13v6dlnrjpeyxgdh8jr3yz0l4pqgp09kwtejsun9ptfdchekx74lst4lk6d
 creation_rules:
   - path_regex: secrets/[^/]+(\.(yaml|json|env|ini|conf))?$
     key_groups:
