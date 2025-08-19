@@ -19,9 +19,9 @@
             device = "/dev/nvme0n1p2";
             allowDiscards = true;
           };
-          # "fun" = {
-          #   device = "/dev/sda1";
-          # };
+          "fun" = {
+            device = "/dev/sda1";
+          };
         };
       };
     };
@@ -42,10 +42,10 @@
       device = "/dev/disk/by-label/nix";
       fsType = "ext4";
     };
-    # "/fun" = {
-    #   device = "/dev/disk/by-label/fun";
-    #   fsType = "ext4";
-    # };
+    "/fun" = {
+      device = "/dev/disk/by-label/fun";
+      fsType = "ext4";
+    };
   };
 
   networking.useDHCP = lib.mkDefault true;
