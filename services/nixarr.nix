@@ -38,6 +38,8 @@
       vpn.enable = true;
       extraSettings = {
         incomplete-dir-enabled = false;
+        cache-size-mb = 256;
+        peer-limit-global = 500;
         speed-limit-up = 500;
         speed-limit-up-enabled = true;
         rpc-authentication-required = true;
