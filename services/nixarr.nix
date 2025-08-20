@@ -37,11 +37,11 @@
       peerPort = 46634;
       vpn.enable = true;
       extraSettings = {
+        cache-size-mb = 512;
         download-queue-enabled = true;
         download-queue-size = 10;
-        incomplete-dir-enabled = false;
-        cache-size-mb = 256;
-        peer-limit-global = 500;
+        seed-queue-enabled = true;
+        seed-queue-size = 10;
         speed-limit-up = 500;
         speed-limit-up-enabled = true;
         rpc-authentication-required = true;
