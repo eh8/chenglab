@@ -37,7 +37,8 @@
       peerPort = 46634;
       vpn.enable = true;
       extraSettings = {
-        download-queue-enabled = false;
+        download-queue-enabled = true;
+        download-queue-size = 10;
         incomplete-dir-enabled = false;
         cache-size-mb = 256;
         peer-limit-global = 500;
