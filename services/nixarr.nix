@@ -38,6 +38,8 @@
       vpn.enable = true;
       extraSettings = {
         cache-size-mb = 512;
+        seed-queue-enabled = true;
+        seed-queue-size = 50;
         speed-limit-up = 500;
         speed-limit-up-enabled = true;
         rpc-authentication-required = true;
