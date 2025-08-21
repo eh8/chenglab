@@ -37,7 +37,11 @@
       peerPort = 46634;
       vpn.enable = true;
       extraSettings = {
-        cache-size-mb = 512;
+        cache-size-mb = 256;
+        download-queue-enabled = true;
+        download-queue-size = 20;
+        incomplete-dir = "/var/lib/transmission/.incomplete";
+        incomplete-dir-enabled = true;
         speed-limit-up = 500;
         speed-limit-up-enabled = true;
         rpc-authentication-required = true;
@@ -155,6 +159,7 @@
   environment.persistence."/nix/persist" = {
     directories = [
       "/var/lib/nixarr"
+      "/var/lib/transmission/.incomplete"
     ];
   };
 }
