@@ -37,6 +37,7 @@
       peerPort = 46634;
       vpn.enable = true;
       extraSettings = {
+        peer-limit-global = 500;
         cache-size-mb = 256;
         incomplete-dir = "/var/lib/transmission/.incomplete";
         incomplete-dir-enabled = true;
