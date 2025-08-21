@@ -38,8 +38,6 @@
       vpn.enable = true;
       extraSettings = {
         cache-size-mb = 256;
-        download-queue-enabled = true;
-        download-queue-size = 20;
         incomplete-dir = "/var/lib/transmission/.incomplete";
         incomplete-dir-enabled = true;
         speed-limit-up = 500;
