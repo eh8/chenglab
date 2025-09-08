@@ -58,6 +58,8 @@ in {
           nixos-rebuild # need for macOS
           nodejs
           pkgs-unstable.claude-code
+          pkgs-unstable.codex
+          pkgs-unstable.gemini-cli
           sops
           statix
           stripe-cli
