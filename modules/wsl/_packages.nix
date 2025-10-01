@@ -12,7 +12,6 @@ in {
     # inspo: https://mynixos.com/nixpkgs/package/azure-cli
     (pkgs-unstable.azure-cli.withExtensions [
       pkgs-unstable.azure-cli.extensions.k8s-extension
-      pkgs-unstable.azure-cli.extensions.aks-preview
       pkgs-unstable.azure-cli.extensions.amg
     ])
     k9s
