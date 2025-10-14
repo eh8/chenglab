@@ -46,7 +46,7 @@
       "firefox"
       "figma-agent"
       "grandperspective"
-      "handbrake"
+      "handbrake-app"
       "linearmouse"
       "obsidian"
       "rar"
