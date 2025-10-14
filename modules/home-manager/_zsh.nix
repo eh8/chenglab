@@ -10,6 +10,7 @@
       neofetch = "fastfetch";
       sudo = "sudo ";
       v = "vim ";
+      k = "kubectl ";
     };
     # inspo: https://discourse.nixos.org/t/brew-not-on-path-on-m1-mac/26770/4
     initContent = ''
