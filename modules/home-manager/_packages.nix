@@ -13,6 +13,7 @@ in {
     packages = with pkgs;
       [
         asciinema
+        asciinema-agg
         asciiquarium
         bind
         cbonsai
