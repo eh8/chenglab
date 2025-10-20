@@ -90,11 +90,11 @@
         {path = "/Applications/Alacritty.app";}
         {path = "/Applications/Zed.app";}
         {path = "/Applications/Discord.app";}
-        {path = "/Applications/Messages.app";}
+        {path = "/System/Applications/Messages.app";}
         {path = "/Applications/Messenger.app";}
         {path = "/Applications/1Password.app";}
         {path = "/Applications/Obsidian.app";}
-        {path = "/Applications/System Settings.app";}
+        {path = "/System/Applications/System Settings.app";}
       ];
     };
   };
