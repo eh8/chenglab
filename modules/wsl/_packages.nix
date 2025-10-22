@@ -18,6 +18,7 @@ in {
     kubectl
     kubectl-cnpg
     kubectx
+    kubelogin
     kubernetes-helm
     terraform
     trashy
