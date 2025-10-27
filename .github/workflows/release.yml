@@ -31,13 +31,13 @@ jobs:
         run: sudo mv result/iso/nixos-*.iso nixos.iso
 
       - name: Upload tarball
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: nixos.wsl
           path: nixos.wsl
 
       - name: Upload ISO
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: nixos.iso
           path: nixos.iso
