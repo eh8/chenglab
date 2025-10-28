@@ -45,6 +45,7 @@
       "exifcleaner"
       "firefox"
       "figma-agent"
+      "google-chrome"
       "grandperspective"
       "handbrake-app"
       "linearmouse"
