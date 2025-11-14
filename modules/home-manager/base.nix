@@ -58,6 +58,8 @@
     nh.enable = true;
     vim.enable = true;
     yt-dlp.enable = true;
+    ripgrep.enable = true;
+    fd.enable = true;
   };
 
   # Nicely reload system units when changing configs

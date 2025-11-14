@@ -29,6 +29,7 @@ in {
         fortune-kind
         gdu
         genact
+        glow
         gti
         hyperfine
         imagemagick
