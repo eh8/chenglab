@@ -54,7 +54,6 @@
       "raycast"
       "screen-studio"
       "spotify"
-      "steam"
       "the-unarchiver"
       "visual-studio-code"
       "vlc"
