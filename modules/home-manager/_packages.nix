@@ -58,6 +58,7 @@ in {
           ffmpeg
           nil
           nixos-rebuild # need for macOS
+          nixd # need for language server
           nodejs
           pkgs-unstable.claude-code
           pkgs-unstable.codex
