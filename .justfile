@@ -19,9 +19,9 @@ lint:
     statix check .
 
 fmt:
-    nix fmt .     
+    nix fmt .
 
-gc:
+clean:
     sudo nix-collect-garbage -d && nix-collect-garbage -d
 
 repair:
