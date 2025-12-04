@@ -10,6 +10,19 @@ jobs:
   build-wsl:
     runs-on: ubuntu-latest
     steps:
+      - name: Build
+        run: |
+          echo "Free space:"
+          df -h
+
+      - name: Maximize build disk space
+        uses: easimon/maximize-build-space@v10
+
+      - name: Build
+        run: |
+          echo "Free space:"
+          df -h
+
       - name: Checkout
         uses: actions/checkout@v6
         with:
@@ -31,6 +44,19 @@ jobs:
   build-iso:
     runs-on: ubuntu-latest
     steps:
+      - name: Build
+        run: |
+          echo "Free space:"
+          df -h
+
+      - name: Maximize build disk space
+        uses: easimon/maximize-build-space@v10
+
+      - name: Build
+        run: |
+          echo "Free space:"
+          df -h
+
       - name: Checkout
         uses: actions/checkout@v6
         with:
