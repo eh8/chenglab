@@ -5,7 +5,7 @@
   ...
 }: let
   pkgs-unstable = import inputs.nixpkgs-unstable {
-    system = pkgs.system;
+    system = pkgs.stdenv.hostPlatform.system;
     config.allowUnfree = true;
   };
 in {
@@ -15,14 +15,13 @@ in {
         asciinema
         asciinema-agg
         asciiquarium
-        bind
         cbonsai
         clolcat
         cmatrix
         croc
         curl
         dig
-        du-dust
+        dust
         dua
         duf
         figlet
@@ -34,13 +33,12 @@ in {
         hyperfine
         imagemagick
         openssl
-        jdupes
         jq
         kopia
         neo-cowsay
         pandoc
         pipes-rs
-        poppler_utils
+        poppler-utils
         qrencode
         tree
         wget

@@ -14,9 +14,9 @@
   programs = {
     git = {
       enable = true;
-      userName = vars.fullName;
-      inherit (vars) userEmail;
-      extraConfig = {
+      settings = {
+        user.name = vars.fullName;
+        user.email = vars.userEmail;
         commit.gpgsign = true;
         gpg.format = "ssh";
         gpg.ssh.allowedSignersFile = "~/.ssh/allowed_signers";

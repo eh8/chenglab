@@ -89,7 +89,8 @@
         {path = "/Applications/Firefox.app";}
         {path = "/Applications/Alacritty.app";}
         {path = "/Applications/Zed.app";}
-        {path = "/Applications/Discord.app";}
+        {path = "/Applications/Spotify.app";}
+        {path = "/Applications/WhatsApp.app";}
         {path = "/Applications/Messenger.app";}
         {path = "/Applications/1Password.app";}
         {path = "/Applications/Obsidian.app";}

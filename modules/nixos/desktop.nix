@@ -3,13 +3,13 @@
   vars,
   ...
 }: {
-  services.xserver = {
-    enable = true;
+  services = {
+    xserver.enable = true;
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
   };
 
-  services.udev.packages = with pkgs; [gnome.gnome-settings-daemon];
+  services.udev.packages = with pkgs; [gnome-settings-daemon];
 
   programs._1password.enable = true;
   programs._1password-gui.enable = true;
