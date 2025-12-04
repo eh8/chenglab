@@ -7,7 +7,7 @@ on:
       - v*
   workflow_dispatch: null
 jobs:
-  build:
+  build-wsl:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -22,6 +22,22 @@ jobs:
           nix_bin=$(which nix)
           sudo $nix_bin run .#nixosConfigurations.workchng.config.system.build.tarballBuilder
 
+      - name: Upload tarball
+        uses: actions/upload-artifact@v5
+        with:
+          name: nixos.wsl
+          path: nixos.wsl
+
+  build-iso:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - uses: cachix/install-nix-action@v31
+
       - name: Build ISO
         run: |
           nix_bin=$(which nix)
@@ -30,21 +46,33 @@ jobs:
       - name: Rename ISO
         run: sudo mv result/iso/nixos-*.iso nixos.iso
 
-      - name: Upload tarball
-        uses: actions/upload-artifact@v5
-        with:
-          name: nixos.wsl
-          path: nixos.wsl
-
       - name: Upload ISO
         uses: actions/upload-artifact@v5
         with:
           name: nixos.iso
           path: nixos.iso
 
+  release:
+    needs:
+      - build-wsl
+      - build-iso
+    if: startsWith(github.ref, 'refs/tags/')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download tarball
+        uses: actions/download-artifact@v4
+        with:
+          name: nixos.wsl
+          path: .
+
+      - name: Download ISO
+        uses: actions/download-artifact@v4
+        with:
+          name: nixos.iso
+          path: .
+
       - name: Release
         uses: softprops/action-gh-release@v2
-        if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
             nixos.wsl
