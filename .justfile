@@ -5,11 +5,11 @@ deploy machine='' ip='':
     @if [ "$(uname)" = "Darwin" ] && [ -z "{{ machine }}" ] && [ -z "{{ ip }}" ]; then \
       sudo darwin-rebuild switch --flake .; \
     elif [ -z "{{ machine }}" ] && [ -z "{{ ip }}" ]; then \
-      nixos-rebuild switch --use-remote-sudo --flake .; \
+      nixos-rebuild switch --sudo --flake .; \
     elif [ -z "{{ ip }}" ]; then \
-      nixos-rebuild switch --use-remote-sudo --flake ".#{{ machine }}"; \
+      nixos-rebuild switch --sudo --flake ".#{{ machine }}"; \
     else \
-      nixos-rebuild switch --fast --flake ".#{{ machine }}" --use-remote-sudo --target-host "eh8@{{ ip }}" --build-host "eh8@{{ ip }}"; \
+      nixos-rebuild switch --fast --flake ".#{{ machine }}" --sudo --target-host "eh8@{{ ip }}" --build-host "eh8@{{ ip }}"; \
     fi
 
 up:
