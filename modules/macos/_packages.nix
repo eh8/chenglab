@@ -63,7 +63,6 @@
     masApps = {
       "1Password for Safari" = 1569813296;
       "Infuse" = 1136220934;
-      "Messenger" = 1480068668;
       "OneDrive" = 823766827;
       "Tailscale" = 1475387142;
     };
