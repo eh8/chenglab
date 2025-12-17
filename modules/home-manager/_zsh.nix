@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -11,6 +12,7 @@
       sudo = "sudo ";
       v = "vim ";
       k = "kubectl ";
+      tf = "terraform ";
     };
     # inspo: https://discourse.nixos.org/t/brew-not-on-path-on-m1-mac/26770/4
     initContent = ''
