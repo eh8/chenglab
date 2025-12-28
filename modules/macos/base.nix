@@ -2,7 +2,8 @@
   pkgs,
   vars,
   ...
-}: {
+}:
+{
   imports = [
     ./_dock.nix
     ./_packages.nix
@@ -37,10 +38,6 @@
 
   programs.zsh.enable = true;
   security.pam.services.sudo_local.touchIdAuth = true;
-
-  services = {
-    tailscale.enable = true;
-  };
 
   users.users.${vars.userName}.home = "/Users/${vars.userName}";
 
@@ -86,14 +83,14 @@
       enable = true;
       username = vars.userName;
       entries = [
-        {path = "/Applications/Firefox.app";}
-        {path = "/Applications/Alacritty.app";}
-        {path = "/Applications/Zed.app";}
-        {path = "/Applications/Spotify.app";}
-        {path = "/Applications/WhatsApp.app";}
-        {path = "/Applications/1Password.app";}
-        {path = "/Applications/Obsidian.app";}
-        {path = "/System/Applications/System Settings.app";}
+        { path = "/Applications/Firefox.app"; }
+        { path = "/Applications/Alacritty.app"; }
+        { path = "/Applications/Zed.app"; }
+        { path = "/Applications/Spotify.app"; }
+        { path = "/Applications/WhatsApp.app"; }
+        { path = "/Applications/1Password.app"; }
+        { path = "/Applications/Obsidian.app"; }
+        { path = "/System/Applications/System Settings.app"; }
       ];
     };
   };
