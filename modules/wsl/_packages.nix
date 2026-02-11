@@ -21,6 +21,7 @@ in {
     kubectx
     kubelogin
     kubernetes-helm
+    python315
     terraform
     trashy
   ];

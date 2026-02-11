@@ -58,9 +58,7 @@ in {
           nixos-rebuild # need for macOS
           nixd # need for language server
           nodejs
-          pkgs-unstable.claude-code
           pkgs-unstable.codex
-          pkgs-unstable.gemini-cli
           sops
           statix
           stripe-cli
