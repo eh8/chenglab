@@ -94,13 +94,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download tarball
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: nixos.wsl
           path: .
 
       - name: Download ISO
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: nixos.iso
           path: .
