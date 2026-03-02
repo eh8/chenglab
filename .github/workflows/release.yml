@@ -40,7 +40,7 @@ jobs:
           sudo $nix_bin run .#nixosConfigurations.workchng.config.system.build.tarballBuilder
 
       - name: Upload tarball
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: nixos.wsl
           path: nixos.wsl
@@ -81,7 +81,7 @@ jobs:
         run: sudo mv result/iso/nixos-*.iso nixos.iso
 
       - name: Upload ISO
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: nixos.iso
           path: nixos.iso
