@@ -3,11 +3,9 @@
   osConfig,
   pkgs,
   ...
-}:
-let
+}: let
   isWorkDevice = osConfig.networking.hostName == "workchng";
-in
-{
+in {
   programs = {
     git.settings = {
       gpg.ssh.program = lib.mkMerge [
@@ -45,7 +43,11 @@ in
   xdg.configFile."1Password/ssh/agent.toml" = {
     text = ''
       [[ssh-keys]]
-      item = "SSH Key - ${if isWorkDevice then "Work" else "Personal"}"
+      item = "SSH Key - ${
+        if isWorkDevice
+        then "Work"
+        else "Personal"
+      }"
     '';
   };
 }
