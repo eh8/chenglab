@@ -37,7 +37,7 @@ jobs:
       - name: Build tarball
         run: |
           nix_bin=$(which nix)
-          sudo $nix_bin run .#nixosConfigurations.workchng.config.system.build.tarballBuilder
+          sudo $nix_bin run .#nixosConfigurations.win1chng.config.system.build.tarballBuilder
 
       - name: Upload tarball
         uses: actions/upload-artifact@v7

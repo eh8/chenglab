@@ -1,13 +1,15 @@
 {
+  lib,
   pkgs,
   inputs,
   osConfig,
   ...
 }: let
   pkgs-unstable = import inputs.nixpkgs-unstable {
-    system = pkgs.stdenv.hostPlatform.system;
+    inherit (pkgs.stdenv.hostPlatform) system;
     config.allowUnfree = true;
   };
+  isServer = lib.hasPrefix "svr" osConfig.networking.hostName;
 in {
   home = {
     packages = with pkgs;
@@ -44,7 +46,7 @@ in {
         wget
       ]
       ++ (
-        if builtins.substring 0 3 osConfig.networking.hostName != "svr"
+        if !isServer
         then [
           # Below packages are for personal machines only; excluded from servers
           # inspo: https://discourse.nixos.org/t/how-to-use-hostname-in-a-path/42612/3

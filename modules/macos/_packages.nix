@@ -1,10 +1,12 @@
 {
   config,
   inputs,
+  lib,
   vars,
   ...
-}:
-{
+}: let
+  isWorkDevice = config.networking.hostName == "workchng";
+in {
   imports = [
     inputs.nix-homebrew.darwinModules.nix-homebrew
   ];
@@ -62,7 +64,7 @@
       "whatsapp"
       "zed"
     ];
-    masApps = {
+    masApps = lib.optionalAttrs (!isWorkDevice) {
       "1Password for Safari" = 1569813296;
       "Infuse" = 1136220934;
       "Microsoft Excel" = 462058435;

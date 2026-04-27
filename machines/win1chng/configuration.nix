@@ -5,11 +5,13 @@
   ...
 }: {
   imports = [
-    inputs.home-manager.darwinModules.home-manager
+    inputs.home-manager.nixosModules.home-manager
+    inputs.nixos-wsl.nixosModules.default
+    inputs.vscode-server.nixosModules.default
 
     ./hardware-configuration.nix
 
-    ./../../modules/macos/base.nix
+    ./../../modules/wsl/base.nix
   ];
 
   home-manager = {
@@ -19,8 +21,6 @@
     users = {
       ${vars.userName} = {
         imports = [
-          ./../../modules/home-manager/1password.nix
-          ./../../modules/home-manager/alacritty.nix
           ./../../modules/home-manager/base.nix
           ./../../modules/home-manager/fonts.nix
           ./../../modules/home-manager/git.nix
@@ -29,9 +29,5 @@
     };
   };
 
-  networking = {
-    hostName = "workchng";
-    computerName = "workchng";
-    localHostName = "workchng";
-  };
+  networking.hostName = "win1chng";
 }

@@ -66,7 +66,10 @@
     inherit (self) outputs;
     vars = import ./vars.nix;
 
-    systems = ["x86_64-linux" "aarch64-darwin"];
+    systems = [
+      "x86_64-linux"
+      "aarch64-darwin"
+    ];
     forAllSystems = nixpkgs.lib.genAttrs systems;
 
     mkNixOSConfig = path:
@@ -86,10 +89,11 @@
 
     darwinConfigurations = {
       mac1chng = mkDarwinConfig ./machines/mac1chng/configuration.nix;
+      workchng = mkDarwinConfig ./machines/workchng/configuration.nix;
     };
 
     nixosConfigurations = {
-      workchng = mkNixOSConfig ./machines/workchng/configuration.nix;
+      win1chng = mkNixOSConfig ./machines/win1chng/configuration.nix;
       dsk1chng = mkNixOSConfig ./machines/dsk1chng/configuration.nix;
       svr1chng = mkNixOSConfig ./machines/svr1chng/configuration.nix;
       svr2chng = mkNixOSConfig ./machines/svr2chng/configuration.nix;

@@ -2,11 +2,13 @@
   vars,
   osConfig,
   ...
-}: {
+}: let
+  isWorkDevice = osConfig.networking.hostName == "workchng";
+in {
   home = {
     # inspo: https://jeppesen.io/git-commit-sign-nix-home-manager-ssh/
     file.".ssh/allowed_signers".text =
-      if osConfig.networking.hostName == "workchng"
+      if isWorkDevice
       then "* ${vars.sshPublicKeyWork}"
       else "* ${vars.sshPublicKeyPersonal}";
   };
@@ -15,15 +17,17 @@
     git = {
       enable = true;
       settings = {
-        user.name = vars.fullName;
-        user.email = vars.userEmail;
+        user = {
+          name = vars.fullName;
+          email = vars.userEmail;
+          signingkey =
+            if isWorkDevice
+            then vars.sshPublicKeyWork
+            else vars.sshPublicKeyPersonal;
+        };
         commit.gpgsign = true;
         gpg.format = "ssh";
         gpg.ssh.allowedSignersFile = "~/.ssh/allowed_signers";
-        user.signingkey =
-          if osConfig.networking.hostName == "workchng"
-          then vars.sshPublicKeyWork
-          else vars.sshPublicKeyPersonal;
       };
     };
   };

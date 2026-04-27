@@ -1,9 +1,11 @@
 {
+  config,
   pkgs,
   vars,
   ...
-}:
-{
+}: let
+  isWorkDevice = config.networking.hostName == "workchng";
+in {
   imports = [
     ./_dock.nix
     ./_packages.nix
@@ -11,19 +13,8 @@
 
   nixpkgs.config.allowUnfree = true;
   nix = {
+    enable = false;
     package = pkgs.nix;
-    gc = {
-      automatic = true;
-      interval = {
-        Weekday = 0;
-        Hour = 0;
-        Minute = 0;
-      };
-      options = "--delete-older-than 7d";
-    };
-    optimise = {
-      automatic = true;
-    };
     settings = {
       experimental-features = "nix-command flakes";
       trusted-users = [
@@ -82,16 +73,29 @@
     dock = {
       enable = true;
       username = vars.userName;
-      entries = [
-        { path = "/Applications/Firefox.app"; }
-        { path = "/Applications/Alacritty.app"; }
-        { path = "/Applications/Zed.app"; }
-        { path = "/Applications/Spotify.app"; }
-        { path = "/Applications/WhatsApp.app"; }
-        { path = "/Applications/1Password.app"; }
-        { path = "/Applications/Obsidian.app"; }
-        { path = "/System/Applications/System Settings.app"; }
-      ];
+      entries =
+        if isWorkDevice
+        then [
+          {path = "/Applications/Google Chrome.app";}
+          {path = "/Applications/Microsoft Outlook.app";}
+          {path = "/Applications/Microsoft Teams.app";}
+          {path = "/Applications/Slack.app";}
+          {path = "/Applications/Spotify.app";}
+          {path = "/Applications/Zed.app";}
+          {path = "/Applications/Alacritty.app";}
+          {path = "/Applications/1Password.app";}
+          {path = "/System/Applications/System Settings.app";}
+        ]
+        else [
+          {path = "/Applications/Firefox.app";}
+          {path = "/Applications/Alacritty.app";}
+          {path = "/Applications/Zed.app";}
+          {path = "/Applications/Spotify.app";}
+          {path = "/Applications/WhatsApp.app";}
+          {path = "/Applications/1Password.app";}
+          {path = "/Applications/Obsidian.app";}
+          {path = "/System/Applications/System Settings.app";}
+        ];
     };
   };
 
