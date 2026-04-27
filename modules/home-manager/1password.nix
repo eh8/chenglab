@@ -45,7 +45,7 @@ in
   xdg.configFile."1Password/ssh/agent.toml" = {
     text = ''
       [[ssh-keys]]
-      item = "SSH Key - ${if isWorkDevice then "Cerebras" else "Personal"}"
+      item = "SSH Key - ${if isWorkDevice then "Work" else "Personal"}"
     '';
   };
 }
