@@ -3,7 +3,8 @@
   pkgs,
   vars,
   ...
-}: {
+}:
+{
   imports = [
     ./_packages.nix
     ./_zsh.nix
@@ -43,11 +44,12 @@
       enable = true;
       settings.updates.auto_update = true;
     };
-    # direnv = {
-    #   enable = true;
-    #   enableZshIntegration = true;
-    #   nix-direnv.enable = true;
-    # };
+    direnv = {
+      # note: figure out way to re-enable this later
+      enable = false;
+      enableZshIntegration = true;
+      nix-direnv.enable = true;
+    };
     bat.enable = true;
     btop.enable = true;
     gallery-dl.enable = true;
