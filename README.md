@@ -14,8 +14,7 @@
 
 ## Highlights
 
-This repo contains the Nix configurations for my homelab, AMD Ryzen desktop, M1
-MacBook Air, and work WSL setup.
+This repo contains the Nix configurations for my homelab, desktop, and work laptops (both macOS and WSL).
 
 - ❄️ Nix flakes handle upstream dependencies and track latest stable release of Nixpkgs (currently 25.11)
 - 🏠 [home-manager](https://github.com/nix-community/home-manager) manages
@@ -116,7 +115,7 @@ Install `just` to access the simple aliases below
 ### Locally deploy changes
 
 ```bash
-just deploy macos
+just deploy
 ```
 
 ```bash
