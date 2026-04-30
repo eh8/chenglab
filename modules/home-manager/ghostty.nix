@@ -19,11 +19,6 @@
           (lib.mkIf pkgs.stdenv.isDarwin 15)
         ];
 
-        macos-icon = "custom-style";
-        macos-icon-frame = "plastic";
-        macos-icon-ghost-color = "#ffffff";
-        macos-icon-screen-color = "#000000,#ffffff";
-
         window-width = 120;
         window-height = 24;
         window-padding-x = 30;
