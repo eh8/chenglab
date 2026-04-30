@@ -3,8 +3,7 @@
   pkgs,
   vars,
   ...
-}:
-{
+}: {
   imports = [
     ./_packages.nix
     ./_zsh.nix

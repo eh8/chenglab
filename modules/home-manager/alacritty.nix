@@ -8,32 +8,32 @@
     settings = {
       colors = {
         bright = {
-          black = "0x737475";
-          blue = "0x959697";
-          cyan = "0xb15928";
-          green = "0x2e2f30";
-          magenta = "0xdadbdc";
-          red = "0xe6550d";
-          white = "0xfcfdfe";
-          yellow = "0x515253";
+          black = "0x6e7681";
+          blue = "0x79c0ff";
+          cyan = "0x39c5cf";
+          green = "0x56d364";
+          magenta = "0xbc8cff";
+          red = "0xffa198";
+          white = "0xb1bac4";
+          yellow = "0xe3b341";
         };
         cursor = {
-          cursor = "0xb7b8b9";
-          text = "0x0c0d0e";
+          cursor = "0xe6edf3";
+          text = "0x0d1117";
         };
         normal = {
-          black = "0x0c0d0e";
-          blue = "0x3182bd";
-          cyan = "0x80b1d3";
-          green = "0x31a354";
-          magenta = "0x756bb1";
-          red = "0xe31a1c";
-          white = "0xb7b8b9";
-          yellow = "0xdca060";
+          black = "0x484f58";
+          blue = "0x58a6ff";
+          cyan = "0x39c5cf";
+          green = "0x3fb950";
+          magenta = "0xbc8cff";
+          red = "0xff7b72";
+          white = "0xb1bac4";
+          yellow = "0xd29922";
         };
         primary = {
-          background = "0x0c0d0e";
-          foreground = "0xb7b8b9";
+          background = "0x0d1117";
+          foreground = "0xe6edf3";
         };
       };
 

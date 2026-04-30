@@ -48,6 +48,7 @@ in {
       "exifcleaner"
       "firefox"
       "figma-agent"
+      "ghostty"
       "google-chrome"
       "grandperspective"
       "handbrake-app"
