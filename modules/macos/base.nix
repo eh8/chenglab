@@ -3,11 +3,9 @@
   pkgs,
   vars,
   ...
-}:
-let
+}: let
   isWorkDevice = config.networking.hostName == "workchng";
-in
-{
+in {
   imports = [
     ./_dock.nix
     ./_packages.nix
@@ -40,14 +38,13 @@ in
     defaults = {
       loginwindow.LoginwindowText = "If lost, contact ${vars.userEmail}";
       screencapture =
-        if isWorkDevice then
-          {
-            location = "~/OneDrive/00-09 Personal/00 Notes/00.00 Screenshots";
-          }
-        else
-          {
-            location = "~/OneDrive/30-39 Hobbies/34 Photos/34.01 Screenshots";
-          };
+        if isWorkDevice
+        then {
+          location = "~/OneDrive/00-09 Personal/00 Notes/00.00 Screenshots";
+        }
+        else {
+          location = "~/OneDrive/30-39 Hobbies/34 Photos/34.01 Screenshots";
+        };
 
       dock = {
         autohide = true;
@@ -84,29 +81,28 @@ in
       enable = true;
       username = vars.userName;
       entries =
-        if isWorkDevice then
-          [
-            { path = "/Applications/Google Chrome.app"; }
-            { path = "/Applications/Microsoft Outlook.app"; }
-            { path = "/Applications/Microsoft Teams.app"; }
-            { path = "/Applications/Slack.app"; }
-            { path = "/Applications/Spotify.app"; }
-            { path = "/Applications/Zed.app"; }
-            { path = "/Applications/Ghostty.app"; }
-            { path = "/Applications/1Password.app"; }
-            { path = "/System/Applications/System Settings.app"; }
-          ]
-        else
-          [
-            { path = "/Applications/Firefox.app"; }
-            { path = "/Applications/Ghostty.app"; }
-            { path = "/Applications/Zed.app"; }
-            { path = "/Applications/Spotify.app"; }
-            { path = "/Applications/WhatsApp.app"; }
-            { path = "/Applications/1Password.app"; }
-            { path = "/Applications/Obsidian.app"; }
-            { path = "/System/Applications/System Settings.app"; }
-          ];
+        if isWorkDevice
+        then [
+          {path = "/Applications/Google Chrome.app";}
+          {path = "/Applications/Microsoft Outlook.app";}
+          {path = "/Applications/Microsoft Teams.app";}
+          {path = "/Applications/Slack.app";}
+          {path = "/Applications/Spotify.app";}
+          {path = "/Applications/Zed.app";}
+          {path = "/Applications/Ghostty.app";}
+          {path = "/Applications/1Password.app";}
+          {path = "/System/Applications/System Settings.app";}
+        ]
+        else [
+          {path = "/Applications/Firefox.app";}
+          {path = "/Applications/Ghostty.app";}
+          {path = "/Applications/Zed.app";}
+          {path = "/Applications/Spotify.app";}
+          {path = "/Applications/WhatsApp.app";}
+          {path = "/Applications/1Password.app";}
+          {path = "/Applications/Obsidian.app";}
+          {path = "/System/Applications/System Settings.app";}
+        ];
     };
   };
 
