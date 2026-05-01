@@ -45,7 +45,7 @@
       window = {
         dimensions = {
           lines = 30;
-          columns = 150;
+          columns = 120;
         };
         decorations = lib.mkMerge [
           (lib.mkIf pkgs.stdenv.isLinux "Full")

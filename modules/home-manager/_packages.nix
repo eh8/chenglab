@@ -16,7 +16,7 @@ in {
       [
         asciinema
         asciinema-agg
-        asciiquarium
+        asciiquarium-transparent
         cbonsai
         clolcat
         cmatrix
