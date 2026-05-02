@@ -19,6 +19,10 @@
     sessionVariables = lib.mkIf pkgs.stdenv.isDarwin {
       SOPS_AGE_KEY_FILE = "$HOME/.config/sops/age/keys.txt";
     };
+    # note: suppress "last login" message on macos
+    file = lib.mkIf pkgs.stdenv.isDarwin {
+      ".hushlogin".text = "";
+    };
   };
 
   programs = {
