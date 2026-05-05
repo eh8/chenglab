@@ -98,9 +98,9 @@ in {
           {path = "/Applications/Ghostty.app";}
           {path = "/Applications/Zed.app";}
           {path = "/Applications/Spotify.app";}
+          {path = "/Applications/Obsidian.app";}
           {path = "/Applications/WhatsApp.app";}
           {path = "/Applications/1Password.app";}
-          {path = "/Applications/Obsidian.app";}
           {path = "/System/Applications/System Settings.app";}
         ];
     };
