@@ -48,10 +48,11 @@ in {
       ++ (
         if !isServer
         then [
-          # Below packages are for personal machines only; excluded from servers
+          # Below packages are excluded from servers
           # inspo: https://discourse.nixos.org/t/how-to-use-hostname-in-a-path/42612/3
           alejandra
           bun
+          docker
           doppler
           just
           gnupg1
@@ -62,13 +63,14 @@ in {
           nodejs
           pkgs-unstable.claude-code
           pkgs-unstable.codex
+          pkgs-unstable.colima
           sops
           statix
           stripe-cli
           zola
         ]
         else [
-          # Below packages are for servers only; excluded from personal machines
+          # Below packages are for servers only
         ]
       );
   };
