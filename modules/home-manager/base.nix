@@ -49,7 +49,7 @@
     };
     direnv = {
       # note: figure out way to re-enable this later
-      enable = false;
+      enable = true;
       enableZshIntegration = true;
       nix-direnv.enable = true;
     };
