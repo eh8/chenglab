@@ -64,6 +64,7 @@ in {
           pkgs-unstable.claude-code
           pkgs-unstable.codex
           pkgs-unstable.colima
+          python315
           sops
           statix
           stripe-cli
