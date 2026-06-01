@@ -57,6 +57,11 @@ in {
           just
           gnupg1
           ffmpeg
+          k9s
+          kubectl
+          kubectx
+          kubelogin
+          kubernetes-helm
           nil
           nixos-rebuild # need for macOS
           nixd # need for language server
