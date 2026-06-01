@@ -17,7 +17,7 @@ in {
       enable = true;
       enableDefaultConfig = false;
       # inspo: https://mynixos.com/home-manager/option/programs.ssh.enableDefaultConfig
-      matchBlocks."*" = lib.mkMerge [
+      settings."*" = lib.mkMerge [
         {
           forwardAgent = false;
           addKeysToAgent = "no";

@@ -8,7 +8,7 @@
   <br>
 </p>
 
-[![nixos 25.11](https://img.shields.io/badge/NixOS-25.11-blue.svg?&logo=NixOS&logoColor=white)](https://nixos.org)
+[![nixos 26.05](https://img.shields.io/badge/NixOS-26.05-blue.svg?&logo=NixOS&logoColor=white)](https://nixos.org)
 [![blog post](https://img.shields.io/badge/blog%20post-snazzy-purple.svg)](https://chengeric.com/homelab?gh)
 ![stars](https://img.shields.io/github/stars/eh8/chenglab?logo=github&style=flat&color)
 
