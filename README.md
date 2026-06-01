@@ -16,7 +16,7 @@
 
 This repo contains the Nix configurations for my homelab, desktop, and work laptops (both macOS and WSL).
 
-- ❄️ Nix flakes handle upstream dependencies and track latest stable release of Nixpkgs (currently 25.11)
+- ❄️ Nix flakes handle upstream dependencies and track latest stable release of Nixpkgs (currently 26.05)
 - 🏠 [home-manager](https://github.com/nix-community/home-manager) manages
   dotfiles
 - 🍎 [nix-darwin](https://github.com/LnL7/nix-darwin) manages MacBook
