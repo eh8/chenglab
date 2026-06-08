@@ -29,8 +29,8 @@ This repo contains the Nix configurations for my homelab, desktop, and work lapt
   self-hosted applications
 - ⚡️ `.justfile` contains useful aliases for many frequent and atrociously long
   `nix` commands
-- 🤖 `flake.lock` updated daily via GitHub Action, servers are configured to
-  automatically upgrade daily via
+- 🤖 `flake.lock` updated via Dependabot, servers are configured to
+  automatically upgrade via
   [`modules/nixos/auto-update.nix`](https://github.com/eh8/chenglab/blob/main/modules/nixos/auto-update.nix)
 - 🧱 Modular architecture promotes readability for me and copy-and-paste-ability
   for you
