@@ -1,0 +1,18 @@
+---
+name: Flake check
+on:
+  pull_request: null
+  workflow_dispatch: null
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - uses: cachix/install-nix-action@v31
+
+      - name: Flake check
+        run: nix flake check
