@@ -45,6 +45,7 @@ in {
       "audacity"
       "betterdisplay"
       "caffeine"
+      "codex-app"
       "discord"
       "exifcleaner"
       "firefox"
