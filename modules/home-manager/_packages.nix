@@ -38,6 +38,7 @@ in {
         jq
         kopia
         neo-cowsay
+        nix-tree
         pandoc
         pipes-rs
         poppler-utils

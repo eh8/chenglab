@@ -3,13 +3,24 @@ default:
 
 deploy machine='' ip='':
     @if [ "$(uname)" = "Darwin" ] && [ -z "{{ machine }}" ] && [ -z "{{ ip }}" ]; then \
-      sudo darwin-rebuild switch --flake .; \
+      sudo darwin-rebuild \
+        switch \
+        --flake .; \
     elif [ -z "{{ machine }}" ] && [ -z "{{ ip }}" ]; then \
-      nixos-rebuild switch --sudo --flake .; \
+      nixos-rebuild switch \
+        --sudo \
+        --flake .; \
     elif [ -z "{{ ip }}" ]; then \
-      nixos-rebuild switch --sudo --flake ".#{{ machine }}"; \
+      nixos-rebuild switch \
+        --sudo \
+        --flake ".#{{ machine }}"; \
     else \
-      nixos-rebuild switch --fast --flake ".#{{ machine }}" --sudo --target-host "eh8@{{ ip }}" --build-host "eh8@{{ ip }}"; \
+      nixos-rebuild switch \
+        --flake ".#{{ machine }}" \
+        --target-host "eh8@{{ ip }}" \
+        --build-host "eh8@{{ ip }}" \
+        --use-remote-sudo \
+        --no-reexec; \
     fi
 
 up:
@@ -31,10 +42,14 @@ sops-edit:
     sops secrets/secrets.yaml
 
 sops-rotate:
-    for file in secrets/*; do sops --rotate --in-place "$file"; done
+    for file in secrets/*; do \
+      sops --rotate --in-place "$file"; \
+    done
 
 sops-update:
-    for file in secrets/*; do sops updatekeys "$file"; done
+    for file in secrets/*; do \
+      sops updatekeys "$file"; \
+    done
 
 build-iso:
     nix build .#nixosConfigurations.iso1chng.config.system.build.isoImage
