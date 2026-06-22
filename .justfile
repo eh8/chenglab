@@ -19,7 +19,7 @@ deploy machine='' ip='':
         --flake ".#{{ machine }}" \
         --target-host "eh8@{{ ip }}" \
         --build-host "eh8@{{ ip }}" \
-        --use-remote-sudo \
+        --sudo \
         --no-reexec; \
     fi
 
