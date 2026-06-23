@@ -14,6 +14,7 @@ in {
     environmentFile = config.sops.templates."alloy.env".path;
   };
 
+  # inspo: taken from the grafana cloud self-start wizard and then adapted using codex
   environment.etc."alloy/config.alloy".text = ''
     prometheus.exporter.self "alloy_check" {}
 
