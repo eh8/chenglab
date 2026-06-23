@@ -56,6 +56,7 @@ in {
           docker
           doppler
           just
+          gcx
           gnupg1
           ffmpeg
           k9s

@@ -14,6 +14,7 @@
     ./../../modules/nixos/base.nix
     ./../../modules/nixos/remote-unlock.nix
 
+    ./../../services/grafana-cloud.nix
     ./../../services/homebridge.nix
     ./../../services/scrypted.nix
     ./../../services/tailscale.nix
