@@ -1,4 +1,8 @@
-{config, ...}: {
+{
+  config,
+  vars,
+  ...
+}: {
   sops = {
     secrets."grafana-cloud-token" = {};
 
@@ -102,7 +106,7 @@
         url = "https://prometheus-prod-66-prod-us-east-3.grafana.net/api/prom/push"
 
         basic_auth {
-          username = "3325626"
+          username = "${vars.grafanaCloudMetricsId}"
           password = sys.env("GRAFANA_CLOUD_TOKEN")
         }
       }
