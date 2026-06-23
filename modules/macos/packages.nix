@@ -52,6 +52,7 @@ in {
       "exifcleaner"
       "firefox"
       "figma-agent"
+      "figma"
       "ghostty"
       "google-chrome"
       "grandperspective"
