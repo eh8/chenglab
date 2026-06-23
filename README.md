@@ -36,7 +36,7 @@ This repo contains the Nix configurations for my homelab, desktop, and work lapt
 - `machines/` — host-specific configuration
 - `modules/` — shared NixOS, macOS, WSL, and Home Manager configuration
 - `services/` — self-hosted service modules
-- `secrets/` — SOPS-encrypted secrets
+- `secrets/` — sops-encrypted secrets
 
 ## Getting started
 
