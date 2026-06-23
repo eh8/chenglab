@@ -7,8 +7,8 @@
   isWorkDevice = config.networking.hostName == "workchng";
 in {
   imports = [
-    ./_dock.nix
-    ./_packages.nix
+    ./dock.nix
+    ./packages.nix
   ];
 
   nixpkgs.config.allowUnfree = true;

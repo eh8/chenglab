@@ -14,7 +14,6 @@
       availableKernelModules = ["nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" "igb"];
       kernelModules = ["amdgpu"];
       luks = {
-        reusePassphrases = true;
         devices = {
           "cryptroot" = {
             device = "/dev/nvme0n1p2";

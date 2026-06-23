@@ -46,40 +46,34 @@ in {
         tree
         wget
       ]
-      ++ (
-        if !isServer
-        then [
-          # Below packages are excluded from servers
-          # inspo: https://discourse.nixos.org/t/how-to-use-hostname-in-a-path/42612/3
-          alejandra
-          bun
-          docker
-          doppler
-          just
-          gcx
-          gnupg1
-          ffmpeg
-          k9s
-          kubectl
-          kubectx
-          kubelogin
-          kubernetes-helm
-          nil
-          nixos-rebuild # need for macOS
-          nixd # need for language server
-          nodejs
-          pkgs-unstable.claude-code
-          pkgs-unstable.codex
-          pkgs-unstable.colima
-          python315
-          sops
-          statix
-          stripe-cli
-          zola
-        ]
-        else [
-          # Below packages are for servers only
-        ]
-      );
+      ++ lib.optionals (!isServer) [
+        # Below packages are excluded from servers
+        # inspo: https://discourse.nixos.org/t/how-to-use-hostname-in-a-path/42612/3
+        alejandra
+        bun
+        docker
+        doppler
+        just
+        gcx
+        gnupg1
+        ffmpeg
+        k9s
+        kubectl
+        kubectx
+        kubelogin
+        kubernetes-helm
+        nil
+        nixos-rebuild # need for macOS
+        nixd # need for language server
+        nodejs
+        pkgs-unstable.claude-code
+        pkgs-unstable.codex
+        pkgs-unstable.colima
+        python315
+        sops
+        statix
+        stripe-cli
+        zola
+      ];
   };
 }

@@ -1,12 +1,11 @@
 {
   config,
   pkgs,
-  lib,
   ...
 }: {
   imports = [
-    ./_acme.nix
-    ./_nginx.nix
+    ./acme.nix
+    ./nginx.nix
   ];
 
   sops.secrets.nextcloud-adminpassfile = {
@@ -74,33 +73,7 @@
     ffmpeg
   ];
 
-  sops.secrets."kopia-repository-token" = {};
-
-  systemd = {
-    services = {
-      "backup-nextcloud" = {
-        description = "Backup Nextcloud data with Kopia";
-        wantedBy = ["default.target"];
-        serviceConfig = {
-          User = "root";
-          ExecStartPre = "${pkgs.kopia}/bin/kopia repository connect from-config --token-file ${config.sops.secrets."kopia-repository-token".path}";
-          ExecStart = "${pkgs.kopia}/bin/kopia snapshot create /fun/nextcloud";
-          ExecStartPost = "${pkgs.kopia}/bin/kopia repository disconnect";
-        };
-      };
-    };
-
-    timers = {
-      "backup-nextcloud" = {
-        description = "Backup Nextcloud data with Kopia";
-        wantedBy = ["timers.target"];
-        timerConfig = {
-          OnCalendar = "*-*-* 4:00:00";
-          RandomizedDelaySec = "1h";
-        };
-      };
-    };
-  };
+  chenglab.kopiaBackup.paths = ["/fun/nextcloud"];
 
   environment.persistence."/nix/persist" = {
     directories = [

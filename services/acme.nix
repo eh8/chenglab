@@ -1,6 +1,5 @@
 {config, ...}: {
   sops.secrets = {
-    "cloudflare-api-email" = {};
     "cloudflare-api-key" = {};
   };
 

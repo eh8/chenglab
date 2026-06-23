@@ -12,10 +12,21 @@
           "code.desktop"
           "alacritty.desktop"
         ];
+        disable-user-extensions = false;
+
+        # `gnome-extensions list` for a list
+        enabled-extensions = [
+          "AlphabeticalAppGrid@stuarthayhurst"
+          "appindicatorsupport@rgcjonas.gmail.com"
+          "blur-my-shell@aunetx"
+          "clipboard-indicator@tudmotu.com"
+          "just-perfection-desktop@just-perfection"
+        ];
       };
       "org/gnome/desktop/interface" = {
         # Gnome dark mode
         color-scheme = "prefer-dark";
+        clock-show-seconds = true;
       };
       # inspo: https://github.com/NixOS/nixpkgs/issues/114514
       "org/gnome/mutter" = {
@@ -34,21 +45,6 @@
         picture-uri = "file:///run/current-system/sw/share/backgrounds/gnome/morphogenesis-d.svg";
         primary-color = "#e18477";
         secondary-color = "#000000";
-      };
-      "org/gnome/shell" = {
-        disable-user-extensions = false;
-
-        # `gnome-extensions list` for a list
-        enabled-extensions = [
-          "AlphabeticalAppGrid@stuarthayhurst"
-          "appindicatorsupport@rgcjonas.gmail.com"
-          "blur-my-shell@aunetx"
-          "clipboard-indicator@tudmotu.com"
-          "just-perfection-desktop@just-perfection"
-        ];
-      };
-      "org/gnome/desktop/interface" = {
-        clock-show-seconds = true;
       };
     };
   };

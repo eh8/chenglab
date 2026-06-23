@@ -4,7 +4,7 @@
   ...
 }: {
   imports = [
-    ./_packages.nix
+    ./packages.nix
   ];
 
   wsl = {

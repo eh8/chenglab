@@ -1,12 +1,7 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}: {
+{...}: {
   imports = [
-    ./_acme.nix
-    ./_nginx.nix
+    ./acme.nix
+    ./nginx.nix
   ];
 
   # inspo: https://lmy.medium.com/from-ansible-to-nixos-3a117b140bec
@@ -39,35 +34,11 @@
     };
   };
 
-  sops.secrets."kopia-repository-token" = {};
-
   systemd = {
     tmpfiles.rules = ["d /var/lib/homebridge 0755 root root"];
-
-    services = {
-      "backup-homebridge" = {
-        description = "Backup Homebridge installation with Kopia";
-        wantedBy = ["default.target"];
-        serviceConfig = {
-          User = "root";
-          ExecStartPre = "${pkgs.kopia}/bin/kopia repository connect from-config --token-file ${config.sops.secrets."kopia-repository-token".path}";
-          ExecStart = "${pkgs.kopia}/bin/kopia snapshot create /var/lib/homebridge";
-          ExecStartPost = "${pkgs.kopia}/bin/kopia repository disconnect";
-        };
-      };
-    };
-
-    timers = {
-      "backup-homebridge" = {
-        description = "Backup Homebridge installation with Kopia";
-        wantedBy = ["timers.target"];
-        timerConfig = {
-          OnCalendar = "*-*-* 4:00:00";
-          RandomizedDelaySec = "1h";
-        };
-      };
-    };
   };
+
+  chenglab.kopiaBackup.paths = ["/var/lib/homebridge"];
 
   environment.persistence."/nix/persist" = {
     directories = [

@@ -5,16 +5,16 @@
   ...
 }: {
   imports = [
-    ./_packages.nix
-    ./_zsh.nix
+    ./packages.nix
+    ./zsh.nix
   ];
 
   home = {
     username = vars.userName;
-    homeDirectory = lib.mkMerge [
-      (lib.mkIf pkgs.stdenv.isLinux "/home/${vars.userName}")
-      (lib.mkIf pkgs.stdenv.isDarwin "/Users/${vars.userName}")
-    ];
+    homeDirectory =
+      if pkgs.stdenv.isDarwin
+      then "/Users/${vars.userName}"
+      else "/home/${vars.userName}";
     stateVersion = "23.11";
     sessionVariables = lib.mkIf pkgs.stdenv.isDarwin {
       SOPS_AGE_KEY_FILE = "$HOME/.config/sops/age/keys.txt";
@@ -66,7 +66,5 @@
     fd.enable = true;
   };
 
-  # Nicely reload system units when changing configs
-  # Self-note: nix-darwin seems to luckily ignore this setting
-  systemd.user.startServices = "sd-switch";
+  systemd.user.startServices = lib.mkIf pkgs.stdenv.isLinux "sd-switch";
 }

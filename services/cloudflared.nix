@@ -9,13 +9,13 @@
       format = "binary";
       sopsFile = ./../secrets/cloudflare-tunnel;
     };
-    "cloudflare-token" = {
+    "cloudflare-cert" = {
       format = "binary";
       sopsFile = ./../secrets/cloudflare-cert.pem;
     };
   };
 
-  environment.etc."cloudflared/cert.pem".source = config.sops.secrets."cloudflare-token".path;
+  environment.etc."cloudflared/cert.pem".source = config.sops.secrets."cloudflare-cert".path;
 
   services.cloudflared = {
     enable = true;

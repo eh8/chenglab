@@ -58,12 +58,10 @@
   };
 
   outputs = {
-    self,
     nixpkgs,
     nix-darwin,
     ...
   } @ inputs: let
-    inherit (self) outputs;
     vars = import ./vars.nix;
 
     systems = [
@@ -74,13 +72,13 @@
 
     mkNixOSConfig = path:
       nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs vars;};
+        specialArgs = {inherit inputs vars;};
         modules = [path];
       };
 
     mkDarwinConfig = path:
       nix-darwin.lib.darwinSystem {
-        specialArgs = {inherit inputs outputs vars;};
+        specialArgs = {inherit inputs vars;};
         modules = [path];
       };
   in {
@@ -100,7 +98,7 @@
       svr3chng = mkNixOSConfig ./machines/svr3chng/configuration.nix;
       iso1chng = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = {inherit inputs outputs vars;};
+        specialArgs = {inherit inputs vars;};
         modules = [
           (nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix")
           ./machines/iso1chng/configuration.nix

@@ -1,6 +1,5 @@
 {
   inputs,
-  outputs,
   vars,
   ...
 }: {
@@ -21,7 +20,7 @@
   ];
 
   home-manager = {
-    extraSpecialArgs = {inherit inputs outputs vars;};
+    extraSpecialArgs = {inherit inputs vars;};
     useGlobalPkgs = true;
     useUserPackages = true;
     users = {

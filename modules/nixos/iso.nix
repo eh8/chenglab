@@ -1,6 +1,6 @@
 {vars, ...}: {
   imports = [
-    ./_packages.nix
+    ./packages.nix
   ];
 
   users.users.nixos = {

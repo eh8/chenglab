@@ -16,27 +16,27 @@
 
 This repo contains the Nix configurations for my homelab, desktop, and work laptops (both macOS and WSL).
 
-- ❄️ Nix flakes handle upstream dependencies and track latest stable release of Nixpkgs (currently 26.05)
+- ❄️ Nix flakes track the latest stable Nixpkgs release (currently 26.05)
 - 🏠 [home-manager](https://github.com/nix-community/home-manager) manages
   dotfiles
-- 🍎 [nix-darwin](https://github.com/LnL7/nix-darwin) manages MacBook
-- 🤫 [sops-nix](https://github.com/Mic92/sops-nix) manages secrets
-- 🔑 Remote initrd unlock system to decrypt drives on boot
+- 🍎 [nix-darwin](https://github.com/LnL7/nix-darwin) manages
+  macOS systems
+- 🤫 [sops-nix](https://github.com/Mic92/sops-nix) manages secrets, including
+  credentials used for remote initrd disk unlocking
 - 🌬️ Root on tmpfs aka
   [impermanence](https://grahamc.com/blog/erase-your-darlings/)
 - 🔒 Automatic Let's Encrypt certificate registration and renewal
 - 🧩 Tailscale, Nextcloud, Jellyfin, Homebridge, Scrypted, among other nice
   self-hosted applications
-- ⚡️ `.justfile` contains useful aliases for many frequent and atrociously long
-  `nix` commands
-- 🤖 `flake.lock` updated via Dependabot, servers are configured to
-  automatically upgrade via
-  [`modules/nixos/auto-update.nix`](https://github.com/eh8/chenglab/blob/main/modules/nixos/auto-update.nix)
-- 🧱 Modular architecture promotes readability for me and copy-and-paste-ability
-  for you
-- 📦
-  [Custom ready-made tarball and ISO](https://github.com/eh8/chenglab/releases)
-  for installing NixOS-on-WSL and NixOS, respectively
+- ⚡️ `just` aliases for common deployment, validation, and maintenance commands
+- 📦 [Ready-made WSL and ISO artifacts](https://github.com/eh8/chenglab/releases)
+
+## Repository layout
+
+- `machines/` — host-specific configuration
+- `modules/` — shared NixOS, macOS, WSL, and Home Manager configuration
+- `services/` — self-hosted service modules
+- `secrets/` — SOPS-encrypted secrets
 
 ## Getting started
 
@@ -61,7 +61,7 @@ sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/eh8/chenglab/main/i
 > [!WARNING]
 > This script is primarily meant for my own use. Using it to install
 > NixOS on your own hardware will fail. At minimum, you'll need to do the
-> following before attemping installation:
+> following before attempting installation:
 >
 > 1. Create a configuration for your own device in the `machines/` folder
 > 1. Retool your own sops-nix secrets or remove them entirely if you don't use
@@ -92,10 +92,10 @@ sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/eh8/chenglab/main/i
 wsl --install --no-distribution
 ```
 
-1. Download `nixos.wsl` from
+2. Download `nixos.wsl` from
    [the latest release](https://github.com/eh8/chenglab/releases).
 
-2. Either double-click the `nixos.wsl` file once downloaded or import
+3. Either double-click the `nixos.wsl` file once downloaded or import
    the tarball into WSL:
 
 ```powershell
@@ -110,40 +110,16 @@ wsl -d NixOS
 
 ## Useful commands 🛠️
 
-Install `just` to access the simple aliases below
+Install `just` to use these aliases:
 
-### Locally deploy changes
-
-```bash
-just deploy
-```
-
-```bash
-just deploy MACHINE
-```
-
-### Remote deployment
-
-To remotely deploy `MACHINE`, which has an IP address of `10.0.10.2`
-
-```bash
-just deploy MACHINE 10.0.10.2
-```
-
-### Edit secrets
-
-Make sure each machine's public key is listed as entry in `.sops.yaml`. To
-modify `secrets/secrets.yaml`:
-
-```bash
-just sops-edit
-```
-
-### Syncing sops keys for a new machine
-
-```bash
-just sops-update
-```
+| Command | Purpose |
+| --- | --- |
+| `just deploy [MACHINE] [IP]` | Deploy locally, to another configuration, or to a remote host |
+| `just check` | Evaluate every supported system |
+| `just fmt` / `just lint` | Format and lint Nix files |
+| `just sops-edit` | Edit `secrets/secrets.yaml` |
+| `just sops-update` | Update secret recipients from `.sops.yaml` |
+| `just build-iso` | Build the installer ISO |
 
 ## Important caveats
 
@@ -155,9 +131,8 @@ To modify user password, first generate a hash
 echo "password" | mkpasswd -m SHA-512 -s
 ```
 
-Then run `just edit-secrets` to replace the existing decrypted hash with the one
-that you just generated. If you use a password manager, sure to update the new
-password as necessary.
+Then run `just sops-edit` to replace the existing decrypted hash with the one
+that you just generated. If you use a password manager, update it too.
 
 ### Changing SSH keys
 
@@ -174,14 +149,11 @@ with how it appears on the official website.
 2. Binary caching
 3. [Wireless remote unlocking](https://discourse.nixos.org/t/wireless-connection-within-initrd/38317/13)
 
-## Frequently used resources
+## Helpful references
 
 - [Search NixOS options](https://search.nixos.org/options)
 - [Home Manager Option Search](https://mipmip.github.io/home-manager-option-search/)
 - [Darwin Configuration Options](https://daiderd.com/nix-darwin/manual/index.html)
-
-## Helpful references
-
 - [An outstanding beginner friendly introduction to NixOS and flakes](https://nixos-and-flakes.thiscute.world/)
 - [Conditional implementation](https://nixos.wiki/wiki/Extend_NixOS#Conditional_Implementation)
 - [Error when using lib.mkIf and lib.mkMerge to set configuration based on hostname](https://stackoverflow.com/questions/77527439/error-when-using-lib-mkif-and-lib-mkmerge-to-set-configuration-based-on-hostname)

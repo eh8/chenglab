@@ -8,7 +8,8 @@
   imports = [
     inputs.sops-nix.nixosModules.sops
 
-    ./_packages.nix
+    ./kopia-backup.nix
+    ./packages.nix
   ];
 
   boot.loader = {

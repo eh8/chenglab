@@ -1,8 +1,4 @@
-{
-  lib,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   programs.alacritty = {
     enable = true;
     settings = {
@@ -47,10 +43,10 @@
           lines = 30;
           columns = 120;
         };
-        decorations = lib.mkMerge [
-          (lib.mkIf pkgs.stdenv.isLinux "Full")
-          (lib.mkIf pkgs.stdenv.isDarwin "transparent")
-        ];
+        decorations =
+          if pkgs.stdenv.isDarwin
+          then "transparent"
+          else "Full";
         dynamic_padding = true;
         padding = {
           x = 30;
@@ -59,10 +55,10 @@
       };
 
       font = {
-        size = lib.mkMerge [
-          (lib.mkIf pkgs.stdenv.isLinux 12)
-          (lib.mkIf pkgs.stdenv.isDarwin 15)
-        ];
+        size =
+          if pkgs.stdenv.isDarwin
+          then 15
+          else 12;
         normal = {
           family = "Iosevka Medium";
         };

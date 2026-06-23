@@ -29,6 +29,9 @@ up:
 lint:
     statix check .
 
+check:
+    nix flake check --all-systems --no-build
+
 fmt:
     nix fmt .
 

@@ -1,12 +1,7 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}: {
+{lib, ...}: {
   imports = [
-    ./_acme.nix
-    ./_nginx.nix
+    ./acme.nix
+    ./nginx.nix
   ];
 
   # Initially generated using compose2nix v0.1.9.
@@ -101,19 +96,6 @@
           "podman-compose-scrypted-root.target"
         ];
       };
-
-      "backup-scrypted" = {
-        description = "Backup Scrypted installation with Kopia";
-        wantedBy = ["default.target"];
-        # warning: following line is needed to prevent race condition with homebridge.nix
-        after = ["backup-homebridge.service"];
-        serviceConfig = {
-          User = "root";
-          ExecStartPre = "${pkgs.kopia}/bin/kopia repository connect from-config --token-file ${config.sops.secrets."kopia-repository-token".path}";
-          ExecStart = "${pkgs.kopia}/bin/kopia snapshot create /var/lib/scrypted";
-          ExecStartPost = "${pkgs.kopia}/bin/kopia repository disconnect";
-        };
-      };
     };
 
     timers = {
@@ -124,17 +106,10 @@
           RandomizedDelaySec = "1h";
         };
       };
-
-      "backup-scrypted" = {
-        description = "Backup Scrypted installation with Kopia";
-        wantedBy = ["timers.target"];
-        timerConfig = {
-          OnCalendar = "*-*-* 4:00:00";
-          RandomizedDelaySec = "1h";
-        };
-      };
     };
   };
+
+  chenglab.kopiaBackup.paths = ["/var/lib/scrypted"];
 
   environment.persistence."/nix/persist" = {
     directories = [
