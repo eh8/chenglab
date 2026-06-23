@@ -1,4 +1,4 @@
-{...}: {
+{config, ...}: {
   imports = [
     ./acme.nix
     ./nginx.nix
@@ -27,7 +27,7 @@
           useACMEHost = "chengeric.com";
           locations."/" = {
             recommendedProxySettings = true;
-            proxyPass = "http://127.0.0.1:8581";
+            proxyPass = "http://127.0.0.1:${toString config.services.homebridge.uiSettings.port}";
           };
         };
       };

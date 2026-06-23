@@ -87,7 +87,7 @@
         useACMEHost = "chengeric.com";
         locations."/" = {
           recommendedProxySettings = true;
-          proxyPass = "http://127.0.0.1:8096";
+          proxyPass = "http://127.0.0.1:${toString config.nixarr.jellyfin.port}";
         };
       };
 
@@ -96,7 +96,7 @@
         useACMEHost = "chengeric.com";
         locations."/" = {
           recommendedProxySettings = true;
-          proxyPass = "http://127.0.0.1:9696";
+          proxyPass = "http://127.0.0.1:${toString config.nixarr.prowlarr.port}";
         };
       };
 
@@ -105,7 +105,7 @@
         useACMEHost = "chengeric.com";
         locations."/" = {
           recommendedProxySettings = true;
-          proxyPass = "http://127.0.0.1:7878";
+          proxyPass = "http://127.0.0.1:${toString config.nixarr.radarr.port}";
         };
       };
 
@@ -114,7 +114,7 @@
         useACMEHost = "chengeric.com";
         locations."/" = {
           recommendedProxySettings = true;
-          proxyPass = "http://127.0.0.1:8989";
+          proxyPass = "http://127.0.0.1:${toString config.nixarr.sonarr.port}";
         };
       };
 
@@ -122,7 +122,7 @@
         forceSSL = true;
         useACMEHost = "chengeric.com";
         locations."/" = {
-          proxyPass = "http://127.0.0.1:9091";
+          proxyPass = "http://127.0.0.1:${toString config.nixarr.transmission.uiPort}";
         };
       };
     };

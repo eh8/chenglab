@@ -25,7 +25,7 @@
         default = "http_status:404";
         ingress = {
           "watch.chengeric.com" = {
-            service = "http://localhost:8096";
+            service = "http://localhost:${toString config.nixarr.jellyfin.port}";
           };
         };
       };

@@ -14,6 +14,7 @@
     ./../../modules/nixos/remote-unlock.nix
 
     ./../../services/grafana-cloud.nix
+    ./../../services/immich.nix
     ./../../services/nextcloud.nix
     ./../../services/tailscale.nix
   ];
