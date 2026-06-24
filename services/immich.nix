@@ -1,4 +1,8 @@
-{config, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     ./acme.nix
     ./nginx.nix
@@ -7,6 +11,7 @@
   services = {
     immich = {
       enable = true;
+      accelerationDevices = ["/dev/dri/renderD128"];
       settings.server.externalDomain = "https://immich.chengeric.com";
     };
 
@@ -23,6 +28,22 @@
       };
     };
   };
+
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-compute-runtime
+      intel-media-driver
+      intel-vaapi-driver
+      libva-vdpau-driver
+      libvdpau-va-gl
+    ];
+  };
+
+  users.users.immich.extraGroups = [
+    "render"
+    "video"
+  ];
 
   chenglab.kopiaBackup.paths = ["/var/lib/immich"];
 

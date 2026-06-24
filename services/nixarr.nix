@@ -62,6 +62,27 @@
     intel-vaapi-driver = pkgs.intel-vaapi-driver.override {enableHybridCodec = true;};
   };
 
+  services.jellyfin = {
+    hardwareAcceleration = {
+      enable = true;
+      type = "vaapi";
+      device = "/dev/dri/renderD128";
+    };
+    transcoding = {
+      enableHardwareEncoding = true;
+      enableToneMapping = true;
+      hardwareDecodingCodecs = {
+        h264 = true;
+        hevc = true;
+        mpeg2 = true;
+        vc1 = true;
+        vp8 = true;
+        vp9 = true;
+      };
+      hardwareEncodingCodecs.hevc = true;
+    };
+  };
+
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
