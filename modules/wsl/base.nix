@@ -40,7 +40,7 @@
     "1.0.0.1"
   ];
   services.vscode-server.enable = true;
-  time.timeZone = "America/New_York";
+  time.timeZone = vars.timeZone;
 
   environment.systemPackages = [
     # inspo: https://github.com/croomes

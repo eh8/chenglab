@@ -66,7 +66,7 @@
     hardwareAcceleration = {
       enable = true;
       type = "vaapi";
-      device = "/dev/dri/renderD128";
+      device = vars.renderDevice;
     };
     transcoding = {
       enableHardwareEncoding = true;
@@ -103,45 +103,45 @@
 
   services.nginx = {
     virtualHosts = {
-      "watch.chengeric.com" = {
+      "watch.${vars.domain}" = {
         forceSSL = true;
-        useACMEHost = "chengeric.com";
+        useACMEHost = vars.domain;
         locations."/" = {
           recommendedProxySettings = true;
           proxyPass = "http://127.0.0.1:${toString config.nixarr.jellyfin.port}";
         };
       };
 
-      "prowlarr.chengeric.com" = {
+      "prowlarr.${vars.domain}" = {
         forceSSL = true;
-        useACMEHost = "chengeric.com";
+        useACMEHost = vars.domain;
         locations."/" = {
           recommendedProxySettings = true;
           proxyPass = "http://127.0.0.1:${toString config.nixarr.prowlarr.port}";
         };
       };
 
-      "radarr.chengeric.com" = {
+      "radarr.${vars.domain}" = {
         forceSSL = true;
-        useACMEHost = "chengeric.com";
+        useACMEHost = vars.domain;
         locations."/" = {
           recommendedProxySettings = true;
           proxyPass = "http://127.0.0.1:${toString config.nixarr.radarr.port}";
         };
       };
 
-      "sonarr.chengeric.com" = {
+      "sonarr.${vars.domain}" = {
         forceSSL = true;
-        useACMEHost = "chengeric.com";
+        useACMEHost = vars.domain;
         locations."/" = {
           recommendedProxySettings = true;
           proxyPass = "http://127.0.0.1:${toString config.nixarr.sonarr.port}";
         };
       };
 
-      "transmission.chengeric.com" = {
+      "transmission.${vars.domain}" = {
         forceSSL = true;
-        useACMEHost = "chengeric.com";
+        useACMEHost = vars.domain;
         locations."/" = {
           proxyPass = "http://127.0.0.1:${toString config.nixarr.transmission.uiPort}";
         };

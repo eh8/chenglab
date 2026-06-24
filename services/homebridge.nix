@@ -1,4 +1,8 @@
-{config, ...}: {
+{
+  config,
+  vars,
+  ...
+}: {
   imports = [
     ./acme.nix
     ./nginx.nix
@@ -22,9 +26,9 @@
     homebridge.enable = true;
     nginx = {
       virtualHosts = {
-        "home.chengeric.com" = {
+        "home.${vars.domain}" = {
           forceSSL = true;
-          useACMEHost = "chengeric.com";
+          useACMEHost = vars.domain;
           locations."/" = {
             recommendedProxySettings = true;
             proxyPass = "http://127.0.0.1:${toString config.services.homebridge.uiSettings.port}";

@@ -1,4 +1,8 @@
-{lib, ...}: {
+{
+  lib,
+  vars,
+  ...
+}: {
   imports = [
     ./acme.nix
     ./nginx.nix
@@ -61,9 +65,9 @@
 
   services.nginx = {
     virtualHosts = {
-      "scrypted.chengeric.com" = {
+      "scrypted.${vars.domain}" = {
         forceSSL = true;
-        useACMEHost = "chengeric.com";
+        useACMEHost = vars.domain;
         locations."/" = {
           recommendedProxySettings = true;
           proxyPass = "https://127.0.0.1:10443";
@@ -114,7 +118,6 @@
   environment.persistence."/nix/persist" = {
     directories = [
       "/var/lib/scrypted"
-
       "/var/lib/containers"
     ];
   };

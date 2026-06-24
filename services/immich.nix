@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  vars,
   ...
 }: {
   imports = [
@@ -11,19 +12,29 @@
   services = {
     immich = {
       enable = true;
-      accelerationDevices = ["/dev/dri/renderD128"];
-      settings.server.externalDomain = "https://immich.chengeric.com";
+      accelerationDevices = [vars.renderDevice];
+      settings = {
+        ffmpeg = {
+          accel = "vaapi";
+          accelDecode = true;
+          preferredHwDevice = vars.renderDevice;
+        };
+        server.externalDomain = "https://immich.${vars.domain}";
+      };
     };
 
-    nginx.virtualHosts."immich.chengeric.com" = {
+    nginx.virtualHosts."immich.${vars.domain}" = {
       forceSSL = true;
-      useACMEHost = "chengeric.com";
+      useACMEHost = vars.domain;
       locations."/" = {
-        recommendedProxySettings = true;
         proxyPass = "http://${config.services.immich.host}:${toString config.services.immich.port}";
+        proxyWebsockets = true;
+        recommendedProxySettings = true;
         extraConfig = ''
-          client_max_body_size 0;
-          proxy_request_buffering off;
+          client_max_body_size 50000M;
+          proxy_read_timeout   600s;
+          proxy_send_timeout   600s;
+          send_timeout         600s;
         '';
       };
     };

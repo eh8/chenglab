@@ -1,4 +1,8 @@
-{config, ...}: {
+{
+  config,
+  vars,
+  ...
+}: {
   sops.secrets = {
     "cloudflare-api-key" = {};
   };
@@ -6,11 +10,11 @@
   # inspo: https://carjorvaz.com/posts/setting-up-wildcard-lets-encrypt-certificates-on-nixos/
   security.acme = {
     acceptTerms = true;
-    defaults.email = "admin+acme@chengeric.com";
+    defaults.email = vars.acmeEmail;
 
-    certs."chengeric.com" = {
-      domain = "chengeric.com";
-      extraDomainNames = ["*.chengeric.com"];
+    certs.${vars.domain} = {
+      domain = vars.domain;
+      extraDomainNames = ["*.${vars.domain}"];
       dnsProvider = "cloudflare";
       dnsPropagationCheck = true;
       # inspo: https://go-acme.github.io/lego/dns/cloudflare/

@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  vars,
   ...
 }: {
   imports = [
@@ -17,7 +18,7 @@
     nextcloud = {
       enable = true;
       package = pkgs.nextcloud33;
-      hostName = "cloud.chengeric.com";
+      hostName = "cloud.${vars.domain}";
 
       https = true;
       maxUploadSize = "16G";
@@ -62,7 +63,7 @@
       virtualHosts = {
         "${config.services.nextcloud.hostName}" = {
           forceSSL = true;
-          useACMEHost = "chengeric.com";
+          useACMEHost = vars.domain;
         };
       };
     };
