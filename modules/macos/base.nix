@@ -86,7 +86,8 @@ in {
           {path = "/Applications/Google Chrome.app";}
           {path = "/Applications/Ghostty.app";}
           {path = "/Applications/Zed.app";}
-          {path = "/Applications/Claude.app";}
+          {path = "/Applications/Codex.app";}
+          {path = "/Applications/ChatGPT.app";}
           {path = "/Applications/Microsoft Outlook.app";}
           {path = "/Applications/Microsoft Teams.app";}
           {path = "/Applications/Slack.app";}
