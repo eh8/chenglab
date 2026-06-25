@@ -3,6 +3,8 @@
     efibootmgr
     git
     gptfdisk
+    # inspo: https://github.com/ghostty-org/ghostty/discussions/5753#discussioncomment-12197678
+    ghostty.terminfo
     parted
     ventoy
     vim
