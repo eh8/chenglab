@@ -3,7 +3,9 @@
   pkgs,
   vars,
   ...
-}: {
+}: let
+  renderDevice = "/dev/dri/renderD128";
+in {
   imports = [
     ./acme.nix
     ./nginx.nix
@@ -66,7 +68,7 @@
     hardwareAcceleration = {
       enable = true;
       type = "vaapi";
-      device = vars.renderDevice;
+      device = renderDevice;
     };
     transcoding = {
       enableHardwareEncoding = true;

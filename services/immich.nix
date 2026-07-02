@@ -3,7 +3,9 @@
   pkgs,
   vars,
   ...
-}: {
+}: let
+  renderDevice = "/dev/dri/renderD128";
+in {
   imports = [
     ./acme.nix
     ./nginx.nix
@@ -12,12 +14,12 @@
   services = {
     immich = {
       enable = true;
-      accelerationDevices = [vars.renderDevice];
+      accelerationDevices = [renderDevice];
       settings = {
         ffmpeg = {
           accel = "vaapi";
           accelDecode = true;
-          preferredHwDevice = vars.renderDevice;
+          preferredHwDevice = renderDevice;
         };
         server.externalDomain = "https://immich.${vars.domain}";
       };
