@@ -87,6 +87,7 @@ in {
           {path = "/Applications/Ghostty.app";}
           {path = "/Applications/Zed.app";}
           {path = "/Applications/ChatGPT.app";}
+          {path = "/Applications/Muse.app";}
           {path = "/Applications/Microsoft Outlook.app";}
           {path = "/Applications/Microsoft Teams.app";}
           {path = "/Applications/Slack.app";}
@@ -99,9 +100,10 @@ in {
           {path = "/Applications/Ghostty.app";}
           {path = "/Applications/Zed.app";}
           {path = "/Applications/ChatGPT.app";}
-          {path = "/Applications/WhatsApp.app";}
+          {path = "/Applications/Muse.app";}
           {path = "/System/Applications/Home.app";}
           {path = "/Applications/1Password.app";}
+          {path = "/Applications/WhatsApp.app";}
           {path = "/System/Applications/System Settings.app";}
         ];
     };

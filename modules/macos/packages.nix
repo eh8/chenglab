@@ -57,6 +57,7 @@ in {
       "grandperspective"
       "handbrake-app"
       "linearmouse"
+      "muse"
       "obsidian"
       "rar"
       "raycast"
