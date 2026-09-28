@@ -1,5 +1,6 @@
 {
   config,
+  inputs,
   pkgs,
   vars,
   ...
@@ -14,6 +15,9 @@ in {
   services = {
     immich = {
       enable = true;
+      # note: immich 2.x in stable is end-of-life and marked insecure.
+      # todo: use mainline nixpkgs version of immich
+      package = inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.immich;
       accelerationDevices = [renderDevice];
       settings = {
         ffmpeg = {
