@@ -92,6 +92,8 @@ jobs:
       - build-iso
     if: startsWith(github.ref, 'refs/tags/')
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Download tarball
         uses: actions/download-artifact@v8
@@ -99,15 +101,27 @@ jobs:
           name: nixos.wsl
           path: .
 
+      - name: Release tarball
+        uses: softprops/action-gh-release@v3
+        with:
+          files: nixos.wsl
+          fail_on_unmatched_files: true
+
+      # Keep only one release asset on disk at a time.
+      - name: Remove uploaded tarball
+        run: rm -- nixos.wsl
+
       - name: Download ISO
         uses: actions/download-artifact@v8
         with:
           name: nixos.iso
           path: .
 
-      - name: Release
+      - name: Release ISO
         uses: softprops/action-gh-release@v3
         with:
-          files: |
-            nixos.wsl
-            nixos.iso
+          files: nixos.iso
+          fail_on_unmatched_files: true
+
+      - name: Remove uploaded ISO
+        run: rm -- nixos.iso
