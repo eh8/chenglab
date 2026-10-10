@@ -61,6 +61,7 @@ in {
       "obsidian"
       "rar"
       "raycast"
+      "rustdesk"
       "screen-studio"
       "spotify"
       "steam"
