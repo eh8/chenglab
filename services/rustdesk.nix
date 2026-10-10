@@ -7,7 +7,7 @@
     enable = true;
     # note: LAN access is allowed by svr2's existing trusted-LAN firewall rules.
     openFirewall = false;
-    signal.relayHosts = ["rustdeck.${vars.domain}"];
+    signal.relayHosts = ["rustdesk.${vars.domain}"];
   };
 
   # inspo: https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/install/
