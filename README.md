@@ -29,7 +29,7 @@ This repo contains the Nix configurations for my homelab, desktop, and work lapt
 - 🧩 Tailscale, Nextcloud, Jellyfin, Homebridge, Scrypted, among other nice
   self-hosted applications
 - ⚡️ `just` aliases for common deployment, validation, and maintenance commands
-- 📦 [Ready-made WSL and ISO artifacts](https://github.com/eh8/chenglab/releases)
+- 📦 [Ready-made NixOS installer ISO](https://github.com/eh8/chenglab/releases)
 
 ## Repository layout
 
@@ -83,30 +83,6 @@ sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/eh8/chenglab/main/i
 > personal SSH key.
 > [The custom ISO released in this repo](https://github.com/eh8/chenglab/releases)
 > is baked with my own key.
-
-### Windows Subsystem for Linux (WSL)
-
-1. Enable WSL if you haven't done already:
-
-```powershell
-wsl --install --no-distribution
-```
-
-2. Download `nixos.wsl` from
-   [the latest release](https://github.com/eh8/chenglab/releases).
-
-3. Either double-click the `nixos.wsl` file once downloaded or import
-   the tarball into WSL:
-
-```powershell
-wsl --install --from-file nixos.wsl
-```
-
-4. You can now run NixOS:
-
-```powershell
-wsl -d NixOS
-```
 
 ## Useful commands 🛠️
 
