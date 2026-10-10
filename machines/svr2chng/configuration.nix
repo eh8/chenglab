@@ -16,6 +16,7 @@
     ./../../services/grafana-cloud.nix
     ./../../services/homebridge.nix
     ./../../services/pocketbase.nix
+    ./../../services/rustdesk.nix
     ./../../services/scrypted.nix
     ./../../services/tailscale.nix
   ];
