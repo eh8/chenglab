@@ -58,6 +58,7 @@ in {
       "muse"
       "obsidian"
       "raycast"
+      "rustdesk"
       "screen-studio"
       "spotify"
       "steam"
