@@ -2,7 +2,6 @@
   config,
   inputs,
   lib,
-  pkgs,
   vars,
   ...
 }: let
@@ -55,6 +54,7 @@ in {
       "grandperspective"
       "handbrake-app"
       "linearmouse"
+      "minecraft"
       "muse"
       "obsidian"
       "raycast"
